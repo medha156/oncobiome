@@ -1,0 +1,1299 @@
+                
+    <div class="hidden-xs search-box">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <h1 class="search-result-main-heading">Upload TimeTree</h1>
+            </div>
+            <div class="col-xs-3">
+                <form id="prunetree-search-widget" action="/api/widget/prunetree" method="post">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="search-step tooltip-help">Upload</h2>
+                        </div>
+                        <div class="col-xs-3 col-xs-offset-0">
+                            <label class="search-label" for="prunetree-widget-upload">File:</label>
+                        </div>
+                        <div class="col-xs-9">
+                            <input type="file" name="prunetree-widget-upload" id="prunetree-widget-upload"/>
+                        </div>
+                        <div class="col-xs-9 col-xs-offset-3">
+                            <button type="submit" class="search-button" id="prunetree-upload-button2">Upload</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-xs-6" id="prunetree-msg-container"></div>
+        </div>
+    </div>
+    
+    <div id="prunetree-widget-container" class="widget-container">
+        <div class="row">
+    <div class="tree-tools hidden-xs col-sm-2">
+    <div class="search-panel-tools tree-format-tool ">
+        <div class="tree-format-option tree-spacing-options ">         
+            <h2 class="format-option-name">Spacing</h2>
+            <div class="prunetree-buttonset">
+                <input type="radio" id="prunetree-1xspacing" name="taxonSpacing" value="1" />
+                <label for="prunetree-1xspacing">1x</label>
+                <input type="radio" id="prunetree-2xspacing" name="taxonSpacing" value="2" checked="checked"/>
+                <label for="prunetree-2xspacing">2x</label>
+                <input type="radio" id="prunetree-3xspacing" name="taxonSpacing" value="3" />
+                <label for="prunetree-3xspacing">3x</label>
+            </div>
+        </div>
+        <!--<div class="tree-format-option tree-line-color ">-->
+        <!--    <h2 class="format-option-name">Line Color</h2>-->
+        <!--    <input class="search-field" id="prunetree-color-picker" name="lineColor"/>        -->
+        <!--</div>-->
+        <!--<div class="tree-format-option">
+            <h2 class="format-option-name">Timescale</h2>
+            <div class="prunetree-buttonset timescale-btns">
+                <div class="toggle-checkbox-container">
+                    <input type="radio" id="prunetree-linear-scale-btn" name="timescale_type" value="1" checked="checked"/>
+                    <label for="prunetree-linear-scale-btn">Linear</label>
+                </div>
+                <div class="toggle-checkbox-container">
+                    <input type="radio" id="prunetree-log-scale-btn" name="timescale_type" value="2" />
+                    <label for="prunetree-log-scale-btn">Log</label>
+                </div>
+            </div>
+        </div>-->   
+        <div class="tree-format-option">
+            <h2 class="format-option-name">Background Colors</h2>
+            <select id="prunetree-bg-colors" class="search-field">
+                <option id="prunetree-ages-option" value="ages">Ages</option>
+                <option id="prunetree-epochs-option" value="epochs">Epochs</option>
+                <option id="prunetree-periods-option" value="periods">Periods</option>
+                <option id="prunetree-eras-option" value="eras">Eras</option>
+                <option id="prunetree-eons-option" value="eons">Eons</option>
+                <option id="prunetree-none-option" value="none">None</option>
+            </select>
+        </div>          
+        <div class="format-btn">
+            <button id="prunetree-apply-formatting-btn" class="search-button">Apply Format</button>        
+        </div>
+    </div>
+    <div class="search-panel-tools tree-format-tool ">
+        <div class="tree-format-option">
+            <h2 class="format-option-name">Display Panels</h2>
+            <div class="toggle-panel-btns prunetree-buttonset">
+                <div class="toggle-checkbox-container">
+                    <input type="checkbox" id="prunetree-geo-panel-btn" name="prunetree-geo-panel-btn" data-panel="prunetree-geo-timescales" checked/>
+                    <label for="prunetree-geo-panel-btn" onclick="ga('send', 'event', 'Display', 'Geo Timescale');">Geo Timescale</label>
+                </div>
+                <div class="toggle-checkbox-container">
+                    <input type="checkbox" id="prunetree-impacts-panel-btn" name="prunetree-impacts-panel-btn" data-panel="prunetree-impacts"  checked/>
+                    <label for="prunetree-impacts-panel-btn" onclick="ga('send', 'event', 'Display', 'Earth Impacts');">Earth Impacts</label>
+                </div>
+                <div class="toggle-checkbox-container">
+                    <input type="checkbox" id="prunetree-o2-panel-btn" name="prunetree-o2-panel-btn" data-panel="prunetree-o2"  checked/>
+                    <label for="prunetree-o2-panel-btn" onclick="ga('send', 'event', 'Display', 'O2 Levels');">O<sub>2</sub> Levels</label>
+                </div>
+                <div class="toggle-checkbox-container">
+                    <input type="checkbox" id="prunetree-co2-panel-btn" name="prunetree-co2-panel-btn" data-panel="prunetree-co2"  checked/>
+                    <label for="prunetree-co2-panel-btn" onclick="ga('send', 'event', 'Display', 'CO2 Levels');">CO<sub>2</sub> Levels</label>
+                </div>
+                <div class="toggle-checkbox-container">
+                    <input type="checkbox" id="prunetree-luminosity-panel-btn" name="prunetree-luminosity-panel-btn" data-panel="prunetree-luminosity"  checked/>
+                    <label for="prunetree-luminosity-panel-btn" onclick="ga('send', 'event', 'Display', 'Luminosity');">Luminosity</label>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="search-panel-tools tree-format-tool tree-format-option tree-export-options">
+        <h2 class="format-option-name">Export Tree</h2>
+        <div class=" ">
+            <form action="/ajax/newick/prunetree/download" method="post">
+                <input type="hidden" name="export" value="newick"/>
+                <input type="hidden" name="rank" value=""/>
+                <input type="hidden" name="taxon" value=""/>
+                <button id="prunetree-newick-export-btn" type="submit" class="search-button" onclick="ga('set', 'dimension1', $('#timetree-resolve-target2 option')[$('#timetree-resolve-target2 option:selected').index()].text);ga('set', 'dimension3', $('#timetree-taxonomy-resolve2 option')[$('#timetree-taxonomy-resolve2 option:selected').index()].text);ga('send', 'event', 'timetree', 'download-newick');">To Newick File</button>
+            </form>
+        </div>
+        <div class="format-toolbox-spacer  "></div>
+        <div>
+<!--            <form action="/imgexport/prunetree" method="post">-->
+                <input type="hidden" id="prunetree-visible-panels" name="prunetree_visible_panels" value=""/>                               
+                <input type="hidden" name="rank" value=""/>
+                <input type="hidden" name="taxon" value=""/>
+                <input id="prunetree-lineColor" type="hidden" name="lineColor" value="#000000"/>
+                <input id="prunetree-taxon-spacing" type="hidden" name="taxonSpacing" value="2"/>
+                <button id="prunetree-timetree-svg-export-btn" type="submit" class="search-button">To Image File</button>            
+                <label for="prunetree_image_format">Select Image Format</label>
+                <select name="prunetree_image_format" id="prunetree_image_format" class="search-field">
+                    <option value="jpg">JPG</option>
+                    <!--<option value="pdf">PDF</option>-->    
+                    <option value="png">PNG</option>
+                    <!--<option value="tiff">TIFF</option>-->                
+                    <option value="svg">SVG</option>
+                </select>                
+<!--            </form>-->
+        </div>
+    </div>
+<!--    <div class="tree-format-tool tree-format-option times-export-options ">-->
+    <div class="tree-format-tool tree-format-option times-export-options hidden">
+        <div class="format-option-name">Get Pairwise Times</div>        
+        <div class="">
+            <form method="post" target="_blank">
+                <div class ="prunetree-buttonset timescale-btns">
+                    <input id="prunetree_matrix_format_radio" type="radio" name="pwtimes_format" value="matrix" checked="checked"/> 
+                    <label for="prunetree_matrix_format_radio"> Matrix</label>
+                    <input id="prunetree_column_format_radio" type="radio" name="pwtimes_format" value="column"/>
+                    <label for="prunetree_column_format_radio"> Column</label>
+                </div>
+                <input id="prunetree_pw_format" type="hidden" name="prunetree_pw_format" value="matrix"/>
+                <input id="leafcount" type="hidden" name="leafcount" value="54
+"/>
+                <input id="tree_type" type="hidden" name="tree_type" value="prunetree"/>
+                <button id="prunetree-pwtimes-dload-btn" type="submit" formaction="/widget/pwtimes/download" class="timetree-formatting-btn button col-xs-10">Download</button>
+                <button id="prunetree-pwtimes-view-btn" type="submit" formaction="/widget/pwtimes/view" class="timetree-formatting-btn button col-xs-10">View Times</button>
+            </form>
+        </div><br/>
+        <div class="format-toolbox-spacer  "> </div>
+    </div>
+</div>
+
+<script src="/public/js/widgets/formatting_tools.js"></script>
+<script src="/public/js/saveSvgAsPng.js"></script>
+<script>
+    $(document).ready(function () {
+        var widget = 'prunetree';
+        $('#branches').attr('id', "prunetree-branches");
+        var lineColor = $('#prunetree-lineColor').val();
+        $('.prunetree-buttonset').buttonset();
+        if ((widget == 'timetree') || (widget == 'prunetree')) {
+            $('#prunetree-color-picker').colorpicker();
+            $('#prunetree-color-picker').colorpicker("val", lineColor);
+            $("#prunetree-color-picker").on("change.color", function(event, color){
+                $('#prunetree-branches polyline, #prunetree-branches line').attr('stroke', color);
+                $('#prunetree-lineColor').val(color);
+            });             
+        }
+       
+        $('.toggle-panel-btns input:checkbox').click(function(e) {
+            var panelName = $(this).attr('data-panel');
+            if ($(this).attr('value') == 'visible')
+                $(this).attr('value', 'hidden');
+            else
+                $(this).attr('value', 'visible');
+            $('#' + panelName).fadeToggle(); 
+            e.stopPropogation();
+        });
+        $('#prunetree-apply-formatting-btn').click(function() {
+//            var widget = 'prunetree';
+            if ($("#impacts-context-menu").hasClass("ui-dialog-content") && $("#impacts-context-menu").dialog("isOpen")) {
+                $('#impacts-context-menu').dialog('close');
+            } 
+            if ($("#timetree-context-menu").hasClass("ui-dialog-content") && $("#timetree-context-menu").dialog("isOpen")) {
+                $('#timetree-context-menu').dialog('close');
+            } 
+            if ($('#geo-timescale-context-menu').hasClass('ui-dialog-content') && $('#geo-timescale-context-menu').dialog('isOpen')) {
+                $('#geo-timescale-context-menu').dialog('close');
+            }   
+            if (widget === 'timetree') {
+                $('#prunetree-timetree-build-widget2').submit();
+            }            
+            else {
+                var data = {
+                    scale: $('[name=timescale_type]:radio:checked').val(),
+                    taxonSpacing: $('[name=taxonSpacing]:radio:checked').val(),
+                    panelHeight: $('[name=panel_height]:radio:checked').val(),
+                    lineColor: $('#prunetree-lineColor').val(),
+                    geoBgColors: $('#prunetree-bg-colors').val()
+                }
+                waitingDialog.show();
+                $.post('ajax/prune/redraw', data, onPruneTreeRedrawDone);
+            }
+        });
+        
+        $('#prunetree-1xspacing').click(function(){
+            $('#prunetree-taxon-spacing').val(1);
+        });
+        $('#prunetree-2xspacing').click(function(){
+            $('#prunetree-taxon-spacing').val(2);
+        });        
+        $('#prunetree-3xspacing').click(function(){
+            $('#prunetree-taxon-spacing').val(3);
+        });        
+        $('#prunetree-timetree-svg-export-btn').click(prunetreeCheckTreeIsTooLarge);
+        $('#prunetree_matrix_format_radio').click(function(){
+            $('#prunetree_pw_format').val('matrix');
+        });
+        $('#prunetree_column_format_radio').click(function(){
+            $('#prunetree_pw_format').val('column');
+        });
+    });
+    
+    function onPruneTreeRedrawDone(data) {
+        $('#prunetree-msg-container').html('');
+        $('#prunetree-tree-svg-wrapper').html(data);
+        var msgBox = $('#prunetree-msg-box');
+        if (msgBox != null) { // move the error messages into the search tools box which does not get reloaded
+            $('#prunetree-msg-container').html(msgBox.html());
+            msgBox.html(''); 
+            $('#prunetree-msg-btn').click(function() {
+                if ($(this).hasClass('error-btn-enabled')) {
+                    $('#prunetree-leaf-count').fadeToggle();
+                    $('#unresolved-names').fadeToggle();                                                            
+                }
+            });  
+            $('#unresolved-names').hide();
+            
+        }
+        else {
+            $('#prunetree-msg-container').html('');                    
+        } 
+        hideModalProgress();
+    }
+    
+    function prunetreeCheckTreeIsTooLarge(e) {
+        var nodeCount = parseInt($('#prunetree-nodecount').val());
+        console.log('node count: ' + nodeCount);
+        var widgetName = "prunetree";
+        console.log('widget: ' + widgetName);
+        var leafNodeCount = (nodeCount + 1) / 2;
+        console.log('num leaf nodes: ' + leafNodeCount);
+        if ((nodeCount > 199) && (nodeCount < 400) && (("#prunetree_image_format").val() == 'pdf')) {
+            messageDialog.show('This timetree is too large (' + leafNodeCount + ' leaf nodes) to export to a PDF file. You can use either PNG or JPG formats for this tree.');
+            e.preventDefault();            
+        }
+        else if (nodeCount > 599) {
+            messageDialog.show('This timetree is too large (' + leafNodeCount + ' leaf nodes) to export to an image file. Image export requires a timetree with no more than 300 leaf nodes.');
+            e.preventDefault();
+        }
+        checkVisiblePanels(widgetName);
+    }
+
+
+var width = 900;
+var height = 0;
+var mergedSvg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+
+var searchtype = 'prunetree';
+var rank = '';
+var taxon = '';
+var filename = taxon + "_" + rank;
+
+if (searchtype == 'prunetree')
+{ filename = 'prunetree' };
+
+var container = document.getElementById('timeline-panels');
+
+const svgs = new Array(
+  document.getElementById(searchtype + '-svg-wrapper').querySelector('svg'),
+  document.getElementById(searchtype + '-geo-timescales').querySelector('svg'),
+  document.getElementById(searchtype + '-timescale').querySelector('svg'),
+  document.getElementById(searchtype + '-impacts').querySelector('svg'),
+  document.getElementById(searchtype + '-o2').querySelector('svg'),
+  document.getElementById(searchtype + '-co2').querySelector('svg'),
+  document.getElementById(searchtype + '-luminosity').querySelector('svg'));
+
+async function combineSVGs () {
+
+  for (const svg of svgs) {
+    processedSvg = await prepareSvg(svg, { width: width });
+  var div = document.createElement('svg');
+  div.innerHTML = processedSvg.src;
+  var newSvg = div.querySelector('svg');
+  newSvg.setAttribute("y", height);
+  height += processedSvg.height;
+  mergedSvg.appendChild(newSvg);
+
+  mergedSvg.setAttribute("height", height);
+  var viewBox = '0 0 ' + width + ' ' + height;
+  mergedSvg.setAttribute("viewBox", viewBox);
+  }
+}
+
+combineSVGs();
+
+
+document.getElementById(searchtype + '-timetree-svg-export-btn').addEventListener('click', function () {
+var type = document.getElementById(searchtype + '_image_format').value;
+
+if (type == 'jpg')
+{
+  saveSvgAsJpg(mergedSvg, filename + ".jpg");
+}
+if (type == 'png')
+{
+  saveSvgAsPng(mergedSvg, filename + ".png");
+}
+if (type == 'svg')
+{
+  saveSvg(mergedSvg, filename + ".svg");
+}
+});    
+
+</script>
+        <div id="prunetree-tree-svg-wrapper">
+            <div id="prunetree-msg-box">
+        <div class="col-xs-12" id="prunetree-msg-box">
+        <div class="row col-xs-6">            
+            <button id="prunetree-msg-btn" class="error-btn-enabled">Unresolved Names (3)</button>
+        </div>
+        <div id="unresolved-names-box" class="col-xs-6" title="Unresolved Taxa Names">
+                        <div id="unresolved-names">
+                                    Gazella subgutturosa (replaced with Gazella dorcas)<br/> 
+                                    Giraffa camelopardalis (replaced with Giraffa reticulata)<br/> 
+                                    Felis silvestris (insufficient data in TimeTree to place this taxon)<br/> 
+                            </div>
+                        <div id="prunetree-leaf-count">
+                54
+ Leaf Nodes in Tree
+            </div>            
+        </div>                    
+    </div>
+    </div>
+<div id='prunetree-results-wrapper'>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="tree-overflow scrollable col-sm-12">
+                                <input type="hidden" id="widgetName" value="prunetree"/>
+                <div id="prunetree-svg-wrapper">            
+                    <?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="1376" name="tree" y="0">
+<defs>
+<g class="background" id="prunetree-background-colors" bg-colors="ages">
+<polyline points="20,1376 36,1376 36,20 20,20 20,1376" class="background" fill="#BFE7F1" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="36,1376 55,1376 55,20 36,20 36,1376" class="background" fill="#CCECF4" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="55,1376 75,1376 75,20 55,20 55,1376" class="background" fill="#D9F1F7" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="75,1376 95,1376 95,20 75,20 75,1376" class="background" fill="#8CCD60" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="95,1376 110,1376 110,20 95,20 95,1376" class="background" fill="#99D36A" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="110,1376 134,1376 134,20 110,20 110,1376" class="background" fill="#A6D975" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="134,1376 153,1376 153,20 134,20 134,1376" class="background" fill="#B3DF7F" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="153,1376 202,1376 202,20 153,20 153,1376" class="background" fill="#BFE48A" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="202,1376 250,1376 250,20 202,20 202,1376" class="background" fill="#CCEA97" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="250,1376 273,1376 273,20 250,20 250,1376" class="background" fill="#B3DE53" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="273,1376 289,1376 289,20 273,20 273,1376" class="background" fill="#BFE35D" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="289,1376 302,1376 302,20 289,20 289,1376" class="background" fill="#CCE968" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="302,1376 311,1376 311,20 302,20 302,1376" class="background" fill="#D9EF74" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="311,1376 360,1376 360,20 311,20 311,1376" class="background" fill="#E6F47F" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="360,1376 379,1376 379,20 360,20 360,1376" class="background" fill="#F2FA8C" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="379,1376 394,1376 394,20 379,20 379,1376" class="background" fill="#FDB462" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="394,1376 405,1376 405,20 394,20 394,1376" class="background" fill="#FEBF65" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="405,1376 416,1376 416,20 405,20 405,1376" class="background" fill="#FDBF6F" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="416,1376 443,1376 443,20 416,20 416,1376" class="background" fill="#FCA773" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="443,1376 474,1376 474,20 443,20 443,1376" class="background" fill="#FCB482" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="474,1376 487,1376 487,20 474,20 474,1376" class="background" fill="#FDC091" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="487,1376 499,1376 499,20 487,20 487,1376" class="background" fill="#FDCDA1" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="499,1376 520,1376 520,20 499,20 499,1376" class="background" fill="#FED99A" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="520,1376 540,1376 540,20 520,20 520,1376" class="background" fill="#FEE6AA" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="540,1376 550,1376 550,20 540,20 540,1376" class="background" fill="#FFFF33" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="550,1376 567,1376 567,20 550,20 550,1376" class="background" fill="#FFFF41" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="567,1376 575,1376 575,20 567,20 567,1376" class="background" fill="#FFFF4D" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="575,1376 584,1376 584,20 575,20 575,1376" class="background" fill="#FFFF59" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="584,1376 600,1376 600,20 584,20 584,1376" class="background" fill="#FFFF66" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="600,1376 608,1376 608,20 600,20 600,1376" class="background" fill="#FFFF73" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="608,1376 614,1376 614,20 608,20 608,1376" class="background" fill="#FFFFB3" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="614,1376 618,1376 618,20 614,20 614,1376" class="background" fill="#FFFFBF" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="618,1376 621,1376 621,20 618,20 618,1376" class="background" fill="#FFFFCC" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="621,1376 625,1376 625,20 621,20 621,1376" class="background" fill="#FFF2BA" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="625,1376 628,1376 628,20 625,20 625,1376" class="background" fill="#FFF2C7" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="628,1376 628,1376 628,20 628,20 628,1376" class="background" fill="#FFF2D3" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+<polyline points="628,1376 628,1376 628,20 628,20 628,1376" class="background" fill="#FEF2EC" fill-opacity="0.2" stroke="#000000" stroke-width="0" stroke-linecap="square"/>
+</g>
+<g id="prunetree-branches" class="branches" depth="unknown">
+<polyline points="600,69 600,59 628,59" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="600,73 600,83 628,83" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="428,87 428,71 600,71" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="428,91 428,107 628,107" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="20,557 20,89 428,89" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="488,162 488,131 628,131" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="585,165 585,155 628,155" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="585,169 585,179 628,179" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="583,196 583,167 585,167" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="602,228 602,203 628,203" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="617,237 617,227 628,227" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="617,241 617,251 628,251" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="613,255 613,239 617,239" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="613,259 613,275 628,275" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="602,232 602,257 613,257" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="583,200 583,230 602,230" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="488,166 488,198 583,198" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="418,249 418,164 488,164" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="457,337 457,299 628,299" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="520,339 520,323 628,323" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="562,357 562,347 628,347" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="562,361 562,371 628,371" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="520,343 520,359 562,359" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="476,366 476,341 520,341" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="476,370 476,395 628,395" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="476,382 476,419 628,419" fill="none" stroke="#000000" stroke-width="2"/>
+<line x1="476" y1="341" x2="476" y2="378" stroke="#000000" stroke-width="2"/>
+<polyline points="457,341 457,380 476,380" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="418,253 418,339 457,339" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="346,360 346,251 418,251" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="618,453 618,443 628,443" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="618,457 618,467 628,467" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="617,471 617,455 618,455" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="617,475 617,491 628,491" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="346,364 346,473 617,473" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="339,470 339,362 346,362" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="385,581 385,515 628,515" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="408,650 408,539 628,539" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="578,573 578,563 628,563" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="578,577 578,587 628,587" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="546,624 546,575 578,575" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="574,621 574,611 628,611" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="574,625 574,635 628,635" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="563,648 563,623 574,623" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="578,675 578,659 628,659" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="596,693 596,683 628,683" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="596,697 596,707 628,707" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="578,679 578,695 596,695" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="563,652 563,677 578,677" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="563,679 563,731 628,731" fill="none" stroke="#000000" stroke-width="2"/>
+<line x1="563" y1="623" x2="563" y2="675" stroke="#000000" stroke-width="2"/>
+<polyline points="546,628 546,677 563,677" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="538,703 538,626 546,626" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="602,765 602,755 628,755" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="602,769 602,779 628,779" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="579,783 579,767 602,767" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="579,787 579,803 628,803" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="538,707 538,785 579,785" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="526,764 526,705 538,705" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="526,768 526,827 628,827" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="408,654 408,766 526,766" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="385,585 385,652 408,652" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="339,474 339,583 385,583" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="271,739 271,472 339,472" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="361,861 361,851 628,851" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="361,865 361,875 628,875" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="297,1009 297,863 361,863" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="403,927 403,899 628,899" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="619,933 619,923 628,923" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="619,937 619,947 628,947" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="529,957 529,935 619,935" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="553,981 553,971 628,971" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="553,985 553,995 628,995" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="529,961 529,983 553,983" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="403,931 403,959 529,959" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="348,1035 348,929 403,929" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="583,1029 583,1019 628,1019" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="583,1033 583,1043 628,1043" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="572,1053 572,1031 583,1031" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="601,1077 601,1067 628,1067" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="601,1081 601,1091 628,1091" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="572,1057 572,1079 601,1079" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="560,1083 560,1055 572,1055" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="560,1087 560,1115 628,1115" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="465,1143 465,1085 560,1085" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="554,1164 554,1139 628,1139" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="595,1173 595,1163 628,1163" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="595,1177 595,1187 628,1187" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="570,1191 570,1175 595,1175" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="570,1195 570,1211 628,1211" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="554,1168 554,1193 570,1193" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="518,1204 518,1166 554,1166" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="561,1245 561,1235 628,1235" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="561,1249 561,1259 628,1259" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="518,1208 518,1247 561,1247" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="465,1147 465,1206 518,1206" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="348,1039 348,1145 465,1145" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="306,1158 306,1037 348,1037" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="306,1162 306,1283 628,1283" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="297,1013 297,1160 306,1160" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="271,743 271,1011 297,1011" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="251,1028 251,741 271,741" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="260,1317 260,1307 628,1307" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="260,1321 260,1331 628,1331" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="251,1032 251,1319 260,1319" fill="none" stroke="#000000" stroke-width="2"/>
+<polyline points="20,561 20,1030 251,1030" fill="none" stroke="#000000" stroke-width="2"/>
+</g>
+<g id="prunetree-nodes" class="branches" depth="unknown">
+<circle cx="69.8%" cy="59" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Notamacropus eugenii" time="" lncount="1" id="76170" fill="#3382D1"/>
+<circle cx="69.8%" cy="59" r="12" class="node" rank="species" otu="true" name="Notamacropus eugenii" time="" lncount="1" id="76170"/>
+<circle cx="69.8%" cy="83" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Macropus giganteus" time="" lncount="1" id="76182" fill="#3382D1"/>
+<circle cx="69.8%" cy="83" r="12" class="node" rank="species" otu="true" name="Macropus giganteus" time="" lncount="1" id="76182"/>
+<circle cx="66.7%" cy="71" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="5.40" cihi="9.34" ci_string="Range: (5.4 - 9.3)" isci="false" time="7.37" lncount="2" dof="Theria" id="76162" fill="#3382D1"/>
+<circle cx="66.7%" cy="71" r="12" class="node" rank="unknown" cilo="5.40" cihi="9.34" ci_string="Range: (5.4 - 9.3)" isci="false" time="7.37" lncount="2" dof="Theria" id="76162"/>
+<circle cx="69.8%" cy="107" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Phascolarctos cinereus" time="" lncount="1" id="76242" fill="#3382D1"/>
+<circle cx="69.8%" cy="107" r="12" class="node" rank="species" otu="true" name="Phascolarctos cinereus" time="" lncount="1" id="76242"/>
+<circle cx="47.6%" cy="89" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="45.7" cihi="55.3" ci_string="CI: (45.7 - 55.3)" isci="false" time="52.6" lncount="3" dof="Theria" id="76025" fill="#3382D1"/>
+<circle cx="47.6%" cy="89" r="12" class="node" rank="unknown" cilo="45.7" cihi="55.3" ci_string="CI: (45.7 - 55.3)" isci="false" time="52.6" lncount="3" dof="Theria" id="76025"/>
+<circle cx="2.2%" cy="557" r="4" fill="#3382D1"/>
+<circle cx="2.2%" cy="557" r="12" class="node" rank="no rank" time="160.0" cilo="147.1" cihi="164.3" isci="false" lncount="54" name="Theria" id="75819"/>
+<circle cx="69.8%" cy="131" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Suricata suricatta" time="" lncount="1" id="77069" fill="#3382D1"/>
+<circle cx="69.8%" cy="131" r="12" class="node" rank="species" otu="true" name="Suricata suricatta" time="" lncount="1" id="77069"/>
+<circle cx="69.8%" cy="155" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Lynx lynx" time="" lncount="1" id="77139" fill="#3382D1"/>
+<circle cx="69.8%" cy="155" r="12" class="node" rank="species" otu="true" name="Lynx lynx" time="" lncount="1" id="77139"/>
+<circle cx="69.8%" cy="179" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Felis margarita" time="" lncount="1" id="77162" fill="#3382D1"/>
+<circle cx="69.8%" cy="179" r="12" class="node" rank="species" otu="true" name="Felis margarita" time="" lncount="1" id="77162"/>
+<circle cx="65.0%" cy="167" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="6.54" cihi="20.74" ci_string="CI: (6.5 - 20.7)" adjusted_age="11" isci="false" time="11.90" lncount="2" dof="Carnivora" id="77127" fill="#3382D1"/>
+<circle cx="65.0%" cy="167" r="12" class="node" rank="unknown" cilo="6.54" cihi="20.74" ci_string="CI: (6.5 - 20.7)" adjusted_age="11" isci="false" time="11.90" lncount="2" dof="Carnivora" id="77127"/>
+<circle cx="69.8%" cy="203" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Panthera tigris" time="" lncount="1" id="77187" fill="#3382D1"/>
+<circle cx="69.8%" cy="203" r="12" class="node" rank="species" otu="true" name="Panthera tigris" time="" lncount="1" id="77187"/>
+<circle cx="69.8%" cy="227" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Panthera leo" time="" lncount="1" id="77201" fill="#3382D1"/>
+<circle cx="69.8%" cy="227" r="12" class="node" rank="species" otu="true" name="Panthera leo" time="" lncount="1" id="77201"/>
+<circle cx="69.8%" cy="251" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Panthera pardus" time="" lncount="1" id="77202" fill="#3382D1"/>
+<circle cx="69.8%" cy="251" r="12" class="node" rank="species" otu="true" name="Panthera pardus" time="" lncount="1" id="77202"/>
+<circle cx="68.6%" cy="239" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="2.52" cihi="5.80" ci_string="CI: (2.5 - 5.8)" isci="false" time="2.96" lncount="2" dof="Panthera" id="77198" fill="#3382D1"/>
+<circle cx="68.6%" cy="239" r="12" class="node" rank="unknown" cilo="2.52" cihi="5.80" ci_string="CI: (2.5 - 5.8)" isci="false" time="2.96" lncount="2" dof="Panthera" id="77198"/>
+<circle cx="69.8%" cy="275" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Panthera onca" time="" lncount="1" id="77203" fill="#3382D1"/>
+<circle cx="69.8%" cy="275" r="12" class="node" rank="species" otu="true" name="Panthera onca" time="" lncount="1" id="77203"/>
+<circle cx="68.1%" cy="257" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="3.11" cihi="7.74" ci_string="CI: (3.1 - 7.7)" isci="false" time="4.06" lncount="3" dof="Panthera" id="77197" fill="#3382D1"/>
+<circle cx="68.1%" cy="257" r="12" class="node" rank="unknown" cilo="3.11" cihi="7.74" ci_string="CI: (3.1 - 7.7)" isci="false" time="4.06" lncount="3" dof="Panthera" id="77197"/>
+<circle cx="66.9%" cy="230" r="4" stroke="#3382D1" stroke-width="1" rank="genus" cilo="4.82" cihi="17.40" ci_string="CI: (4.8 - 17.4)" isci="false" time="6.77" lncount="4" name="Panthera" id="77186" fill="#3382D1"/>
+<circle cx="66.9%" cy="230" r="12" class="node" rank="genus" cilo="4.82" cihi="17.40" ci_string="CI: (4.8 - 17.4)" isci="false" time="6.77" lncount="4" name="Panthera" id="77186"/>
+<circle cx="64.8%" cy="198" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="11.56" cihi="14.70" ci_string="CI: (11.6 - 14.7)" adjusted_age="12" isci="false" time="13.57" lncount="6" dof="Carnivora" id="77122" fill="#3382D1"/>
+<circle cx="64.8%" cy="198" r="12" class="node" rank="unknown" cilo="11.56" cihi="14.70" ci_string="CI: (11.6 - 14.7)" adjusted_age="12" isci="false" time="13.57" lncount="6" dof="Carnivora" id="77122"/>
+<circle cx="54.2%" cy="164" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="32.5" cihi="41.8" ci_string="CI: (32.5 - 41.8)" isci="false" time="37.0" lncount="7" dof="Carnivora" id="76974" fill="#3382D1"/>
+<circle cx="54.2%" cy="164" r="12" class="node" rank="unknown" cilo="32.5" cihi="41.8" ci_string="CI: (32.5 - 41.8)" isci="false" time="37.0" lncount="7" dof="Carnivora" id="76974"/>
+<circle cx="69.8%" cy="299" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Lycaon pictus" time="" lncount="1" id="77263" fill="#3382D1"/>
+<circle cx="69.8%" cy="299" r="12" class="node" rank="species" otu="true" name="Lycaon pictus" time="" lncount="1" id="77263"/>
+<circle cx="69.8%" cy="323" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Lutra lutra" time="" lncount="1" id="77345" fill="#3382D1"/>
+<circle cx="69.8%" cy="323" r="12" class="node" rank="species" otu="true" name="Lutra lutra" time="" lncount="1" id="77345"/>
+<circle cx="69.8%" cy="347" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Nasua nasua" time="" lncount="1" id="77409" fill="#3382D1"/>
+<circle cx="69.8%" cy="347" r="12" class="node" rank="species" otu="true" name="Nasua nasua" time="" lncount="1" id="77409"/>
+<circle cx="69.8%" cy="371" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Procyon lotor" time="" lncount="1" id="77427" fill="#3382D1"/>
+<circle cx="69.8%" cy="371" r="12" class="node" rank="species" otu="true" name="Procyon lotor" time="" lncount="1" id="77427"/>
+<circle cx="62.4%" cy="359" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="16.34" cihi="23.37" ci_string="CI: (16.3 - 23.4)" adjusted_age="17" isci="false" time="17.31" lncount="2" dof="Caniformia" id="77402" fill="#3382D1"/>
+<circle cx="62.4%" cy="359" r="12" class="node" rank="unknown" cilo="16.34" cihi="23.37" ci_string="CI: (16.3 - 23.4)" adjusted_age="17" isci="false" time="17.31" lncount="2" dof="Caniformia" id="77402"/>
+<circle cx="57.8%" cy="341" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="27.35" cihi="29.50" ci_string="CI: (27.3 - 29.5)" adjusted_age="28" isci="false" time="28.38" lncount="3" dof="Caniformia" id="77294" fill="#3382D1"/>
+<circle cx="57.8%" cy="341" r="12" class="node" rank="unknown" cilo="27.35" cihi="29.50" ci_string="CI: (27.3 - 29.5)" adjusted_age="28" isci="false" time="28.38" lncount="3" dof="Caniformia" id="77294"/>
+<circle cx="69.8%" cy="395" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Phoca vitulina" time="" lncount="1" id="77494" fill="#3382D1"/>
+<circle cx="69.8%" cy="395" r="12" class="node" rank="species" otu="true" name="Phoca vitulina" time="" lncount="1" id="77494"/>
+<circle cx="69.8%" cy="419" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Ursus arctos" time="" lncount="1" id="77539" fill="#3382D1"/>
+<circle cx="69.8%" cy="419" r="12" class="node" rank="species" otu="true" name="Ursus arctos" time="" lncount="1" id="77539"/>
+<circle cx="52.9%" cy="380" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="35.7" cihi="42.8" ci_string="CI: (35.7 - 42.8)" adjusted_age="40" isci="false" time="40.0" lncount="5" dof="Caniformia" id="77290" fill="#3382D1"/>
+<circle cx="52.9%" cy="380" r="12" class="node" rank="unknown" cilo="35.7" cihi="42.8" ci_string="CI: (35.7 - 42.8)" adjusted_age="40" isci="false" time="40.0" lncount="5" dof="Caniformia" id="77290"/>
+<circle cx="50.8%" cy="339" r="4" stroke="#3382D1" stroke-width="1" rank="suborder" cilo="43.4" cihi="48.5" ci_string="CI: (43.4 - 48.5)" adjusted_age="45" isci="false" time="45.1" lncount="6" name="Caniformia" id="77210" fill="#3382D1"/>
+<circle cx="50.8%" cy="339" r="12" class="node" rank="suborder" cilo="43.4" cihi="48.5" ci_string="CI: (43.4 - 48.5)" adjusted_age="45" isci="false" time="45.1" lncount="6" name="Caniformia" id="77210"/>
+<circle cx="46.4%" cy="251" r="4" stroke="#3382D1" stroke-width="1" rank="order" cilo="52.9" cihi="57.3" ci_string="CI: (52.9 - 57.3)" adjusted_age="55" isci="false" time="55.4" lncount="13" name="Carnivora" id="76972" fill="#3382D1"/>
+<circle cx="46.4%" cy="251" r="12" class="node" rank="order" cilo="52.9" cihi="57.3" ci_string="CI: (52.9 - 57.3)" adjusted_age="55" isci="false" time="55.4" lncount="13" name="Carnivora" id="76972"/>
+<circle cx="69.8%" cy="443" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Equus hemionus" time="" lncount="1" id="77566" fill="#3382D1"/>
+<circle cx="69.8%" cy="443" r="12" class="node" rank="species" otu="true" name="Equus hemionus" time="" lncount="1" id="77566"/>
+<circle cx="69.8%" cy="467" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Equus asinus" time="" lncount="1" id="77570" fill="#3382D1"/>
+<circle cx="69.8%" cy="467" r="12" class="node" rank="species" otu="true" name="Equus asinus" time="" lncount="1" id="77570"/>
+<circle cx="68.7%" cy="455" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="0.00" cihi="0.00" ci_string="CI: (6.4 - 12.7)" isci="false" time="2.62" lncount="2" dof="Boreoeutheria" id="77560" fill="#3382D1"/>
+<circle cx="68.7%" cy="455" r="12" class="node" rank="unknown" cilo="0.00" cihi="0.00" ci_string="CI: (6.4 - 12.7)" isci="false" time="2.62" lncount="2" dof="Boreoeutheria" id="77560"/>
+<circle cx="69.8%" cy="491" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Equus quagga" time="" lncount="1" id="77573" fill="#3382D1"/>
+<circle cx="69.8%" cy="491" r="12" class="node" rank="species" otu="true" name="Equus quagga" time="" lncount="1" id="77573"/>
+<circle cx="68.6%" cy="473" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="0.00" cihi="0.00" ci_string="CI: (6.4 - 12.7)" isci="false" time="2.78" lncount="3" dof="Boreoeutheria" id="77559" fill="#3382D1"/>
+<circle cx="68.6%" cy="473" r="12" class="node" rank="unknown" cilo="0.00" cihi="0.00" ci_string="CI: (6.4 - 12.7)" isci="false" time="2.78" lncount="3" dof="Boreoeutheria" id="77559"/>
+<circle cx="38.4%" cy="362" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="65.8" cihi="74.5" ci_string="CI: (65.8 - 74.5)" adjusted_age="74" isci="false" time="71.0" lncount="16" dof="Boreoeutheria" id="76961" fill="#3382D1"/>
+<circle cx="38.4%" cy="362" r="12" class="node" rank="unknown" cilo="65.8" cihi="74.5" ci_string="CI: (65.8 - 74.5)" adjusted_age="74" isci="false" time="71.0" lncount="16" dof="Boreoeutheria" id="76961"/>
+<circle cx="69.8%" cy="515" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Lama glama" time="" lncount="1" id="77602" fill="#3382D1"/>
+<circle cx="69.8%" cy="515" r="12" class="node" rank="species" otu="true" name="Lama glama" time="" lncount="1" id="77602"/>
+<circle cx="69.8%" cy="539" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Hippopotamus amphibius" time="" lncount="1" id="77795" fill="#3382D1"/>
+<circle cx="69.8%" cy="539" r="12" class="node" rank="species" otu="true" name="Hippopotamus amphibius" time="" lncount="1" id="77795"/>
+<circle cx="69.8%" cy="563" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Bison bonasus" time="" lncount="1" id="77844" fill="#3382D1"/>
+<circle cx="69.8%" cy="563" r="12" class="node" rank="species" otu="true" name="Bison bonasus" time="" lncount="1" id="77844"/>
+<circle cx="69.8%" cy="587" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Syncerus caffer" time="" lncount="1" id="77846" fill="#3382D1"/>
+<circle cx="69.8%" cy="587" r="12" class="node" rank="species" otu="true" name="Syncerus caffer" time="" lncount="1" id="77846"/>
+<circle cx="64.2%" cy="575" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="0.83" cihi="14.22" ci_string="CI: (0.8 - 14.2)" isci="false" time="13.06" lncount="2" dof="Bovidae" id="77821" fill="#3382D1"/>
+<circle cx="64.2%" cy="575" r="12" class="node" rank="unknown" cilo="0.83" cihi="14.22" ci_string="CI: (0.8 - 14.2)" isci="false" time="13.06" lncount="2" dof="Bovidae" id="77821"/>
+<circle cx="69.8%" cy="611" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Kobus megaceros" time="" lncount="1" id="77892" fill="#3382D1"/>
+<circle cx="69.8%" cy="611" r="12" class="node" rank="species" otu="true" name="Kobus megaceros" time="" lncount="1" id="77892"/>
+<circle cx="69.8%" cy="635" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Gazella dorcas" time="" lncount="1" id="77922" fill="#3382D1"/>
+<circle cx="69.8%" cy="635" r="12" class="node" rank="species" otu="true" name="Gazella dorcas" time="" lncount="1" id="77922"/>
+<circle cx="63.8%" cy="623" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="13.11" cihi="16.66" ci_string="CI: (13.1 - 16.7)" isci="false" time="14.20" lncount="2" dof="Bovidae" id="77876" fill="#3382D1"/>
+<circle cx="63.8%" cy="623" r="12" class="node" rank="unknown" cilo="13.11" cihi="16.66" ci_string="CI: (13.1 - 16.7)" isci="false" time="14.20" lncount="2" dof="Bovidae" id="77876"/>
+<circle cx="69.8%" cy="659" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Connochaetes taurinus" time="" lncount="1" id="78010" fill="#3382D1"/>
+<circle cx="69.8%" cy="659" r="12" class="node" rank="species" otu="true" name="Connochaetes taurinus" time="" lncount="1" id="78010"/>
+<circle cx="69.8%" cy="683" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Capra ibex" time="" lncount="1" id="78047" fill="#3382D1"/>
+<circle cx="69.8%" cy="683" r="12" class="node" rank="species" otu="true" name="Capra ibex" time="" lncount="1" id="78047"/>
+<circle cx="69.8%" cy="707" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Ammotragus lervia" time="" lncount="1" id="78077" fill="#3382D1"/>
+<circle cx="69.8%" cy="707" r="12" class="node" rank="species" otu="true" name="Ammotragus lervia" time="" lncount="1" id="78077"/>
+<circle cx="66.2%" cy="695" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="5.27" cihi="9.37" ci_string="CI: (5.3 - 9.4)" adjusted_age="8" isci="false" time="6.03" lncount="2" dof="Bovidae" id="78028" fill="#3382D1"/>
+<circle cx="66.2%" cy="695" r="12" class="node" rank="unknown" cilo="5.27" cihi="9.37" ci_string="CI: (5.3 - 9.4)" adjusted_age="8" isci="false" time="6.03" lncount="2" dof="Bovidae" id="78028"/>
+<circle cx="64.2%" cy="677" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="11.92" cihi="15.10" ci_string="CI: (11.9 - 15.1)" adjusted_age="13" isci="false" time="13.28" lncount="3" dof="Bovidae" id="77993" fill="#3382D1"/>
+<circle cx="64.2%" cy="677" r="12" class="node" rank="unknown" cilo="11.92" cihi="15.10" ci_string="CI: (11.9 - 15.1)" adjusted_age="13" isci="false" time="13.28" lncount="3" dof="Bovidae" id="77993"/>
+<circle cx="69.8%" cy="731" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Aepyceros melampus" time="" lncount="1" id="78107" fill="#3382D1"/>
+<circle cx="69.8%" cy="731" r="12" class="node" rank="species" otu="true" name="Aepyceros melampus" time="" lncount="1" id="78107"/>
+<circle cx="62.6%" cy="677" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="14.36" cihi="17.88" ci_string="CI: (14.4 - 17.9)" adjusted_age="17" isci="false" time="16.03" lncount="6" dof="Bovidae" id="77874" fill="#3382D1"/>
+<circle cx="62.6%" cy="677" r="12" class="node" rank="unknown" cilo="14.36" cihi="17.88" ci_string="CI: (14.4 - 17.9)" adjusted_age="17" isci="false" time="16.03" lncount="6" dof="Bovidae" id="77874"/>
+<circle cx="60.7%" cy="626" r="4" stroke="#3382D1" stroke-width="1" rank="family" cilo="19.09" cihi="30.82" ci_string="CI: (19.1 - 30.8)" adjusted_age="22" isci="false" time="24.60" lncount="8" name="Bovidae" id="77814" fill="#3382D1"/>
+<circle cx="60.7%" cy="626" r="12" class="node" rank="family" cilo="19.09" cihi="30.82" ci_string="CI: (19.1 - 30.8)" adjusted_age="22" isci="false" time="24.60" lncount="8" name="Bovidae" id="77814"/>
+<circle cx="69.8%" cy="755" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Dama dama" time="" lncount="1" id="78130" fill="#3382D1"/>
+<circle cx="69.8%" cy="755" r="12" class="node" rank="species" otu="true" name="Dama dama" time="" lncount="1" id="78130"/>
+<circle cx="69.8%" cy="779" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Cervus elaphus" time="" lncount="1" id="78155" fill="#3382D1"/>
+<circle cx="69.8%" cy="779" r="12" class="node" rank="species" otu="true" name="Cervus elaphus" time="" lncount="1" id="78155"/>
+<circle cx="66.9%" cy="767" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="4.20" cihi="17.80" ci_string="CI: (4.2 - 17.8)" adjusted_age="7" isci="false" time="5.65" lncount="2" dof="Cervidae" id="78127" fill="#3382D1"/>
+<circle cx="66.9%" cy="767" r="12" class="node" rank="unknown" cilo="4.20" cihi="17.80" ci_string="CI: (4.2 - 17.8)" adjusted_age="7" isci="false" time="5.65" lncount="2" dof="Cervidae" id="78127"/>
+<circle cx="69.8%" cy="803" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Odocoileus virginianus" time="" lncount="1" id="78200" fill="#3382D1"/>
+<circle cx="69.8%" cy="803" r="12" class="node" rank="species" otu="true" name="Odocoileus virginianus" time="" lncount="1" id="78200"/>
+<circle cx="64.3%" cy="785" r="4" stroke="#3382D1" stroke-width="1" rank="family" cilo="8.50" cihi="17.70" ci_string="CI: (8.5 - 17.7)" isci="false" time="12.80" lncount="3" name="Cervidae" id="78109" fill="#3382D1"/>
+<circle cx="64.3%" cy="785" r="12" class="node" rank="family" cilo="8.50" cihi="17.70" ci_string="CI: (8.5 - 17.7)" isci="false" time="12.80" lncount="3" name="Cervidae" id="78109"/>
+<circle cx="59.8%" cy="705" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="18.51" cihi="27.80" ci_string="CI: (18.5 - 27.8)" adjusted_age="24" isci="false" time="22.79" lncount="11" dof="Artiodactyla" id="77801" fill="#3382D1"/>
+<circle cx="59.8%" cy="705" r="12" class="node" rank="unknown" cilo="18.51" cihi="27.80" ci_string="CI: (18.5 - 27.8)" adjusted_age="24" isci="false" time="22.79" lncount="11" dof="Artiodactyla" id="77801"/>
+<circle cx="69.8%" cy="827" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Giraffa reticulata" time="" lncount="1" id="78212" fill="#3382D1"/>
+<circle cx="69.8%" cy="827" r="12" class="node" rank="species" otu="true" name="Giraffa reticulata" time="" lncount="1" id="78212"/>
+<circle cx="58.4%" cy="766" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="18.72" cihi="33.60" ci_string="CI: (18.7 - 33.6)" isci="false" time="26.75" lncount="12" dof="Artiodactyla" id="77800" fill="#3382D1"/>
+<circle cx="58.4%" cy="766" r="12" class="node" rank="unknown" cilo="18.72" cihi="33.60" ci_string="CI: (18.7 - 33.6)" isci="false" time="26.75" lncount="12" dof="Artiodactyla" id="77800"/>
+<circle cx="45.3%" cy="652" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="53.0" cihi="59.4" ci_string="CI: (53 - 59.4)" isci="false" time="57.8" lncount="13" dof="Artiodactyla" id="77613" fill="#3382D1"/>
+<circle cx="45.3%" cy="652" r="12" class="node" rank="unknown" cilo="53.0" cihi="59.4" ci_string="CI: (53 - 59.4)" isci="false" time="57.8" lncount="13" dof="Artiodactyla" id="77613"/>
+<circle cx="42.8%" cy="583" r="4" stroke="#3382D1" stroke-width="1" rank="order" cilo="61.4" cihi="65.8" ci_string="CI: (61.4 - 65.8)" isci="false" time="64.0" lncount="14" name="Artiodactyla" id="77596" fill="#3382D1"/>
+<circle cx="42.8%" cy="583" r="12" class="node" rank="order" cilo="61.4" cihi="65.8" ci_string="CI: (61.4 - 65.8)" isci="false" time="64.0" lncount="14" name="Artiodactyla" id="77596"/>
+<circle cx="37.7%" cy="472" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="72.8" cihi="78.3" ci_string="CI: (72.8 - 78.3)" isci="false" time="76.0" lncount="30" dof="Boreoeutheria" id="76960" fill="#3382D1"/>
+<circle cx="37.7%" cy="472" r="12" class="node" rank="unknown" cilo="72.8" cihi="78.3" ci_string="CI: (72.8 - 78.3)" isci="false" time="76.0" lncount="30" dof="Boreoeutheria" id="76960"/>
+<circle cx="69.8%" cy="851" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Sciurus vulgaris" time="" lncount="1" id="80601" fill="#3382D1"/>
+<circle cx="69.8%" cy="851" r="12" class="node" rank="species" otu="true" name="Sciurus vulgaris" time="" lncount="1" id="80601"/>
+<circle cx="69.8%" cy="875" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Cricetus cricetus" time="" lncount="1" id="81220" fill="#3382D1"/>
+<circle cx="69.8%" cy="875" r="12" class="node" rank="species" otu="true" name="Cricetus cricetus" time="" lncount="1" id="81220"/>
+<circle cx="40.1%" cy="863" r="4" stroke="#3382D1" stroke-width="1" rank="order" cilo="64.4" cihi="74.0" ci_string="CI: (64.4 - 74)" adjusted_age="70" isci="false" time="68.8" lncount="2" name="Rodentia" id="80249" fill="#3382D1"/>
+<circle cx="40.1%" cy="863" r="12" class="node" rank="order" cilo="64.4" cihi="74.0" ci_string="CI: (64.4 - 74)" adjusted_age="70" isci="false" time="68.8" lncount="2" name="Rodentia" id="80249"/>
+<circle cx="69.8%" cy="899" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Nycticebus pygmaeus" time="" lncount="1" id="83770" fill="#3382D1"/>
+<circle cx="69.8%" cy="899" r="12" class="node" rank="species" otu="true" name="Nycticebus pygmaeus" time="" lncount="1" id="83770"/>
+<circle cx="69.8%" cy="923" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Varecia variegata" time="" lncount="1" id="83982" fill="#3382D1"/>
+<circle cx="69.8%" cy="923" r="12" class="node" rank="species" otu="true" name="Varecia variegata" time="" lncount="1" id="83982"/>
+<circle cx="69.8%" cy="947" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Varecia rubra" time="" lncount="1" id="83983" fill="#3382D1"/>
+<circle cx="69.8%" cy="947" r="12" class="node" rank="species" otu="true" name="Varecia rubra" time="" lncount="1" id="83983"/>
+<circle cx="68.8%" cy="935" r="4" stroke="#3382D1" stroke-width="1" rank="genus" cilo="1.60" cihi="8.10" ci_string="CI: (1.6 - 8.1)" adjusted_age="2.4" isci="false" time="2.45" lncount="2" name="Varecia" id="83981" fill="#3382D1"/>
+<circle cx="68.8%" cy="935" r="12" class="node" rank="genus" cilo="1.60" cihi="8.10" ci_string="CI: (1.6 - 8.1)" adjusted_age="2.4" isci="false" time="2.45" lncount="2" name="Varecia" id="83981"/>
+<circle cx="69.8%" cy="971" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Lemur catta" time="" lncount="1" id="83997" fill="#3382D1"/>
+<circle cx="69.8%" cy="971" r="12" class="node" rank="species" otu="true" name="Lemur catta" time="" lncount="1" id="83997"/>
+<circle cx="69.8%" cy="995" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Eulemur macaco" time="" lncount="1" id="84018" fill="#3382D1"/>
+<circle cx="69.8%" cy="995" r="12" class="node" rank="species" otu="true" name="Eulemur macaco" time="" lncount="1" id="84018"/>
+<circle cx="61.4%" cy="983" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="14.67" cihi="21.94" ci_string="CI: (14.7 - 21.9)" isci="false" time="19.73" lncount="2" dof="Lemuridae" id="83984" fill="#3382D1"/>
+<circle cx="61.4%" cy="983" r="12" class="node" rank="unknown" cilo="14.67" cihi="21.94" ci_string="CI: (14.7 - 21.9)" isci="false" time="19.73" lncount="2" dof="Lemuridae" id="83984"/>
+<circle cx="58.8%" cy="959" r="4" stroke="#3382D1" stroke-width="1" rank="family" cilo="21.63" cihi="29.97" ci_string="CI: (21.6 - 30)" isci="false" time="25.99" lncount="4" name="Lemuridae" id="83978" fill="#3382D1"/>
+<circle cx="58.8%" cy="959" r="12" class="node" rank="family" cilo="21.63" cihi="29.97" ci_string="CI: (21.6 - 30)" isci="false" time="25.99" lncount="4" name="Lemuridae" id="83978"/>
+<circle cx="44.8%" cy="929" r="4" stroke="#3382D1" stroke-width="1" rank="suborder" cilo="55.1" cihi="62.1" ci_string="CI: (55.1 - 62.1)" isci="false" time="59.3" lncount="5" name="Strepsirrhini" id="83760" fill="#3382D1"/>
+<circle cx="44.8%" cy="929" r="12" class="node" rank="suborder" cilo="55.1" cihi="62.1" ci_string="CI: (55.1 - 62.1)" isci="false" time="59.3" lncount="5" name="Strepsirrhini" id="83760"/>
+<circle cx="69.8%" cy="1019" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Cebuella pygmaea" time="" lncount="1" id="84151" fill="#3382D1"/>
+<circle cx="69.8%" cy="1019" r="12" class="node" rank="species" otu="true" name="Cebuella pygmaea" time="" lncount="1" id="84151"/>
+<circle cx="69.8%" cy="1043" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Callimico goeldii" time="" lncount="1" id="84166" fill="#3382D1"/>
+<circle cx="69.8%" cy="1043" r="12" class="node" rank="species" otu="true" name="Callimico goeldii" time="" lncount="1" id="84166"/>
+<circle cx="64.8%" cy="1031" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="10.68" cihi="13.00" ci_string="CI: (10.7 - 13)" isci="false" time="11.83" lncount="2" dof="Callitrichinae" id="84132" fill="#3382D1"/>
+<circle cx="64.8%" cy="1031" r="12" class="node" rank="unknown" cilo="10.68" cihi="13.00" ci_string="CI: (10.7 - 13)" isci="false" time="11.83" lncount="2" dof="Callitrichinae" id="84132"/>
+<circle cx="69.8%" cy="1067" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Saguinus imperator" time="" lncount="1" id="84205" fill="#3382D1"/>
+<circle cx="69.8%" cy="1067" r="12" class="node" rank="species" otu="true" name="Saguinus imperator" time="" lncount="1" id="84205"/>
+<circle cx="69.8%" cy="1091" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Saguinus oedipus" time="" lncount="1" id="84218" fill="#3382D1"/>
+<circle cx="69.8%" cy="1091" r="12" class="node" rank="species" otu="true" name="Saguinus oedipus" time="" lncount="1" id="84218"/>
+<circle cx="66.8%" cy="1079" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="4.22" cihi="9.02" ci_string="CI: (4.2 - 9)" isci="false" time="7.00" lncount="2" dof="Callitrichinae" id="84199" fill="#3382D1"/>
+<circle cx="66.8%" cy="1079" r="12" class="node" rank="unknown" cilo="4.22" cihi="9.02" ci_string="CI: (4.2 - 9)" isci="false" time="7.00" lncount="2" dof="Callitrichinae" id="84199"/>
+<circle cx="63.6%" cy="1055" r="4" stroke="#3382D1" stroke-width="1" rank="subfamily" cilo="13.59" cihi="15.66" ci_string="CI: (13.6 - 15.7)" isci="false" time="14.75" lncount="4" name="Callitrichinae" id="84130" fill="#3382D1"/>
+<circle cx="63.6%" cy="1055" r="12" class="node" rank="subfamily" cilo="13.59" cihi="15.66" ci_string="CI: (13.6 - 15.7)" isci="false" time="14.75" lncount="4" name="Callitrichinae" id="84130"/>
+<circle cx="69.8%" cy="1115" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Saimiri boliviensis" time="" lncount="1" id="84265" fill="#3382D1"/>
+<circle cx="69.8%" cy="1115" r="12" class="node" rank="species" otu="true" name="Saimiri boliviensis" time="" lncount="1" id="84265"/>
+<circle cx="62.2%" cy="1085" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="17.10" cihi="19.10" ci_string="CI: (17.1 - 19.1)" isci="false" time="17.88" lncount="5" dof="Simiiformes" id="84109" fill="#3382D1"/>
+<circle cx="62.2%" cy="1085" r="12" class="node" rank="unknown" cilo="17.10" cihi="19.10" ci_string="CI: (17.1 - 19.1)" isci="false" time="17.88" lncount="5" dof="Simiiformes" id="84109"/>
+<circle cx="69.8%" cy="1139" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Hylobates lar" time="" lncount="1" id="84350" fill="#3382D1"/>
+<circle cx="69.8%" cy="1139" r="12" class="node" rank="species" otu="true" name="Hylobates lar" time="" lncount="1" id="84350"/>
+<circle cx="69.8%" cy="1163" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Gorilla gorilla" time="" lncount="1" id="84377" fill="#3382D1"/>
+<circle cx="69.8%" cy="1163" r="12" class="node" rank="species" otu="true" name="Gorilla gorilla" time="" lncount="1" id="84377"/>
+<circle cx="69.8%" cy="1187" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Pan troglodytes" time="" lncount="1" id="84385" fill="#3382D1"/>
+<circle cx="69.8%" cy="1187" r="12" class="node" rank="species" otu="true" name="Pan troglodytes" time="" lncount="1" id="84385"/>
+<circle cx="66.1%" cy="1175" r="4" stroke="#3382D1" stroke-width="1" rank="subfamily" cilo="8.25" cihi="9.30" ci_string="CI: (8.2 - 9.3)" isci="false" time="8.60" lncount="2" name="Homininae" id="84375" fill="#3382D1"/>
+<circle cx="66.1%" cy="1175" r="12" class="node" rank="subfamily" cilo="8.25" cihi="9.30" ci_string="CI: (8.2 - 9.3)" isci="false" time="8.60" lncount="2" name="Homininae" id="84375"/>
+<circle cx="69.8%" cy="1211" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Pongo pygmaeus" time="" lncount="1" id="84393" fill="#3382D1"/>
+<circle cx="69.8%" cy="1211" r="12" class="node" rank="species" otu="true" name="Pongo pygmaeus" time="" lncount="1" id="84393"/>
+<circle cx="63.3%" cy="1193" r="4" stroke="#3382D1" stroke-width="1" rank="family" cilo="14.50" cihi="16.30" ci_string="CI: (14.5 - 16.3)" isci="false" time="15.20" lncount="3" name="Hominidae" id="84374" fill="#3382D1"/>
+<circle cx="63.3%" cy="1193" r="12" class="node" rank="family" cilo="14.50" cihi="16.30" ci_string="CI: (14.5 - 16.3)" isci="false" time="15.20" lncount="3" name="Hominidae" id="84374"/>
+<circle cx="61.6%" cy="1166" r="4" stroke="#3382D1" stroke-width="1" rank="superfamily" cilo="18.80" cihi="20.30" ci_string="CI: (18.8 - 20.3)" isci="false" time="19.46" lncount="4" name="Hominoidea" id="84324" fill="#3382D1"/>
+<circle cx="61.6%" cy="1166" r="12" class="node" rank="superfamily" cilo="18.80" cihi="20.30" ci_string="CI: (18.8 - 20.3)" isci="false" time="19.46" lncount="4" name="Hominoidea" id="84324"/>
+<circle cx="69.8%" cy="1235" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Macaca fuscata" time="" lncount="1" id="84558" fill="#3382D1"/>
+<circle cx="69.8%" cy="1235" r="12" class="node" rank="species" otu="true" name="Macaca fuscata" time="" lncount="1" id="84558"/>
+<circle cx="69.8%" cy="1259" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Pygathrix nemaeus" time="" lncount="1" id="84669" fill="#3382D1"/>
+<circle cx="69.8%" cy="1259" r="12" class="node" rank="species" otu="true" name="Pygathrix nemaeus" time="" lncount="1" id="84669"/>
+<circle cx="62.3%" cy="1247" r="4" stroke="#3382D1" stroke-width="1" rank="family" cilo="15.50" cihi="19.80" ci_string="CI: (15.5 - 19.8)" adjusted_age="18" isci="false" time="17.75" lncount="2" name="Cercopithecidae" id="84395" fill="#3382D1"/>
+<circle cx="62.3%" cy="1247" r="12" class="node" rank="family" cilo="15.50" cihi="19.80" ci_string="CI: (15.5 - 19.8)" adjusted_age="18" isci="false" time="17.75" lncount="2" name="Cercopithecidae" id="84395"/>
+<circle cx="57.6%" cy="1206" r="4" stroke="#3382D1" stroke-width="1" rank="parvorder" cilo="26.80" cihi="30.60" ci_string="CI: (26.8 - 30.6)" isci="false" time="28.82" lncount="6" name="Catarrhini" id="84323" fill="#3382D1"/>
+<circle cx="57.6%" cy="1206" r="12" class="node" rank="parvorder" cilo="26.80" cihi="30.60" ci_string="CI: (26.8 - 30.6)" isci="false" time="28.82" lncount="6" name="Catarrhini" id="84323"/>
+<circle cx="51.7%" cy="1145" r="4" stroke="#3382D1" stroke-width="1" rank="infraorder" cilo="40.0" cihi="44.2" ci_string="CI: (40 - 44.2)" isci="false" time="42.9" lncount="11" name="Simiiformes" id="84021" fill="#3382D1"/>
+<circle cx="51.7%" cy="1145" r="12" class="node" rank="infraorder" cilo="40.0" cihi="44.2" ci_string="CI: (40 - 44.2)" isci="false" time="42.9" lncount="11" name="Simiiformes" id="84021"/>
+<circle cx="38.7%" cy="1037" r="4" stroke="#3382D1" stroke-width="1" rank="order" cilo="71.4" cihi="77.5" ci_string="CI: (71.4 - 77.5)" isci="false" time="73.8" lncount="16" name="Primates" id="83759" fill="#3382D1"/>
+<circle cx="38.7%" cy="1037" r="12" class="node" rank="order" cilo="71.4" cihi="77.5" ci_string="CI: (71.4 - 77.5)" isci="false" time="73.8" lncount="16" name="Primates" id="83759"/>
+<circle cx="69.8%" cy="1283" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Tupaia belangeri" time="" lncount="1" id="84757" fill="#3382D1"/>
+<circle cx="69.8%" cy="1283" r="12" class="node" rank="species" otu="true" name="Tupaia belangeri" time="" lncount="1" id="84757"/>
+<circle cx="34.0%" cy="1160" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="74.6" cihi="86.5" ci_string="CI: (74.6 - 86.5)" adjusted_age="85" isci="false" time="84.7" lncount="17" dof="Euarchontoglires" id="83754" fill="#3382D1"/>
+<circle cx="34.0%" cy="1160" r="12" class="node" rank="unknown" cilo="74.6" cihi="86.5" ci_string="CI: (74.6 - 86.5)" adjusted_age="85" isci="false" time="84.7" lncount="17" dof="Euarchontoglires" id="83754"/>
+<circle cx="33.0%" cy="1011" r="4" stroke="#3382D1" stroke-width="1" rank="superorder" cilo="81.3" cihi="91.0" ci_string="CI: (81.3 - 91)" isci="false" time="87.2" lncount="19" name="Euarchontoglires" id="80088" fill="#3382D1"/>
+<circle cx="33.0%" cy="1011" r="12" class="node" rank="superorder" cilo="81.3" cihi="91.0" ci_string="CI: (81.3 - 91)" isci="false" time="87.2" lncount="19" name="Euarchontoglires" id="80088"/>
+<circle cx="30.1%" cy="741" r="4" stroke="#3382D1" stroke-width="1" rank="no rank" cilo="91.5" cihi="97.4" ci_string="CI: (91.5 - 97.4)" isci="false" time="94.0" lncount="49" name="Boreoeutheria" id="76422" fill="#3382D1"/>
+<circle cx="30.1%" cy="741" r="12" class="node" rank="no rank" cilo="91.5" cihi="97.4" ci_string="CI: (91.5 - 97.4)" isci="false" time="94.0" lncount="49" name="Boreoeutheria" id="76422"/>
+<circle cx="69.8%" cy="1307" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Loxodonta africana" time="" lncount="1" id="84800" fill="#3382D1"/>
+<circle cx="69.8%" cy="1307" r="12" class="node" rank="species" otu="true" name="Loxodonta africana" time="" lncount="1" id="84800"/>
+<circle cx="69.8%" cy="1331" r="2" stroke="#3382D1" stroke-width="1" rank="species" otu="true" name="Choloepus didactylus" time="" lncount="1" id="85012" fill="#3382D1"/>
+<circle cx="69.8%" cy="1331" r="12" class="node" rank="species" otu="true" name="Choloepus didactylus" time="" lncount="1" id="85012"/>
+<circle cx="28.9%" cy="1319" r="4" stroke="#3382D1" stroke-width="1" rank="unknown" cilo="83.7" cihi="97.8" ci_string="CI: (83.7 - 97.8)" isci="false" time="96.8" lncount="2" dof="Eutheria" id="84766" fill="#3382D1"/>
+<circle cx="28.9%" cy="1319" r="12" class="node" rank="unknown" cilo="83.7" cihi="97.8" ci_string="CI: (83.7 - 97.8)" isci="false" time="96.8" lncount="2" dof="Eutheria" id="84766"/>
+<circle cx="27.9%" cy="1030" r="4" stroke="#3382D1" stroke-width="1" rank="no rank" cilo="94.7" cihi="101.9" ci_string="CI: (94.7 - 101.9)" adjusted_age="99" isci="false" time="99.2" lncount="51" name="Eutheria" id="76421" fill="#3382D1"/>
+<circle cx="27.9%" cy="1030" r="12" class="node" rank="no rank" cilo="94.7" cihi="101.9" ci_string="CI: (94.7 - 101.9)" adjusted_age="99" isci="false" time="99.2" lncount="51" name="Eutheria" id="76421"/>
+</g>
+<g id="prunetree-names" class="branches" depth="unknown">
+<text x="71.8%" y="64" font-style="italic"> Notamacropus eugenii</text>
+<text x="71.8%" y="88" font-style="italic"> Macropus giganteus</text>
+<text x="71.8%" y="112" font-style="italic"> Phascolarctos cinereus</text>
+<text x="71.8%" y="136" font-style="italic"> Suricata suricatta</text>
+<text x="71.8%" y="160" font-style="italic"> Lynx lynx</text>
+<text x="71.8%" y="184" font-style="italic"> Felis margarita</text>
+<text x="71.8%" y="208" font-style="italic"> Panthera tigris</text>
+<text x="71.8%" y="232" font-style="italic"> Panthera leo</text>
+<text x="71.8%" y="256" font-style="italic"> Panthera pardus</text>
+<text x="71.8%" y="280" font-style="italic"> Panthera onca</text>
+<text x="71.8%" y="304" font-style="italic"> Lycaon pictus</text>
+<text x="71.8%" y="328" font-style="italic"> Lutra lutra</text>
+<text x="71.8%" y="352" font-style="italic"> Nasua nasua</text>
+<text x="71.8%" y="376" font-style="italic"> Procyon lotor</text>
+<text x="71.8%" y="400" font-style="italic"> Phoca vitulina</text>
+<text x="71.8%" y="424" font-style="italic"> Ursus arctos</text>
+<text x="71.8%" y="448" font-style="italic"> Equus hemionus</text>
+<text x="71.8%" y="472" font-style="italic"> Equus asinus</text>
+<text x="71.8%" y="496" font-style="italic"> Equus quagga</text>
+<text x="71.8%" y="520" font-style="italic"> Lama glama</text>
+<text x="71.8%" y="544" font-style="italic"> Hippopotamus amphibius</text>
+<text x="71.8%" y="568" font-style="italic"> Bison bonasus</text>
+<text x="71.8%" y="592" font-style="italic"> Syncerus caffer</text>
+<text x="71.8%" y="616" font-style="italic"> Kobus megaceros</text>
+<text x="71.8%" y="640" font-style="italic">*Gazella subgutturosa</text>
+<text x="71.8%" y="664" font-style="italic"> Connochaetes taurinus</text>
+<text x="71.8%" y="688" font-style="italic"> Capra ibex</text>
+<text x="71.8%" y="712" font-style="italic"> Ammotragus lervia</text>
+<text x="71.8%" y="736" font-style="italic"> Aepyceros melampus</text>
+<text x="71.8%" y="760" font-style="italic"> Dama dama</text>
+<text x="71.8%" y="784" font-style="italic"> Cervus elaphus</text>
+<text x="71.8%" y="808" font-style="italic"> Odocoileus virginianus</text>
+<text x="71.8%" y="832" font-style="italic">*Giraffa camelopardalis</text>
+<text x="71.8%" y="856" font-style="italic"> Sciurus vulgaris</text>
+<text x="71.8%" y="880" font-style="italic"> Cricetus cricetus</text>
+<text x="71.8%" y="904" font-style="italic"> Nycticebus pygmaeus</text>
+<text x="71.8%" y="928" font-style="italic"> Varecia variegata</text>
+<text x="71.8%" y="952" font-style="italic"> Varecia rubra</text>
+<text x="71.8%" y="976" font-style="italic"> Lemur catta</text>
+<text x="71.8%" y="1000" font-style="italic"> Eulemur macaco</text>
+<text x="71.8%" y="1024" font-style="italic"> Cebuella pygmaea</text>
+<text x="71.8%" y="1048" font-style="italic"> Callimico goeldii</text>
+<text x="71.8%" y="1072" font-style="italic"> Saguinus imperator</text>
+<text x="71.8%" y="1096" font-style="italic"> Saguinus oedipus</text>
+<text x="71.8%" y="1120" font-style="italic"> Saimiri boliviensis</text>
+<text x="71.8%" y="1144" font-style="italic"> Hylobates lar</text>
+<text x="71.8%" y="1168" font-style="italic"> Gorilla gorilla</text>
+<text x="71.8%" y="1192" font-style="italic"> Pan troglodytes</text>
+<text x="71.8%" y="1216" font-style="italic"> Pongo pygmaeus</text>
+<text x="71.8%" y="1240" font-style="italic"> Macaca fuscata</text>
+<text x="71.8%" y="1264" font-style="italic"> Pygathrix nemaeus</text>
+<text x="71.8%" y="1288" font-style="italic"> Tupaia belangeri</text>
+<text x="71.8%" y="1312" font-style="italic"> Loxodonta africana</text>
+<text x="71.8%" y="1336" font-style="italic"> Choloepus didactylus</text>
+</g>
+</defs>
+<svg viewBox="0 0 900 1376" preserveAspectRatio="none">
+<use href="#prunetree-background-colors" width="1" height="1"/>
+</svg>
+<svg viewBox="0 0 900 1376" preserveAspectRatio="none">
+<use href="#prunetree-branches"/>
+</svg>
+<svg preserveAspectRatio="none">
+<use href="#prunetree-nodes"/>
+</svg>
+<svg preserveAspectRatio="none">
+<use href="#prunetree-names"/>
+</svg>
+</svg>
+
+                </div>
+                <input id="prunetree-nodecount" type="hidden" value="107" />
+                <input id="prunetreeLowestRank" type="hidden" value="species"/>
+            </div>
+            <div class="tree-panel scrollable col-sm-12">
+                                <div class="panel svg-panel-container">
+                    <div id="prunetree-geo-timescales" class="svg timetree-panel">
+                        
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100" name="timetree-geo-timescales" y="0">
+<defs>
+<polyline points="19,0 19,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<g id="timescale-ages" class="geo-timescale">
+<rect x="2.2%" y="0" width="67.7%" height="20" fill="none" stroke="#555555" stroke-width="1"/>
+<rect x="2.3%" y="2" width="1.8%" height="16" fill="#BFE7F1" stroke="#BFE7F1" stroke-width="3" full-name="Oxfordian" start="161.20" end="155.70" unit="Age" title="Oxfordian"/>
+<rect x="4.1%" y="2" width="2.1%" height="18" fill="#CCECF4" stroke="#CCECF4" stroke-width="3" full-name="Kimmeridgian" start="155.70" end="150.80" unit="Age" title="Kimmeridgian"/>
+<rect x="6.2%" y="2" width="2.2%" height="18" fill="#D9F1F7" stroke="#D9F1F7" stroke-width="3" full-name="Tithonian" start="150.80" end="145.50" unit="Age" title="Tithonian"/>
+<rect x="8.4%" y="2" width="2.2%" height="18" fill="#8CCD60" stroke="#8CCD60" stroke-width="3" full-name="Berriasian" start="145.50" end="140.20" unit="Age" title="Berriasian"/>
+<rect x="10.7%" y="2" width="1.7%" height="18" fill="#99D36A" stroke="#99D36A" stroke-width="3" full-name="Valanginian" start="140.20" end="136.40" unit="Age" title="Valanginian"/>
+<rect x="12.3%" y="2" width="2.7%" height="18" fill="#A6D975" stroke="#A6D975" stroke-width="3" full-name="Hauterivian" start="136.40" end="130.00" unit="Age" title="Hauterivian"/>
+<rect x="15.0%" y="2" width="2.1%" height="18" fill="#B3DF7F" stroke="#B3DF7F" stroke-width="3" full-name="Barremian" start="130.00" end="125.00" unit="Age" title="Barremian"/>
+<rect x="17.1%" y="2" width="5.4%" height="18" fill="#BFE48A" stroke="#BFE48A" stroke-width="3" full-name="Aptian" start="125.00" end="112.00" unit="Age" title="Aptian"/>
+<rect x="22.6%" y="2" width="5.3%" height="18" fill="#CCEA97" stroke="#CCEA97" stroke-width="3" full-name="Albian" start="112.00" end="99.60" unit="Age" title="Albian"/>
+<rect x="27.9%" y="2" width="2.6%" height="18" fill="#B3DE53" stroke="#B3DE53" stroke-width="3" full-name="Cenomanian" start="99.60" end="93.50" unit="Age" title="Cenomanian"/>
+<rect x="30.4%" y="2" width="1.8%" height="18" fill="#BFE35D" stroke="#BFE35D" stroke-width="3" full-name="Turonian" start="93.50" end="89.30" unit="Age" title="Turonian"/>
+<rect x="32.2%" y="2" width="1.4%" height="18" fill="#CCE968" stroke="#CCE968" stroke-width="3" full-name="Coniacian" start="89.30" end="85.80" unit="Age" title="Coniacian"/>
+<rect x="33.7%" y="2" width="1.0%" height="18" fill="#D9EF74" stroke="#D9EF74" stroke-width="3" full-name="Santonian" start="85.80" end="83.50" unit="Age" title="Santonian"/>
+<rect x="34.7%" y="2" width="5.4%" height="18" fill="#E6F47F" stroke="#E6F47F" stroke-width="3" full-name="Campanian" start="83.50" end="70.60" unit="Age" title="Campanian"/>
+<rect x="40.1%" y="2" width="2.1%" height="18" fill="#F2FA8C" stroke="#F2FA8C" stroke-width="3" full-name="Maastrichtian" start="70.60" end="65.50" unit="Age" title="Maastrichtian"/>
+<rect x="42.2%" y="2" width="1.7%" height="18" fill="#FDB462" stroke="#FDB462" stroke-width="3" full-name="Danian" start="65.50" end="61.70" unit="Age" title="Danian"/>
+<rect x="43.9%" y="2" width="1.2%" height="18" fill="#FEBF65" stroke="#FEBF65" stroke-width="3" full-name="Selandian" start="61.70" end="58.70" unit="Age" title="Selandian"/>
+<rect x="45.1%" y="2" width="1.2%" height="18" fill="#FDBF6F" stroke="#FDBF6F" stroke-width="3" full-name="Thanetian" start="58.70" end="55.80" unit="Age" title="Thanetian"/>
+<rect x="46.3%" y="2" width="3.0%" height="18" fill="#FCA773" stroke="#FCA773" stroke-width="3" full-name="Ypresian" start="55.80" end="48.60" unit="Age" title="Ypresian"/>
+<rect x="49.3%" y="2" width="3.4%" height="18" fill="#FCB482" stroke="#FCB482" stroke-width="3" full-name="Lutetian" start="48.60" end="40.40" unit="Age" title="Lutetian"/>
+<rect x="52.8%" y="2" width="1.4%" height="18" fill="#FDC091" stroke="#FDC091" stroke-width="3" full-name="Bartonian" start="40.40" end="37.20" unit="Age" title="Bartonian"/>
+<rect x="54.2%" y="2" width="1.3%" height="18" fill="#FDCDA1" stroke="#FDCDA1" stroke-width="3" full-name="Priabonian" start="37.20" end="33.90" unit="Age" title="Priabonian"/>
+<rect x="55.6%" y="2" width="2.3%" height="18" fill="#FED99A" stroke="#FED99A" stroke-width="3" full-name="Rupelian" start="33.90" end="28.40" unit="Age" title="Rupelian"/>
+<rect x="57.9%" y="2" width="2.2%" height="18" fill="#FEE6AA" stroke="#FEE6AA" stroke-width="3" full-name="Chattian" start="28.40" end="23.03" unit="Age" title="Chattian"/>
+<rect x="60.1%" y="2" width="1.1%" height="18" fill="#FFFF33" stroke="#FFFF33" stroke-width="3" full-name="Aquitanian" start="23.03" end="20.43" unit="Age" title="Aquitanian"/>
+<rect x="61.2%" y="2" width="1.9%" height="18" fill="#FFFF41" stroke="#FFFF41" stroke-width="3" full-name="Burdigalian" start="20.43" end="15.97" unit="Age" title="Burdigalian"/>
+<rect x="63.1%" y="2" width="0.9%" height="18" fill="#FFFF4D" stroke="#FFFF4D" stroke-width="3" full-name="Langhian" start="15.97" end="13.82" unit="Age" title="Langhian"/>
+<rect x="64.0%" y="2" width="1.0%" height="18" fill="#FFFF59" stroke="#FFFF59" stroke-width="3" full-name="Serravallian" start="13.82" end="11.61" unit="Age" title="Serravallian"/>
+<rect x="65.0%" y="2" width="1.8%" height="18" fill="#FFFF66" stroke="#FFFF66" stroke-width="3" full-name="Tortonian" start="11.61" end="7.25" unit="Age" title="Tortonian"/>
+<rect x="66.8%" y="2" width="0.9%" height="18" fill="#FFFF73" stroke="#FFFF73" stroke-width="3" full-name="Messinian" start="7.25" end="5.33" unit="Age" title="Messinian"/>
+<rect x="67.7%" y="2" width="0.7%" height="18" fill="#FFFFB3" stroke="#FFFFB3" stroke-width="3" full-name="Zanclean" start="5.33" end="3.60" unit="Age" title="Zanclean"/>
+<rect x="68.3%" y="2" width="0.4%" height="18" fill="#FFFFBF" stroke="#FFFFBF" stroke-width="3" full-name="Piacenzian" start="3.60" end="2.59" unit="Age" title="Piacenzian"/>
+<rect x="68.8%" y="2" width="0.3%" height="18" fill="#FFFFCC" stroke="#FFFFCC" stroke-width="3" full-name="Gelasian" start="2.59" end="1.81" unit="Age" title="Gelasian"/>
+<rect x="69.1%" y="2" width="0.4%" height="18" fill="#FFF2BA" stroke="#FFF2BA" stroke-width="3" full-name="Lower" start="1.81" end="0.78" unit="Age" title="Lower"/>
+<rect x="69.6%" y="2" width="0.3%" height="18" fill="#FFF2C7" stroke="#FFF2C7" stroke-width="3" full-name="Middle" start="0.78" end="0.13" unit="Age" title="Middle"/>
+<rect x="69.9%" y="2" width="0.0%" height="18" fill="#FFF2D3" stroke="#FFF2D3" stroke-width="3" full-name="Upper" start="0.13" end="0.01" unit="Age" title="Upper"/>
+<rect x="69.9%" y="2" width="0.0%" height="18" fill="#FEF2EC" stroke="#FEF2EC" stroke-width="3" full-name=" " start="0.01" end="0.00" unit="Age" title=" "/>
+<polyline points="628,0 628,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<rect x="69.9%" y="0" width="0.3%" height="22" fill="white" stroke="white" stroke-width="1"/>
+</g>
+<g id="timescale-ages-text" class="geo-timescale">
+<text x="17.0%" y="18" full-name="Aptian" start="125.00" end="112.00" unit="Age" font-family="Roboto Condensed">Aptian</text>
+<text x="23.8%" y="18" full-name="Albian" start="112.00" end="99.60" unit="Age" font-family="Roboto Condensed">ALB</text>
+<text x="35.9%" y="18" full-name="Campanian" start="83.50" end="70.60" unit="Age" font-family="Roboto Condensed">CMP</text>
+<text x="46.4%" y="18" full-name="Ypresian" start="55.80" end="48.60" unit="Age" font-family="Roboto Condensed">YPR</text>
+<text x="49.7%" y="18" full-name="Lutetian" start="48.60" end="40.40" unit="Age" font-family="Roboto Condensed">LUT</text>
+<text x="70.3%" y="17" fill="black" font-size="12" font-family="Roboto Condensed">Ages</text>
+</g>
+<polyline points="19,0 628,0" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<polyline points="19,0 19,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<g id="timescale-epochs" class="geo-timescale">
+<rect x="2.2%" y="20" width="67.7%" height="20" fill="none" stroke="#555555" stroke-width="1"/>
+<rect x="2.3%" y="21" width="6.1%" height="17" fill="#B3E3EE" stroke="#B3E3EE" stroke-width="3" full-name="Upper" start="161.20" end="145.50" unit="Epoch" title="Upper"/>
+<rect x="8.4%" y="21" width="19.4%" height="18" fill="#8CCD57" stroke="#8CCD57" stroke-width="3" full-name="Lower" start="145.50" end="99.60" unit="Epoch" title="Lower"/>
+<rect x="27.9%" y="21" width="14.3%" height="18" fill="#A6D84A" stroke="#A6D84A" stroke-width="3" full-name="Upper" start="99.60" end="65.50" unit="Epoch" title="Upper"/>
+<rect x="42.2%" y="21" width="4.1%" height="18" fill="#FDA75F" stroke="#FDA75F" stroke-width="3" full-name="Paleocene" start="65.50" end="55.80" unit="Epoch" title="Paleocene"/>
+<rect x="46.3%" y="21" width="9.2%" height="18" fill="#FDB46C" stroke="#FDB46C" stroke-width="3" full-name="Eocene" start="55.80" end="33.90" unit="Epoch" title="Eocene"/>
+<rect x="55.6%" y="21" width="4.6%" height="18" fill="#FDC07A" stroke="#FDC07A" stroke-width="3" full-name="Oligocene" start="33.90" end="23.03" unit="Epoch" title="Oligocene"/>
+<rect x="60.1%" y="21" width="7.6%" height="18" fill="#FFFF00" stroke="#FFFF00" stroke-width="3" full-name="Miocene" start="23.03" end="5.33" unit="Epoch" title="Miocene"/>
+<rect x="67.7%" y="21" width="1.4%" height="18" fill="#FFFF99" stroke="#FFFF99" stroke-width="3" full-name="Pliocene" start="5.33" end="1.81" unit="Epoch" title="Pliocene"/>
+<rect x="69.1%" y="21" width="0.8%" height="18" fill="#FFF2AE" stroke="#FFF2AE" stroke-width="3" full-name="Pleistocene" start="1.81" end="0.01" unit="Epoch" title="Pleistocene"/>
+<rect x="69.9%" y="21" width="0.0%" height="18" fill="#FEF2E0" stroke="#FEF2E0" stroke-width="3" full-name="Holocene" start="0.01" end="0.00" unit="Epoch" title="Holocene"/>
+<polyline points="628,0 628,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<rect x="69.9%" y="19" width="0.3%" height="22" fill="white" stroke="white" stroke-width="1"/>
+</g>
+<g id="timescale-epochs-text" class="geo-timescale">
+<text x="3.1%" y="36" full-name="Upper" start="161.20" end="145.50" unit="Epoch" font-family="Roboto Condensed">Upper</text>
+<text x="15.9%" y="36" full-name="Lower" start="145.50" end="99.60" unit="Epoch" font-family="Roboto Condensed">Lower</text>
+<text x="32.7%" y="36" full-name="Upper" start="99.60" end="65.50" unit="Epoch" font-family="Roboto Condensed">Upper</text>
+<text x="42.8%" y="36" full-name="Paleocene" start="65.50" end="55.80" unit="Epoch" font-family="Roboto Condensed">PAL</text>
+<text x="48.2%" y="36" full-name="Eocene" start="55.80" end="33.90" unit="Epoch" font-family="Roboto Condensed">Eocene</text>
+<text x="56.3%" y="36" full-name="Oligocene" start="33.90" end="23.03" unit="Epoch" font-family="Roboto Condensed">OLI</text>
+<text x="60.7%" y="36" full-name="Miocene" start="23.03" end="5.33" unit="Epoch" font-family="Roboto Condensed">Miocene</text>
+<text x="70.3%" y="36" fill="black" font-size="12" font-family="Roboto Condensed">Epochs</text>
+</g>
+<polyline points="19,0 19,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<g id="timescale-periods" class="geo-timescale">
+<rect x="2.2%" y="40" width="67.7%" height="20" fill="none" stroke="#555555" stroke-width="1"/>
+<rect x="2.3%" y="41" width="6.1%" height="17" fill="#34B2C9" stroke="#34B2C9" stroke-width="3" full-name="Jurassic" start="199.60" end="145.50" unit="Period" title="Jurassic"/>
+<rect x="8.4%" y="41" width="33.8%" height="18" fill="#7FC64E" stroke="#7FC64E" stroke-width="3" full-name="Cretaceous" start="145.50" end="65.50" unit="Period" title="Cretaceous"/>
+<rect x="42.2%" y="41" width="17.9%" height="18" fill="#FD9A52" stroke="#FD9A52" stroke-width="3" full-name="Paleogene" start="65.50" end="23.03" unit="Period" title="Paleogene"/>
+<rect x="60.1%" y="41" width="9.8%" height="18" fill="#FFE619" stroke="#FFE619" stroke-width="3" full-name="Neogene" start="23.03" end="0.00" unit="Period" title="Neogene"/>
+<polyline points="628,0 628,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<rect x="69.9%" y="39" width="0.3%" height="22" fill="white" stroke="white" stroke-width="1"/>
+</g>
+<g id="timescale-periods-text" class="geo-timescale">
+<text x="4.9%" y="56" full-name="Jurassic" start="199.60" end="145.50" unit="Period" font-family="Roboto Condensed">J</text>
+<text x="20.8%" y="56" full-name="Cretaceous" start="145.50" end="65.50" unit="Period" font-family="Roboto Condensed">Cretaceous</text>
+<text x="47.0%" y="56" full-name="Paleogene" start="65.50" end="23.03" unit="Period" font-family="Roboto Condensed">Paleogene</text>
+<text x="61.8%" y="56" full-name="Neogene" start="23.03" end="0.00" unit="Period" font-family="Roboto Condensed">Neogene</text>
+<text x="70.3%" y="56" fill="black" font-size="12" font-family="Roboto Condensed">Periods</text>
+</g>
+<polyline points="19,0 19,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<g id="timescale-eras" class="geo-timescale">
+<rect x="2.2%" y="60" width="67.7%" height="20" fill="none" stroke="#555555" stroke-width="1"/>
+<rect x="2.3%" y="61" width="39.9%" height="17" fill="#67C5CA" stroke="#67C5CA" stroke-width="3" full-name="Mesozoic" start="251.00" end="65.50" unit="Era" title="Mesozoic"/>
+<rect x="42.2%" y="61" width="27.7%" height="18" fill="#F2F91D" stroke="#F2F91D" stroke-width="3" full-name="Cenozoic" start="65.50" end="0.00" unit="Era" title="Cenozoic"/>
+<polyline points="628,0 628,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<rect x="69.9%" y="59" width="0.3%" height="22" fill="white" stroke="white" stroke-width="1"/>
+</g>
+<g id="timescale-eras-text" class="geo-timescale">
+<text x="18.7%" y="76" full-name="Mesozoic" start="251.00" end="65.50" unit="Era" font-family="Roboto Condensed">Mesozoic</text>
+<text x="52.3%" y="76" full-name="Cenozoic" start="65.50" end="0.00" unit="Era" font-family="Roboto Condensed">Cenozoic</text>
+<text x="70.3%" y="76" fill="black" font-size="12" font-family="Roboto Condensed">Eras</text>
+</g>
+<polyline points="19,0 19,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<g id="timescale-eons" class="geo-timescale">
+<rect x="2.2%" y="80" width="67.7%" height="20" fill="none" stroke="#555555" stroke-width="1"/>
+<rect x="2.3%" y="81" width="67.6%" height="17" fill="#9AD9DD" stroke="#9AD9DD" stroke-width="3" full-name="Phanerozoic" start="542.00" end="0.00" unit="Eon" title="Phanerozoic"/>
+<polyline points="628,0 628,20" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<polyline points="19,19 628,19" fill="none" stroke="#555555" stroke-width="1" stroke-linecap="square"/>
+<rect x="69.9%" y="79" width="0.3%" height="21" fill="white" stroke="white" stroke-width="1"/>
+</g>
+<g id="timescale-eons-text" class="geo-timescale">
+<text x="31.1%" y="96" full-name="Phanerozoic" start="542.00" end="0.00" unit="Eon" font-family="Roboto Condensed">Phanerozoic</text>
+<text x="70.3%" y="95" fill="black" font-size="12" font-family="Roboto Condensed">Eons</text>
+<text x="76.4%" y="56" font-height="16" fill="#1c6bc9" font-family="Roboto Condensed">Geologic Timescale</text>
+</g>
+</defs>
+<svg width="100%" height="100" y="0" viewBox="0 0 900 100" preserveAspectRatio="none">
+<use href="#timescale-ages"/>
+<use href="#timescale-epochs"/>
+<use href="#timescale-periods"/>
+<use href="#timescale-eras"/>
+<use href="#timescale-eons"/>
+</svg>
+<svg width="100%" height="100" y="0" preserveAspectRatio="none">
+<use href="#timescale-ages-text"/>
+<use href="#timescale-epochs-text"/>
+<use href="#timescale-periods-text"/>
+<use href="#timescale-eras-text"/>
+<use href="#timescale-eons-text"/>
+</svg>
+</svg>
+
+                    </div>
+                </div>
+                                <div class="panel svg-panel-container">
+                    <div id="prunetree-timescale" class="svg timetree-panel">
+                        
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="35" name="timescale" y="100">
+<defs>
+<g id="timescale" class="timescale">
+<polyline points="20,5 628,5" fill="none" stroke="#333" stroke-width="1" stroke-linecap="square"/>
+<polyline points="628,5 628,20" fill="none" stroke="#333" stroke-width="1" stroke-linecap="square"/>
+<polyline points="476,5 476,20" fill="none" stroke="#333" stroke-width="1" stroke-linecap="square"/>
+<polyline points="324,5 324,20" fill="none" stroke="#333" stroke-width="1" stroke-linecap="square"/>
+<polyline points="172,5 172,20" fill="none" stroke="#333" stroke-width="1" stroke-linecap="square"/>
+<polyline points="20,5 20,20" fill="none" stroke="#333" stroke-width="1" stroke-linecap="square"/>
+</g>
+<g id="timescale-text" class="timescale">
+<text x="69.6%" y="33" fill="#555555" font-size="12">0</text>
+<text x="52.3%" y="33" fill="#555555" font-size="12">40</text>
+<text x="35.4%" y="33" fill="#555555" font-size="12">80</text>
+<text x="18.2%" y="33" fill="#555555" font-size="12">120</text>
+<text x="1.3%" y="33" fill="#555555" font-size="12">160</text>
+<text x="76.4%" y="24" font-height="16" fill="#1c6bc9" font-family="Roboto Condensed">Time (MYA)</text>
+</g>
+</defs>
+<svg width="100%" height="100" y="0" viewBox="0 0 900 100" preserveAspectRatio="none">
+<use href="#timescale"/>
+</svg>
+<svg width="100%" height="100" y="0" preserveAspectRatio="none">
+<use href="#timescale-text"/>
+</svg>
+</svg>
+
+                    </div>
+                </div>
+                                <div class="panel svg-panel-container">
+                    <div id="prunetree-impacts" class="svg timetree-panel">
+                        
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="65" name="impacts" y="150">
+<defs>
+<g id="earth-impacts" class="earth-impacts">
+<rect x="1" y="5" width="18" height="50" fill="white" stroke="white" stroke-width="2"/>
+<rect x="629" y="5" width="60" height="50" fill="white" stroke="white" stroke-width="2"/>
+<polyline points="20,55 628,55 628,5" stroke="white" stroke-width="1" fill="white"/>
+<polyline points="20,30 628,30" fill="none" stroke-dasharray="5,5" stroke="orange" stroke-width="1" stroke-linecap="square"/>
+<circle cx="381" cy="30" r="18" diam="150.00" age="65" lat="21.333" lon="-89.500" name="Chicxulub" loc="Yucatan, Mexico" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="492" cy="30" r="11" diam="90.00" age="36" lat="71.650" lon="111.183" name="Popigai" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="77" cy="30" r="8" diam="70.00" age="145" lat="-26.467" lon="23.533" name="Morokweng" loc="South Africa" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="361" cy="30" r="8" diam="65.00" age="70" lat="69.100" lon="64.150" name="Kara" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="142" cy="30" r="7" diam="55.00" age="128" lat="-27.117" lon="142.833" name="Tookoonoka" loc="Queensland" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="609" cy="30" r="6" diam="52.00" age="5" lat="39.017" lon="73.450" name="Kara-Kul" loc="Tajikistan" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="436" cy="30" r="5" diam="45.00" age="50" lat="42.883" lon="-64.217" name="Montagnais" loc="Nova Scotia, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="88" cy="30" r="5" diam="40.00" age="142" lat="73.800" lon="29.667" name="Mjolnir" loc="Norway" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="494" cy="30" r="5" diam="40.00" age="35" lat="37.283" lon="-76.017" name="Chesapeake Bay" loc="Virginia, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="191" cy="30" r="5" diam="39.00" age="115" lat="58.450" lon="-109.500" name="Carswell" loc="Saskatchewan, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="346" cy="30" r="4" diam="35.00" age="74" lat="42.583" lon="-94.550" name="Manson" loc="Iowa, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="490" cy="30" r="3" diam="28.00" age="36" lat="55.883" lon="-63.300" name="Mistastin" loc="Newfoundland/Labrador, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="442" cy="30" r="3" diam="25.00" age="49" lat="48.350" lon="40.500" name="Kamensk" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="282" cy="30" r="3" diam="25.00" age="91" lat="59.500" lon="-117.633" name="Steen River" loc="Alberta, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="380" cy="30" r="3" diam="24.00" age="65" lat="48.750" lon="32.167" name="Boltysh" loc="Ukraine" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="571" cy="30" r="3" diam="24.00" age="15" lat="48.883" lon="10.617" name="Ries" loc="Germany" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="480" cy="30" r="3" diam="23.00" age="39" lat="75.367" lon="-89.683" name="Haughton" loc="Nunavut, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="338" cy="30" r="3" diam="23.00" age="76" lat="63.200" lon="23.700" name="Lappajarvi" loc="Finland" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="86" cy="30" r="3" diam="22.00" age="142" lat="-23.817" lon="132.317" name="Gosses Bluff" loc="Northern Territory" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="476" cy="30" r="2" diam="20.00" age="40" lat="65.517" lon="95.933" name="Logancha" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="290" cy="30" r="2" diam="19.00" age="89" lat="61.800" lon="16.800" name="Dellen" loc="Sweden" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="172" cy="30" r="2" diam="18.00" age="120" lat="24.583" lon="24.400" name="Oasis" loc="Libya" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="615" cy="30" r="2" diam="18.00" age="4" lat="67.500" lon="172.083" name="El'gygytgyn" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="467" cy="30" r="2" diam="15.00" age="42" lat="54.200" lon="27.800" name="Logoisk" loc="Belarus" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="625" cy="30" r="2" diam="14.00" age="9.000E-001" lat="48.400" lon="60.967" name="Zhamanshin" loc="Kazakhstan" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="248" cy="30" r="2" diam="13.00" age="100" lat="30.600" lon="-102.917" name="Sierra Madera" loc="Texas, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="259" cy="30" r="2" diam="13.00" age="97" lat="40.750" lon="-87.400" name="Kentland" loc="Indiana, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="252" cy="30" r="2" diam="13.00" age="99" lat="56.400" lon="-102.983" name="Deep Bay" loc="Saskatchewan, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="408" cy="30" r="2" diam="12.70" age="58" lat="31.283" lon="-96.300" name="Marquez" loc="Texas, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="442" cy="30" r="1" diam="12.00" age="49" lat="71.250" lon="-156.633" name="Avak" loc="Alaska, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="161" cy="30" r="1" diam="12.00" age="123" lat="-26.833" lon="-52.117" name="Vargeao Dome" loc="Brazil" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="624" cy="30" r="1" diam="10.50" age="1" lat="6.500" lon="-1.417" name="Bosumtwi" loc="Ghana" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="313" cy="30" r="1" diam="10.00" age="83" lat="-10.167" lon="-45.250" name="Santa Marta" loc="Brazil" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="381" cy="30" r="1" diam="10.00" age="65" lat="49.700" lon="-110.500" name="Eagle Butte" loc="Alberta, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="495" cy="30" r="1" diam="10.00" age="35" lat="-34.617" lon="139.067" name="Flaxman" loc="Australia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="609" cy="30" r="1" diam="10.00" age="5" lat="54.917" lon="48.033" name="Karla" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="381" cy="30" r="1" diam="9.50" age="65" lat="-25.950" lon="-52.683" name="Vista Alegre" loc="Brazil" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="400" cy="30" r="1" diam="9.00" age="60" lat="-23.533" lon="124.750" name="Connolly Basin" loc="Western Australia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="168" cy="30" r="1" diam="9.00" age="121" lat="56.417" lon="14.867" name="Mien" loc="Sweden" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="453" cy="30" r="1" diam="9.00" age="46" lat="58.733" lon="61.800" name="Ragozinka" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="495" cy="30" r="1" diam="8.50" age="35" lat="-34.717" lon="139.033" name="Crawford" loc="Australia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="476" cy="30" r="1" diam="8.00" age="40" lat="71.000" lon="121.667" name="Beyenchime-Salaatin" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="609" cy="30" r="1" diam="8.00" age="5" lat="48.567" lon="82.017" name="Bigach" loc="Kazakhstan" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="487" cy="30" r="1" diam="7.50" age="37" lat="46.750" lon="-80.750" name="Wanapitei" loc="Ontario, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="320" cy="30" r="1" diam="6.50" age="81" lat="32.517" lon="-86.167" name="Wetumpka" loc="Alabama, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="362" cy="30" r="1" diam="6.00" age="70" lat="75.700" lon="97.800" name="Chukcha" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="343" cy="30" r="1" diam="6.00" age="75" lat="49.800" lon="-109.100" name="Maple Creek" loc="Saskatchewan, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="362" cy="30" r="1" diam="6.00" age="70" lat="27.600" lon="5.117" name="Tin Bider" loc="Algeria" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="453" cy="30" r="1" diam="5.50" age="46" lat="49.167" lon="57.850" name="Chiyli" loc="Kazakhstan" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="451" cy="30" r="1" diam="5.50" age="46" lat="31.050" lon="36.800" name="Jebel Waqf as Suwwan" loc="Jordan" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="438" cy="30" r="1" diam="5.10" age="50" lat="-18.333" lon="126.667" name="Goat Paddock" loc="Western Australia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="4.50" age="1.000E-001" lat="-32.867" lon="-64.233" name="Rio Cuarto" loc="Argentina" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="210" cy="30" r="1" diam="4.00" age="110" lat="-27.950" lon="135.367" name="Mount Toondina" loc="South Australia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="571" cy="30" r="1" diam="3.80" age="15" lat="48.683" lon="10.067" name="Steinheim" loc="Germany" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="550" cy="30" r="1" diam="3.60" age="20" lat="-23.867" lon="-46.717" name="Colonia" loc="Brazil" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="362" cy="30" r="1" diam="3.50" age="70" lat="29.000" lon="-7.550" name="Ouarkziz" loc="Algeria" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="324" cy="30" r="1" diam="3.50" age="80" lat="48.067" lon="32.750" name="Zeleny Gai" loc="Ukraine" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="623" cy="30" r="1" diam="3.44" age="1" lat="61.283" lon="-73.667" name="New Quebec" loc="Quebec, Canada" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="442" cy="30" r="1" diam="3.00" age="49" lat="48.433" lon="40.533" name="Gusev" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="457" cy="30" r="1" diam="2.80" age="45" lat="47.200" lon="72.700" name="Shunak" loc="Kazakhstan" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="172" cy="30" r="1" diam="2.70" age="120" lat="49.000" lon="32.000" name="Rotmistrovka" loc="Ukraine" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="614" cy="30" r="1" diam="2.50" age="4" lat="-27.767" lon="16.300" name="Roter Kamm" loc="Namibia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="172" cy="30" r="1" diam="2.00" age="120" lat="25.317" lon="24.333" name="B.P. Structure" loc="Libya" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="1.90" age="2.140E-002" lat="22.917" lon="-10.400" name="Tenoumer" loc="Mauritania" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="1.83" age="5.200E-002" lat="19.967" lon="76.517" name="Lonar" loc="India" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="617" cy="30" r="1" diam="1.75" age="3" lat="33.317" lon="4.033" name="Talemzane" loc="Algeria" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="58" cy="30" r="1" diam="1.60" age="150" lat="-12.400" lon="134.050" name="Liverpool" loc="Northern Territory" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="58" cy="30" r="1" diam="1.30" age="150" lat="44.117" lon="109.650" name="Tabun-Khara-Obo" loc="Mongolia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="1.18" age="4.900E-002" lat="35.033" lon="-111.017" name="Barringer" loc="Arizona, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="627" cy="30" r="1" diam="1.13" age="2.200E-001" lat="-25.400" lon="28.083" name="Tswaing" loc="South Africa" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="627" cy="30" r="1" diam="0.87" age="3.000E-001" lat="-19.167" lon="127.800" name="Wolfe Creek" loc="Western Australia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="627" cy="30" r="1" diam="0.64" age="2.500E-001" lat="-32.717" lon="24.433" name="Kalkkop" loc="South Africa" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="624" cy="30" r="1" diam="0.46" age="1" lat="-23.933" lon="-68.283" name="Monturaqui" loc="Chile" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.45" age="1.000E-001" lat="26.083" lon="4.383" name="Amguid" loc="Algeria" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="617" cy="30" r="1" diam="0.39" age="3" lat="20.250" lon="-12.683" name="Aouelloul" loc="Mauritania" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.30" age="7.000E-003" lat="60.100" lon="117.583" name="Macha" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.17" age="5.400E-003" lat="-22.617" lon="135.200" name="Boxhole" loc="Northern Territory" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.16" age="5.000E-002" lat="31.750" lon="-102.483" name="Xiuyan" loc="Texas, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.16" age="6.350E-002" lat="31.750" lon="-102.483" name="Odessa" loc="Texas, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.15" age="4.200E-003" lat="-24.567" lon="133.133" name="Henbury" loc="Northern Territory" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.11" age="4.000E-003" lat="58.400" lon="22.667" name="Kaalijarv" loc="Estonia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.11" age="1.400E-004" lat="21.500" lon="50.467" name="Wabar" loc="Saudi Arabia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.10" age="1.000E-002" lat="52.483" lon="16.900" name="Morasko" loc="Poland" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.08" age="6.600E-003" lat="57.967" lon="27.417" name="Ilumetsa" loc="Estonia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="624" cy="30" r="1" diam="0.08" age="1" lat="-22.967" lon="125.367" name="Veevers" loc="Western Australia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.05" age="1.000E-003" lat="46.300" lon="137.867" name="Sobolev" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.05" age="4.000E-003" lat="-27.633" lon="-61.700" name="Campo Del Cielo" loc="Argentina" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.04" age="0.000E+000" lat="22.017" lon="26.083" name="Kamil" loc="Egypt" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.04" age="1.100E-003" lat="54.000" lon="-115.600" name="Whitecourt" loc="Alberta, Canada " stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.02" age="6.700E-005" lat="46.117" lon="134.667" name="Sikhote Alin" loc="Russia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="627" cy="30" r="1" diam="0.02" age="2.700E-001" lat="-27.633" lon="117.283" name="Dalgaranga" loc="Western Australia" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.01" age="7.000E-006" lat="-16.667" lon="-69.050" name="Carancas" loc="Peru" stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<circle cx="628" cy="30" r="1" diam="0.01" age="1.000E-003" lat="37.583" lon="-99.167" name="Haviland" loc="Kansas, U.S.A." stroke="red" stroke-width="1" fill-opacity="0.4" fill="red"/>
+<polyline points="630,5 635,5" fill="none" stroke="black" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,30 635,30" fill="none" stroke="black" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,55 635,55" fill="none" stroke="black" stroke-width="1" stroke-linecap="square"/>
+<polyline points="20,55 628,55 628,5" fill="none" stroke="#aaaaaa" stroke-width="1" stroke-linecap="square"/>
+</g>
+<g id="earth-impacts-text" class="earth-impacts">
+<text x="71.3%" y="12" fill="black" font-size="12" font-family="Roboto Condensed">200</text>
+<text x="71.3%" y="33" fill="black" font-size="12" font-family="Roboto Condensed">0 km</text>
+<text x="71.3%" y="58" fill="black" font-size="12" font-family="Roboto Condensed">200</text>
+<text x="76.4%" y="33" font-height="16" fill="#1c6bc9" font-family="Roboto Condensed">Earth Impacts</text>
+</g>
+</defs>
+<svg width="100%" height="65" y="0" viewBox="0 0 900 65" preserveAspectRatio="none">
+<use href="#earth-impacts"/>
+</svg>
+<svg width="100%" height="65" y="0" preserveAspectRatio="none">
+<use href="#earth-impacts-text"/>
+</svg>
+</svg>
+
+                    </div>
+                </div>
+                                <div class="panel svg-panel-container">
+                    <div id="prunetree-o2" class="svg timetree-panel">
+                        
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="65" name="o2" y="215">
+<defs>
+<g id="o2" class="geo-data" name="o2">
+<polyline points="20,55 628,55 628,5" fill="none" stroke="#aaaaaa" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,5 635,5" fill="none" stroke="#000" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,30 635,30" fill="none" stroke="black" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,55 635,55" fill="none" stroke="black" stroke-width="1" stroke-linecap="square"/>
+<polygon points="628,54 628,40 607,40 582,40 558,37 533,31 508,24 484,18 459,12 434,8 410,6 385,6 360,6 335,8 311,8 286,8 261,12 237,12 212,18 187,22 162,26 138,31 113,37 88,43 64,49 39,51 20,53 20,54 628,54" fill="#ffc300" fill-opacity="0.75" stroke="#ffc300" stroke-width="1"/>
+</g>
+<g id="o2-text" class="geo-data" name="o2">
+<text x="76.4%" y="34" font-height="16" fill="#1c6bc9" font-family="Roboto Condensed">Oxygen</text>
+<text x="71.3%" y="11" fill="black" font-size="12" font-family="Roboto Condensed"> 22.70</text>
+<text x="71.3%" y="33" fill="black" font-size="12" font-family="Roboto Condensed"> 21.52%</text>
+<text x="71.3%" y="58" fill="black" font-size="12" font-family="Roboto Condensed">   20.34</text>
+</g>
+</defs>
+<svg width="100%" height="65" y="0" viewBox="0 0 900 65" preserveAspectRatio="none">
+<use href="#o2"/>
+</svg>
+<svg width="100%" height="65" y="0" preserveAspectRatio="none">
+<use href="#o2-text"/>
+</svg>
+</svg>
+
+                    </div>
+                </div>
+                                <div class="panel svg-panel-container">
+                    <div id="prunetree-co2" class="svg timetree-panel">
+                        
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="65" name="co2" y="280">
+<defs>
+<g id="co2" class="geo-data" name="co2">
+<polyline points="20,55 628,55 628,5" fill="none" stroke="#aaaaaa" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,5 635,5" fill="none" stroke="#000" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,30 635,30" fill="none" stroke="black" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,55 635,55" fill="none" stroke="black" stroke-width="1" stroke-linecap="square"/>
+<polygon points="628,54 628,49 627,53 626,52 625,51 623,51 621,51 620,51 619,51 618,50 617,50 616,50 615,50 614,50 613,50 612,50 611,50 610,49 609,50 608,50 607,51 606,51 605,52 604,52 603,52 602,52 601,52 600,52 599,52 598,52 597,52 596,52 595,52 594,52 593,52 592,52 591,52 590,52 589,52 588,51 587,51 586,52 585,52 584,52 583,52 582,52 581,52 580,52 579,52 578,52 577,52 576,52 575,53 574,53 573,53 572,53 571,52 570,51 569,49 568,49 567,49 566,49 565,50 564,50 563,51 562,52 561,52 560,52 559,52 558,52 557,52 556,52 555,51 554,51 553,51 552,51 551,51 550,51 549,51 548,51 547,51 546,51 545,51 544,51 543,52 542,52 541,52 540,52 539,52 538,51 537,51 536,50 535,50 534,49 533,49 532,48 531,48 530,47 529,47 528,47 527,47 526,47 525,47 524,47 523,47 522,47 521,47 520,48 519,48 518,48 517,48 516,47 515,47 514,46 513,45 512,44 511,43 510,42 509,42 508,41 507,40 506,39 505,38 504,37 503,36 502,35 501,35 500,35 499,35 498,35 497,36 496,36 495,36 494,36 493,37 492,37 491,37 490,38 489,38 488,38 487,39 486,39 485,39 484,40 483,40 482,40 481,41 480,40 479,40 478,39 477,38 476,38 475,37 474,36 473,36 472,36 471,35 470,35 469,35 468,35 467,35 466,34 465,34 464,34 463,34 462,33 461,33 460,32 459,32 458,32 457,32 456,31 455,31 454,31 453,31 452,31 451,31 450,31 449,31 448,32 447,32 446,32 445,32 444,32 443,32 442,31 441,31 440,31 439,31 438,31 437,31 436,32 435,32 434,33 433,34 432,36 431,38 430,39 429,39 428,39 427,39 426,38 425,38 424,39 423,42 418,41 414,41 411,41 407,42 403,42 399,41 395,40 391,39 387,39 383,38 379,37 375,36 371,35 367,34 363,34 359,33 355,32 352,31 348,30 344,30 340,29 336,28 332,27 328,27 324,26 320,26 316,26 312,26 308,26 304,26 301,26 297,26 293,26 289,26 285,25 281,24 277,24 273,23 269,22 265,22 261,21 257,21 253,20 249,19 246,18 242,17 238,16 234,15 230,14 226,13 222,12 218,11 214,10 210,9 206,8 202,7 198,6 194,6 190,6 186,7 183,7 179,7 175,8 171,9 167,10 163,12 159,14 156,16 152,17 148,19 144,20 140,21 136,22 133,23 129,24 125,25 121,26 117,27 113,28 109,30 106,31 102,32 98,32 94,31 90,30 86,29 82,27 78,26 74,25 70,24 66,23 62,22 58,21 54,20 50,20 46,19 43,19 39,19 35,19 31,18 27,18 23,18 20,18 20,54 628,54" fill="#ff5733" fill-opacity="0.75" stroke="#ff5733" stroke-width="1"/>
+</g>
+<g id="co2-text" class="geo-data" name="co2">
+<text x="76.4%" y="34" font-height="16" fill="#1c6bc9" font-family="Roboto Condensed">Carbon Dioxide</text>
+<text x="71.3%" y="11" fill="black" font-size="12" font-family="Roboto Condensed">  0.21</text>
+<text x="71.3%" y="33" fill="black" font-size="12" font-family="Roboto Condensed">  0.11%</text>
+<text x="71.3%" y="58" fill="black" font-size="12" font-family="Roboto Condensed">    0.02</text>
+</g>
+</defs>
+<svg width="100%" height="65" y="0" viewBox="0 0 900 65" preserveAspectRatio="none">
+<use href="#co2"/>
+</svg>
+<svg width="100%" height="65" y="0" preserveAspectRatio="none">
+<use href="#co2-text"/>
+</svg>
+</svg>
+
+                    </div>
+                </div>
+                                <div class="panel svg-panel-container">
+                    <div id="prunetree-luminosity" class="svg timetree-panel">
+                        
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="65" name="luminosity" y="345">
+<defs>
+<g id="luminosity" class="geo-data" name="luminosity">
+<polyline points="20,55 628,55 628,5" fill="none" stroke="#aaaaaa" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,5 635,5" fill="none" stroke="#000" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,30 635,30" fill="none" stroke="black" stroke-width="1" stroke-linecap="square"/>
+<polyline points="630,55 635,55" fill="none" stroke="black" stroke-width="1" stroke-linecap="square"/>
+<polygon points="628,54 628,6 20,53 20,54 628,54" fill="#c70039" fill-opacity="0.75" stroke="#c70039" stroke-width="1"/>
+</g>
+<g id="luminosity-text" class="geo-data" name="luminosity">
+<text x="76.4%" y="34" font-height="16" fill="#1c6bc9" font-family="Roboto Condensed">Solar Luminosity</text>
+<text x="71.3%" y="11" fill="black" font-size="12" font-family="Roboto Condensed">100.00</text>
+<text x="71.3%" y="33" fill="black" font-size="12" font-family="Roboto Condensed"> 99.31L</text>
+<text x="71.3%" y="58" fill="black" font-size="12" font-family="Roboto Condensed">   98.62</text>
+</g>
+</defs>
+<svg width="100%" height="65" y="0" viewBox="0 0 900 65" preserveAspectRatio="none">
+<use href="#luminosity"/>
+</svg>
+<svg width="100%" height="65" y="0" preserveAspectRatio="none">
+<use href="#luminosity-text"/>
+</svg>
+</svg>
+
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/js/widgets/timetree.js"></script>
+<script src="/public/js/widgets/common.js"></script>
+<script>
+    $(document).ready(function () {
+        $('polyline').attr('stroke-linecap', 'square');
+        $('circle.node').attr('fill', 'rgba(0,0,0,0)');
+        $("#prunetree-color-picker").on("change.color", function (event, color) {
+            $('#prunetree-branches polyline, #prunetree-branches line').attr('stroke', color);
+            $('#prunetree-lineColor').val(color);
+        });
+        
+        disableIrrelevantBgColors();
+        resetPanelDisplayButtons()
+        var bg_colors = $('#prunetree-background-colors').attr('bg-colors');
+        if ((bg_colors != null) && (bg_colors != '')) {
+            $('#prunetree-bg-colors').val(bg_colors);            
+        }
+        else
+            $('#prunetree-bg-colors').val('none'); 
+    });
+    
+    function disableIrrelevantBgColors() {
+        if ($('#prunetree-ages').length)  {
+            $('#prunetree-ages-option').attr('disabled', false);
+        }
+        else {
+            $('#prunetree-ages-option').attr('disabled', false);
+        }
+
+        if ($('#prunetree-epochs').length)  {
+            $('#prunetree-epochs-option').attr('disabled', false);
+        }
+        else {
+            $('#prunetree-epochs-option').attr('disabled', false);
+        }       
+    }
+    
+    function resetPanelDisplayButtons() {        
+        $('#prunetree-geo-panel-btn').prop('checked', true);
+        $('#prunetree-impacts-panel-btn').prop('checked', true);
+        $('#prunetree-o2-panel-btn').prop('checked', true);
+        $('#prunetree-co2-panel-btn').prop('checked', true);
+        $('#prunetree-luminosity-panel-btn').prop('checked', true);        
+        $('.prunetree-buttonset').buttonset();
+    }
+</script>        </div>        
+    </div>
+    <div class="wrap" id="prunetree-timetable"></div>
+    
+    <script>
+        $(document).ready(function(){
+            $('#prunetree-upload-button2').click(function(e) {
+                e.preventDefault();
+                var formData = new FormData();   
+                if ($('#prunetree-widget-upload').val() == '') {
+                    messageDialog.show('Please select a file to upload');
+                    return;
+                }
+                if ($("#timetree-context-menu").hasClass("ui-dialog-content") && $("#timetree-context-menu").dialog("isOpen")) {
+                    $('#timetree-context-menu').dialog('close');
+                }
+                if ($("#geo-timescale-context-menu").hasClass("ui-dialog-content") && $("#geo-timescale-context-menu").dialog("isOpen")) {
+                    $('#geo-timescale-context-menu').dialog('close');
+                }     
+                if ($("#impacts-context-menu").hasClass("ui-dialog-content") && $("#impacts-context-menu").dialog("isOpen")) {
+                    $('#impacts-context-menu').dialog('close');
+                }                  
+                waitingDialog.show();
+//                $('#prunetree-msg-box').addClass('hidden');
+                var input = $('#prunetree-widget-upload')[0];
+
+                formData.append('file', input.files[0]);
+                formData.append('scale', $('[name=timescale_type]:radio:checked').val());
+                formData.append('taxonSpacing', $('[name=taxonSpacing]:radio:checked').val());
+                formData.append('panelHeight', 1);
+                formData.append('lineColor', $('#prunetree-lineColor').val());
+                formData.append('geoBgColors', $('#prunetree-bg-colors').val());
+                    
+                $.ajax({
+                  url: '/ajax/prune/widget_load_names/',
+                  data: formData,
+                  processData: false,
+                  contentType: false,
+                  type: 'POST',
+                  success: function(data){
+                    $('#prunetree-msg-container').html('');
+                    $('#prunetree-tree-svg-wrapper').html(data);                    
+                    var msgBox = $('#prunetree-msg-box');
+                    if (msgBox != null) { // move the error messages into the search tools box which does not get reloaded
+                        $('#prunetree-msg-container').html(msgBox.html());
+                        msgBox.html(''); 
+                        $('#prunetree-msg-btn').click(function() {
+                            if ($(this).hasClass('error-btn-enabled')) {
+                                $('#prunetree-leaf-count').fadeToggle();
+                                $('#unresolved-names').fadeToggle();                                                            
+                            }
+                        });  
+                        $('#unresolved-names').hide();
+                    }
+                    else {
+                        $('#prunetree-msg-container').html('');                    
+                    }
+                    hideModalProgress();
+                  },
+                  error: function(data) {
+                    $('#prunetree-tree-svg-wrapper').html(data);  
+                    hideModalProgress();
+                  }
+                });                 
+            }); // end prunetree-upload-button2
+            
+        });
+    </script>
+    

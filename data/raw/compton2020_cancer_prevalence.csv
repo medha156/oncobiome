@@ -1,0 +1,38 @@
+common_name,species_name,order,family,genus,total_necropsies,percent_any_neoplasia,percent_any_malignant,adult_mass_kg,max_lifespan_yr,placenta_invasiveness,littersize
+Elephant,Loxodonta_africana,Proboscidea,Elephantidae,Loxodonta,17,0.470588235,0.235294118,4800.0,65.0,endotheliochorial,0.84
+Armadillo,Dasypus_novemcinctus,Cingulata,Dasypodidae,Dasypus,67,0.029850746,0.0,5.5,22.3,hemochorial,3.96
+Baboon,Papio_hamadryas,Primates,Cercopithecidae,Papio,12,0.0,0.0,18.0,37.5,hemochorial,1.01
+Black-backed jackal,Canis_mesomelas,Carnivora,Canidae,Canis,5,0.2,0.2,10.25,16.7,endotheliochorial,3.89
+Burro and Sardinian ass,Equus_asinus,Perissodactyla,Equidae,Equus,9,0.111111111,0.0,165.0,47.0,epitheliochorial,1.0
+Cape hunting dog,Lycaon_pictus,Carnivora,Canidae,Lycaon,6,0.5,0.166666667,26.5,17.0,endotheliochorial,8.1
+Capybara,Hydrochaeris_hydrochaeris,Rodentia,Caviidae,Hydrochoerus,13,0.0,0.0,55.0,15.1,hemochorial,3.49
+Cheetah,Acinonyx_jubatus,Carnivora,Felidae,Acinonyx,42,0.214285714,0.095238095,53.5,20.5,endotheliochorial,3.28
+Collared peccary,Pecari_tajacu,Artiodactyla,Tayassuidae,Pecari,11,0.0,0.0,20.2,31.5,epitheliochorial,1.56
+Common wallaroo,Macropus_robustus,Diprotodontia,Macropodidae,Macropus,30,0.0,0.0,30.0,22.0,marsupial,1.0
+Cougar,Puma_concolor,Carnivora,Felidae,Puma,5,0.0,0.0,63.0,23.8,endotheliochorial,2.76
+Dama wallaby,Macropus_eugenii,Diprotodontia,Macropodidae,Macropus,11,0.0,0.0,6.5,15.1,marsupial,1.01
+Fennec fox,Vulpes_zerda,Carnivora,Canidae,Vulpes,4,0.0,0.0,1.25,16.3,endotheliochorial,2.36
+Guenon,Cercopithecus_mitis,Primates,Cercopithecidae,Cercopithecus,41,0.097560976,0.097560976,9.0,37.8,hemochorial,1.0
+Harbor seal,Phoca_vitulina,Carnivora,Phocidae,Phoca,33,0.060606061,0.060606061,115.0,47.6,endotheliochorial,1.0
+Koala,Phascolarctos_cinereus,Diprotodontia,Phascolarctidae,Phascolarctos,74,0.283783784,0.216216216,9.3,22.1,marsupial,1.01
+Lion,Panthera_leo,Carnivora,Felidae,Panthera,18,0.055555556,0.055555556,175.0,27.0,endotheliochorial,2.75
+Llama,Lama_glama,Artiodactyla,Camelidae,Lama,6,0.0,0.0,140.0,28.9,epitheliochorial,1.0
+Marmoset,Callithrix_jacchus,Primates,Cebidae,Callithrix,40,0.125,0.125,0.26,16.5,hemochorial,2.31
+Matschie's tree kangaroo,Dendrolagus_matschiei,Diprotodontia,Macropodidae,Dendrolagus,11,0.0,0.0,7.2,26.9,marsupial,1.01
+Moose,Alces_alces,Artiodactyla,Cervidae,Alces,13,0.0,0.0,386.0,22.0,epitheliochorial,1.25
+Parma wallaby,Macropus_parma,Diprotodontia,Macropodidae,Macropus,59,0.06779661,0.033898305,4.25,15.9,marsupial,0.9
+Prairie dog,Cynomys_ludovicianus,Rodentia,Sciuridae,Cynomys,31,0.451612903,0.451612903,1.13,11.0,hemochorial,4.43
+Pronghorn,Antilocapra_americana,Artiodactyla,Antilocapridae,Antilocapra,20,0.05,0.05,46.1,15.5,epitheliochorial,1.93
+Pygmy marmoset,Callithrix_pygmaea,Primates,Cebidae,Callithrix,28,0.035714286,0.035714286,0.12,18.6,hemochorial,1.93
+Raccoon,Procyon_lotor,Carnivora,Procyonidae,Procyon,12,0.0,0.0,6.0,21.0,endotheliochorial,3.06
+Red kangaroo,Macropus_rufus,Diprotodontia,Macropodidae,Macropus,9,0.0,0.0,55.0,25.0,marsupial,1.0
+Reindeer,Rangifer_tarandus,Artiodactyla,Cervidae,Rangifer,17,0.117647059,0.117647059,101.25,21.7,epitheliochorial,2.0
+Rock hyrax,Procavia_capensis,Hyracoidea,Procaviidae,Procavia,91,0.054945055,0.021978022,3.6,14.8,hemochorial,2.5
+Squirrel monkey,Saimiri_sciureus,Primates,Cebidae,Saimiri,13,0.0,0.0,0.93,30.2,hemochorial,1.0
+Striped grass mouse,Rhabdomys_pumilio,Rodentia,Muridae,Rhabdomys,13,0.0,0.0,0.05,4.5,hemochorial,5.28
+Tarsier,Tarsius_syrichta,Primates,Tarsiidae,Tarsius,8,0.0,0.0,0.12,16.0,hemochorial,1.01
+Tasmanian devil,Sarcophilus_harrisii,Dasyuromorphia,Dasyuridae,Sarcophilus,18,0.444444444,0.333333333,6.5,13.0,marsupial,2.88
+Tiger,Panthera_tigris,Carnivora,Felidae,Panthera,11,0.181818182,0.090909091,119.7,26.3,endotheliochorial,2.6
+Tree shrew,Tupaia_glis,Scandentia,Tupaiidae,Tupaia,10,0.1,0.1,0.2,12.4,endotheliochorial,2.22
+Virginia opossum,Didelphis_virginiana,Didelphimorphia,Didelphidae,Didelphis,28,0.607142857,0.535714286,3.0,6.6,marsupial,8.62
+White-tailed gnu,Connochaetes_gnou,Artiodactyla,Bovidae,Connochaetes,16,0.0,0.0,164.5,24.3,epitheliochorial,1.0

@@ -1,0 +1,290 @@
+Sample,class,order,family,genus,species,host_common_name,diet,captive_wild,country,sample_type
+X144_Cattle,Mammalia,Artiodactyla,Bovidae,Bos,Bos_taurus,Cattle,herbivore,captive,Austria,feces
+X370_African_Bush_Elephant,Mammalia,Proboscidea,Elephantidae,Loxodonta,Loxodonta_africana,African_Bush_Elephant,herbivore,captive,Austria,feces
+X80_European_Otter,Mammalia,Carnivora,Mustelidae,Lutra,Lutra_lutra,European_Otter,carnivore,wild,Austria,feces
+X66_Mouflon,Mammalia,Artiodactyla,Bovidae,Ovis,Ovis_aries,Mouflon,herbivore,captive,Austria,feces
+X11_Onager,Mammalia,Perissodactyla,Equidae,Equus,Equus_hemionus,Onager,herbivore,wild,Iran,feces
+X267_Rook,Aves,Passeriformes,Corvidae,Corvus,Corvus_frugilegus,Rook,omnivore,wild,Austria,feces
+X3_Alpine_Chamois,Mammalia,Artiodactyla,Bovidae,Rupicapra,Rupicapra_rupicapra,Alpine_Chamois,herbivore,wild,Austria,feces
+X122_Wild_Boar,Mammalia,Artiodactyla,Suidae,Sus,Sus_scrofa,Wild_Boar,omnivore,wild,Austria,feces
+X338_White_beaked_Dolphin,Mammalia,Cetacea,Delphinidae,Lagenorhynchus,Lagenorhynchus_albirostris,White_beaked_Dolphin,carnivore,wild,England,feces
+X8_Garden_Dormouse,Mammalia,Rodentia,Gliridae,Eliomys,Eliomys_quercinus,Garden_Dormouse,omnivore,captive,Austria,gut
+X395_Przewalski_horse,Mammalia,Perissodactyla,Equidae,Equus,Equus_caballus,Przewalski_horse,herbivore,captive,Austria,feces
+X414_Vervet_Monkey,Mammalia,Primates,Cercopithecidae,Chlorocebus,Chlorocebus_pygerythrus,Vervet_Monkey,omnivore,wild,South Africa,feces
+X101_Horse,Mammalia,Perissodactyla,Equidae,Equus,Equus_caballus,Horse,herbivore,captive,Austria,feces
+X74_Steppe_Polecat,Mammalia,Carnivora,Mustelidae,Mustela,Mustela_eversmanii,Steppe_Polecat,carnivore,wild,Austria,feces
+X30_Beech_Marten,Mammalia,Carnivora,Mustelidae,Martes,Martes_foina,Beech_Marten,omnivore,wild,Austria,feces
+X348_European_Rabbit,Mammalia,Lagomorpha,Leporidae,Oryctolagus,Oryctolagus_cuniculus,European_Rabbit,herbivore,wild,Austria,gut
+X76_European_Polecat,Mammalia,Carnivora,Mustelidae,Mustela,Mustela_putorius,European_Polecat,omnivore,wild,Austria,feces
+X7_European_Otter,Mammalia,Carnivora,Mustelidae,Lutra,Lutra_lutra,European_Otter,carnivore,wild,Austria,feces
+X424_Quagga,Mammalia,Perissodactyla,Equidae,Equus,Equus_quagga,Quagga,herbivore,wild,East Africa,feces
+X391_European_Ground_Squirrel,Mammalia,Rodentia,Sciuridae,Spermophilus,Spermophilus_citellus,European_Ground_Squirrel,omnivore,wild,Austria,feces
+X364_fail_Fulvous_Harvest_Mouse,Mammalia,Rodentia,Cricetidae,Reithrodontomys,Reithrodontomys_fluvesces,Fulvous_Harvest_Mouse,omnivore,wild,Costa Rica,gut
+XF44_Fallow_Deer,Mammalia,Artiodactyla,Cervidae,Dama,Dama_dama,Fallow_Deer,herbivore,wild,Austria,feces
+X366_fail_Tomes_Spiny_Rat,Mammalia,Rodentia,Echimyidae,Proechimys,Proechimys_semispinosus,Tomes_Spiny_Rat,herbivore,wild,Costa Rica,gut
+X377_Fat_Sand_Rat,Mammalia,Rodentia,Muridae,Psammomys,Psammomys_obesus,Fat_Sand_Rat,herbivore,captive,Austria,feces
+X174_Great_Tit,Aves,Passeriformes,Paridae,Parus,Parus_major,Great_Tit,omnivore,wild,Hungary,feces
+X422_Common_Hippopotamus,Mammalia,Artiodactyla,Hippopotamidae,Hippopotamus,Hippopotamus_amphibius,Common_Hippopotamus,herbivore,wild,East Africa,feces
+X345_fail_Alpine_Salamander,Amphibia,Caudata,Salamandridae,Salamandra,Salamandra_atra,Alpine_Salamander,carnivore,wild,Austria,feces
+X135_Horse,Mammalia,Perissodactyla,Equidae,Equus,Equus_caballus,Horse,herbivore,captive,Austria,feces
+X79_Eurasian_Beaver,Mammalia,Rodentia,Castoridae,Castor,Castor_fiber,Eurasian_Beaver,herbivore,wild,Austria,feces
+X77_Onager,Mammalia,Perissodactyla,Equidae,Equus,Equus_hemionus,Onager,herbivore,wild,Iran,feces
+X362_Gray_Four_eyed_Opossum,Mammalia,Didelphimorphia,Didelphidae,Philander,Philander_opossum,Gray_Four_eyed_Opossum,omnivore,wild,Costa Rica,gut
+X34_Mallard_Duck,Aves,Anseriformes,Anatidae,Anas,Anas_platyrhynchos,Mallard_Duck,omnivore,wild,Austria,feces
+X221_Alpine_Ibex,Mammalia,Artiodactyla,Bovidae,Capra,Capra_ibex,Alpine_Ibex,herbivore,captive,Austria,feces
+X434_Blue_Wildebeest,Mammalia,Artiodactyla,Bovidae,Connochaetes,Connochaetes_taurinus,Blue_Wildebeest,herbivore,captive,Austria,feces
+X82_Eurasian_Ruffe,Actinopterygii,Perciformes,Percidae,Gymnocephalus,Gymnocephalus_cernua,Eurasian_Ruffe,carnivore,wild,Austria,feces
+X208_Red_Sheep,Mammalia,Artiodactyla,Bovidae,Ovis,Ovis_aries,Red_Sheep,herbivore,captive,Austria,feces
+X330_Ide,Actinopterygii,Cypriniformes,Cyprinidae,Leuciscus,Leuciscus_idus,Ide,carnivore,wild,Austria,feces
+X393_European_Rabbit,Mammalia,Lagomorpha,Leporidae,Oryctolagus,Oryctolagus_cuniculus,European_Rabbit,herbivore,wild,Austria,feces
+X129_Alpine_Ibex,Mammalia,Artiodactyla,Bovidae,Capra,Capra_ibex,Alpine_Ibex,herbivore,wild,Austria,feces
+X187_fail_Rainbow_Trout,Actinopterygii,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus_mykiss,Rainbow_Trout,carnivore,wild,Austria,feces
+X110_Noctule,Mammalia,Chiroptera,Vespertilionidae,Nyctalus,Nyctalus_noctula,Noctule,carnivore,wild,Hungary,gut
+X40_Bactrian_Camel,Mammalia,Artiodactyla,Camelidae,Camelus,Camelus_bactrianus,Bactrian_Camel,herbivore,wild,Mongolia,feces
+X75_fail1_Steppe_Polecat,Mammalia,Carnivora,Mustelidae,Mustela,Mustela_eversmanii,Steppe_Polecat,carnivore,wild,Austria,feces
+X271_Common_Pheasant,Aves,Galliformes,Phasianidae,Phasianus,Phasianus_colchicus,Common_Pheasant,omnivore,wild,Austria,gut
+X270_Common_Pheasant,Aves,Galliformes,Phasianidae,Phasianus,Phasianus_colchicus,Common_Pheasant,omnivore,wild,Austria,gut
+X10_House_Mouse,Mammalia,Rodentia,Muridae,Mus,Mus_musculus,House_Mouse,omnivore,captive,Austria,gut
+X407_African_Bush_Elephant,Mammalia,Proboscidea,Elephantidae,Loxodonta,Loxodonta_africana,African_Bush_Elephant,herbivore,wild,South Africa,feces
+X375_European_Pine_Marten,Mammalia,Carnivora,Mustelidae,Martes,Martes_martes,European_Pine_Marten,omnivore,wild,Austria,feces
+X412_Lion,Mammalia,Carnivora,Felidae,Panthera,Panthera_leo,Lion,carnivore,wild,South Africa,feces
+X107_House_Mouse,Mammalia,Rodentia,Muridae,Mus,Mus_musculus,House_Mouse,omnivore,captive,Austria,gut
+X181_Common_Carp,Actinopterygii,Cypriniformes,Cyprinidae,Cyprinus,Cyprinus_carpio,Common_Carp,omnivore,wild,Austria,gut
+X343_Sand_Lizard,Reptilia,Squamata,Lacertidae,Lacerta,Lacerta_agilis,Sand_Lizard,carnivore,wild,Austria,gut
+X60_European_Chub,Actinopterygii,Cypriniformes,Cyprinidae,Leuciscus,Leuciscus_cephalus,European_Chub,omnivore,wild,Austria,feces
+X336_Sei_Whale,Mammalia,Cetacea,Balaenopteridae,Balaenoptera,Balaenoptera_borealis,Sei_Whale,carnivore,wild,England,feces
+X94_Mangalica,Mammalia,Artiodactyla,Suidae,Sus,Sus_scrofa,Mangalica,omnivore,captive,Austria,feces
+X153_Bank_Vole,Mammalia,Rodentia,Cricetidae,Myodes,Myodes_glareolus,Bank_Vole,omnivore,wild,Austria,gut
+X134_Domestic_Goat,Mammalia,Artiodactyla,Bovidae,Capra,Capra_hircus,Domestic_Goat,herbivore,captive,Austria,feces
+X261_fail_Common_Pipistrelle,Mammalia,Chiroptera,Vespertilionidae,Pipistrellus,Pipistrellus_pipistrellus,Common_Pipistrelle,carnivore,wild,Hungary,gut
+X429_Giraffe,Mammalia,Artiodactyla,Giraffidae,Giraffa,Giraffa_camelopardalis,Giraffe,herbivore,captive,Austria,feces
+X6_Common_Hamster,Mammalia,Rodentia,Cricetidae,Cricetus,Cricetus_cricetus,Common_Hamster,omnivore,wild,Austria,gut
+X360_White_tailed_Deer,Mammalia,Artiodactyla,Cervidae,Odocoileus,Odocoileus_virginianus,White_tailed_Deer,herbivore,wild,Costa Rica,feces
+X242_Dalmatian_Tortoise,Reptilia,Squamata,Testudinidae,Testudo,Testudo_hermanni,Dalmatian_Tortoise,omnivore,wild,Croatia,feces
+X334_Gray_Seal,Mammalia,Carnivora,Phocidae,Halichoerus,Halichoerus_grypus,Gray_Seal,carnivore,wild,Wales,feces
+X171_Blackbird,Aves,Passeriformes,Turdidae,Turdus,Turdus_merula,Blackbird,omnivore,wild,Hungary,feces
+X419_African_Buffalo,Mammalia,Artiodactyla,Bovidae,Syncerus,Syncerus_caffer,African_Buffalo,herbivore,wild,East Africa,feces
+X389_Indian_Rhinoceros,Mammalia,Perissodactyla,Rhinocerotidae,Rhinoceros,Rhinoceros_unicornis,Indian_Rhinoceros,herbivore,captive,Austria,feces
+X420_Cattle,Mammalia,Artiodactyla,Bovidae,Bos,Bos_taurus,Cattle,herbivore,wild,East Africa,feces
+X337_Sowerbys_Beaked_Whale,Mammalia,Cetacea,Ziphiidae,Mesoplodon,Mesoplodon_bidens,Sowerbys_Beaked_Whale,carnivore,wild,England,feces
+X418_Giraffe,Mammalia,Artiodactyla,Giraffidae,Giraffa,Giraffa_camelopardalis,Giraffe,herbivore,wild,East Africa,feces
+X405_Nile_Crocodile,Reptilia,Crocodilia,Crocodylidae,Crocodylus,Crocodylus_niloticus,Nile_Crocodile,carnivore,wild,South Africa,feces
+XF144_Wood_Sandpiper,Aves,Charadriiformes,Scolopacidae,Tringa,Tringa_glareola,Wood_Sandpiper,carnivore,wild,Austria,feces
+X21_Yellow_necked_Field_Mouse,Mammalia,Rodentia,Muridae,Apodemus,Apodemus_flavicollis,Yellow_necked_Field_Mouse,omnivore,wild,Austria,gut
+X231_Brown_Bear,Mammalia,Carnivora,Ursidae,Ursus,Ursus_arctos,Brown_Bear,omnivore,wild,Austria,feces
+X102_Kulan,Mammalia,Perissodactyla,Equidae,Equus,Equus_hemionus,Kulan,herbivore,wild,Mongolia,feces
+X169_Great_Cormorant,Aves,Pelecaniformes,Phalacrocoracidae,Phalacrocorax,Phalacrocorax_carbo,Great_Cormorant,carnivore,wild,Austria,feces
+X352_Kinkajou,Mammalia,Carnivora,Procyonidae,Potos,Potos_flavus,Kinkajou,omnivore,wild,Costa Rica,feces
+X296_Galah,Aves,Psittaciformes,Cacatuidae,Eolophus,Eolophus_roseicapilla,Galah,omnivore,wild,Australia,feces
+X373_Least_Weasel,Mammalia,Carnivora,Mustelidae,Mustela,Mustela_nivalis,Least_Weasel,carnivore,wild,Austria,gut
+X128_Alpine_Marmot,Mammalia,Rodentia,Sciuridae,Marmota,Marmota_marmota,Alpine_Marmot,herbivore,wild,Austria,feces
+X137_Gaur,Mammalia,Artiodactyla,Bovidae,Bos,Bos_frontalis,Gaur,herbivore,wild,Viet Nam,feces
+X130_Alpine_Ibex,Mammalia,Artiodactyla,Bovidae,Capra,Capra_ibex,Alpine_Ibex,herbivore,wild,Austria,feces
+X138_Gaur,Mammalia,Artiodactyla,Bovidae,Bos,Bos_frontalis,Gaur,herbivore,wild,Viet Nam,feces
+X430_Giraffe,Mammalia,Artiodactyla,Giraffidae,Giraffa,Giraffa_camelopardalis,Giraffe,herbivore,captive,Austria,feces
+X186_Brown_Trout,Actinopterygii,Salmoniformes,Salmonidae,Salmo,Salmo_trutta,Brown_Trout,carnivore,wild,Austria,gut
+X98_Eurasian_Red_Squirrel,Mammalia,Rodentia,Sciuridae,Sciurus,Sciurus_vulgaris,Eurasian_Red_Squirrel,omnivore,wild,Austria,gut
+X120_Alpine_Shrew,Mammalia,Soricomorpha,Soricidae,Sorex,Sorex_alpinus,Alpine_Shrew,carnivore,wild,Austria,gut
+X401_fail_Blue_Wildebeest,Mammalia,Artiodactyla,Bovidae,Connochaetes,Connochaetes_taurinus,Blue_Wildebeest,herbivore,wild,South Africa,feces
+XF315_Northern_Pike,Actinopterygii,Esociformes,Esocidae,Esox,Esox_lucius,Northern_Pike,carnivore,wild,Austria,feces
+X214_Goose,Aves,Anseriformes,Anatidae,Anser,Anser_anser,Goose,herbivore,wild,Austria,feces
+X234_Beech_Marten,Mammalia,Carnivora,Mustelidae,Martes,Martes_foina,Beech_Marten,omnivore,wild,Austria,gut
+X92_Lesser_White_toothed_Shrew,Mammalia,Soricomorpha,Soricidae,Crocidura,Crocidura_suaveolens,Lesser_White_toothed_Shrew,carnivore,wild,Austria,feces
+X108_Striped_Desert_Hamster,Mammalia,Rodentia,Cricetidae,Phodopus,Phodopus_sungorus,Striped_Desert_Hamster,omnivore,captive,Austria,gut
+X154_Tree_Shrew,Mammalia,Scandentia,Tupaiidae,Tupaia,Tupaia_belangeri,Tree_Shrew,omnivore,captive,Austria,feces
+X365_fail_Goldmans_Ichthyomyine,Mammalia,Rodentia,Cricetidae,Rheomys,Rheomys_raptor,Goldmans_Ichthyomyine,carnivore,wild,Costa Rica,gut
+X248_Yellow_necked_Field_Mouse,Mammalia,Rodentia,Muridae,Apodemus,Apodemus_flavicollis,Yellow_necked_Field_Mouse,omnivore,wild,Austria,gut
+X106_Eurasian_Teal,Aves,Anseriformes,Anatidae,Anas,Anas_crecca,Eurasian_Teal,omnivore,wild,Austria,feces
+X125_Common_Carp,Actinopterygii,Cypriniformes,Cyprinidae,Cyprinus,Cyprinus_carpio,Common_Carp,omnivore,wild,Austria,feces
+X233_Aesculapian_Snake,Reptilia,Squamata,Colubridae,Zamenis,Zamenis_longissimus,Aesculapian_Snake,carnivore,wild,Austria,feces
+X31_Chicken,Aves,Galliformes,Phasianidae,Gallus,Gallus_gallus,Chicken,omnivore,wild,Austria,feces
+X158_White_tailed_Eagle,Aves,Falconiformes,Accipitridae,Haliaeetus,Haliaeetus_albicilla,White_tailed_Eagle,carnivore,wild,Austria,gut
+X314_Red_Deer,Mammalia,Artiodactyla,Cervidae,Cervus,Cervus_elaphus,Red_Deer,herbivore,captive,Austria,feces
+X279_Western_Grey_Kangaroo,Mammalia,Diprotodontia,Macropodidae,Macropus,Macropus_fuliginosus,Western_Grey_Kangaroo,herbivore,wild,Australia,feces
+X431_Quagga,Mammalia,Perissodactyla,Equidae,Equus,Equus_quagga,Quagga,herbivore,captive,Austria,feces
+X170_Tawny_Owl,Aves,Strigiformes,Strigidae,Strix,Strix_aluco,Tawny_Owl,carnivore,captive,Austria,gut
+X353_Raccoon,Mammalia,Carnivora,Procyonidae,Procyon,Procyon_lotor,Raccoon,omnivore,wild,Costa Rica,feces
+X155_Long_tailed_Field_Mouse,Mammalia,Rodentia,Muridae,Apodemus,Apodemus_sylvaticus,Long_tailed_Field_Mouse,omnivore,wild,Austria,gut
+X19_European_Ground_Squirrel,Mammalia,Rodentia,Sciuridae,Spermophilus,Spermophilus_citellus,European_Ground_Squirrel,omnivore,wild,Austria,feces
+X188_Brook_Trout,Actinopterygii,Salmoniformes,Salmonidae,Salvelinus,Salvelinus_fontinalis,Brook_Trout,carnivore,wild,Austria,feces
+X351_Grass_Snake,Reptilia,Squamata,Colubridae,Natrix,Natrix_natrix,Grass_Snake,carnivore,wild,Austria,feces
+X289_Eastern_Grey_Kangaroo,Mammalia,Diprotodontia,Macropodidae,Macropus,Macropus_giganteus,Eastern_Grey_Kangaroo,herbivore,wild,Australia,feces
+X117_Long_eared_Owl,Aves,Strigiformes,Strigidae,Asio,Asio_otus,Long_eared_Owl,carnivore,wild,Hungary,feces
+X115_Common_Kestrel,Aves,Falconiformes,Falconidae,Falco,Falco_tinnunculus,Common_Kestrel,carnivore,wild,Hungary,gut
+X238_Hanuman_Langur,Mammalia,Primates,Cercopithecidae,Trachypithecus,Trachypithecus_hatinhensis,Hanuman_Langur,herbivore,wild,Viet Nam,feces
+X112_Eurasian_Sparrowhawk,Aves,Falconiformes,Accipitridae,Accipiter,Accipiter_nisus,Eurasian_Sparrowhawk,carnivore,wild,Hungary,gut
+X277_Common_Zingel,Actinopterygii,Perciformes,Percidae,Zingel,Zingel_zingel,Common_Zingel,carnivore,wild,Austria,gut
+X180_Roach,Actinopterygii,Cypriniformes,Cyprinidae,Rutilus,Rutilus_rutilus,Roach,omnivore,wild,Austria,gut
+X119_Ural_Owl,Aves,Strigiformes,Strigidae,Strix,Strix_uralensis,Ural_Owl,carnivore,wild,Austria,feces
+X281_Tammar_Wallaby,Mammalia,Diprotodontia,Macropodidae,Macropus,Macropus_eugenii,Tammar_Wallaby,herbivore,wild,Australia,feces
+X212_Goose,Aves,Anseriformes,Anatidae,Anser,Anser_anser,Goose,herbivore,wild,Austria,feces
+X136_Domestic_Pig,Mammalia,Artiodactyla,Suidae,Sus,Sus_scrofa,Domestic_Pig,omnivore,captive,Austria,feces
+X247_Common_Hamster,Mammalia,Rodentia,Cricetidae,Cricetus,Cricetus_cricetus,Common_Hamster,omnivore,wild,Austria,feces
+X126_White_Stork,Aves,Ciconiiformes,Ciconiidae,Ciconia,Ciconia_ciconia,White_Stork,carnivore,wild,Hungary,feces
+X374_fail_Least_Weasel,Mammalia,Carnivora,Mustelidae,Mustela,Mustela_nivalis,Least_Weasel,carnivore,wild,Austria,gut
+X282_Inland_Forest_Bat,Mammalia,Chiroptera,Vespertilionidae,Vespadelus,Eptesicus_baverstocki,Inland_Forest_Bat,carnivore,wild,Australia,feces
+X215_Goose,Aves,Anseriformes,Anatidae,Anser,Anser_anser,Goose,herbivore,wild,Austria,feces
+X394_Przewalski_horse,Mammalia,Perissodactyla,Equidae,Equus,Equus_caballus,Przewalski_horse,herbivore,wild,Mongolia,feces
+X325_Asp,Actinopterygii,Cypriniformes,Cyprinidae,Aspius,Aspius_aspius,Asp,carnivore,wild,Austria,feces
+X41_Pika,Mammalia,Lagomorpha,Leporidae,Lepus,Lepus_tolai,Pika,herbivore,wild,Mongolia,feces
+X287_Common_Brushtail,Mammalia,Diprotodontia,Phalangeridae,Trichosurus,Trichosurus_vulpecula,Common_Brushtail,omnivore,wild,Australia,feces
+X22_European_Rabbit,Mammalia,Lagomorpha,Leporidae,Oryctolagus,Oryctolagus_cuniculus,European_Rabbit,herbivore,captive,Austria,feces
+X23_Garden_Dormouse,Mammalia,Rodentia,Gliridae,Eliomys,Eliomys_quercinus,Garden_Dormouse,omnivore,captive,Austria,feces
+X43_European_Badger,Mammalia,Carnivora,Mustelidae,Meles,Meles_meles,European_Badger,omnivore,wild,Austria,feces
+X2_Raccoon_Dog,Mammalia,Carnivora,Canidae,Nyctereutes,Nyctereutes_procyonoides,Raccoon_Dog,omnivore,wild,Austria,feces
+X251_fail_Slow_Worm,Reptilia,Squamata,Anguidae,Anguis,Anguis_fragilis,Slow_Worm,carnivore,wild,Austria,gut
+X91_Dunnock,Aves,Passeriformes,Passeridae,Prunella,Prunella_modularis,Dunnock,omnivore,wild,Austria,feces
+X193_fail_Common_Frog,Amphibia,Anura,Ranidae,Rana,Rana_temporaria,Common_Frog,carnivore,wild,Austria,feces
+X36_Agile_Frog,Amphibia,Anura,Ranidae,Rana,Rana_dalmatina,Agile_Frog,carnivore,wild,Austria,feces
+X237_Red_shanked_Douc_Langur,Mammalia,Primates,Cercopithecidae,Pygathrix,Pygathrix_nemaeus,Red_shanked_Douc_Langur,herbivore,wild,Viet Nam,feces
+X288_Common_Brushtail,Mammalia,Diprotodontia,Phalangeridae,Trichosurus,Trichosurus_vulpecula,Common_Brushtail,omnivore,wild,Australia,feces
+X50_Song_Thrush,Aves,Passeriformes,Turdidae,Turdus,Turdus_philomelos,Song_Thrush,omnivore,wild,Austria,feces
+X32_Greylag_Goose,Aves,Anseriformes,Anatidae,Anser,Anser_anser,Greylag_Goose,herbivore,wild,Austria,feces
+X42_Goitered_Gazelle,Mammalia,Artiodactyla,Bovidae,Gazella,Gazella_subgutturosa,Goitered_Gazelle,herbivore,wild,Mongolia,feces
+X340_Western_Lowland_Gorilla,Mammalia,Primates,Hominidae,Gorilla,Gorilla_gorilla,Western_Lowland_Gorilla,herbivore,wild,Republic of the Congo,feces
+X356_Northern_Tamandua,Mammalia,Pilosa,Myrmecophagidae,Tamandua,Tamandua_mexicana,Northern_Tamandua,carnivore,wild,,feces
+X396_Morelets_crocodile,Reptilia,Crocodilia,Crocodylidae,Crocodylus,Crocodylus_moreletii,Morelets_crocodile,carnivore,captive,Austria,feces
+X372_Emu,Aves,Struthioniformes,Dromaiidae,Dromaius,Dromaius_novaehollandiae,Emu,omnivore,captive,Austria,feces
+X141_Red_cheeked_Gibbon,Mammalia,Primates,Hylobatidae,Nomascus,Nomascus_gabriellae,Red_cheeked_Gibbon,omnivore,wild,Viet Nam,feces
+X341_Western_Lowland_Gorilla,Mammalia,Primates,Hominidae,Gorilla,Gorilla_gorilla,Western_Lowland_Gorilla,herbivore,wild,Republic of the Congo,feces
+X421_Common_Hippopotamus,Mammalia,Artiodactyla,Hippopotamidae,Hippopotamus,Hippopotamus_amphibius,Common_Hippopotamus,herbivore,wild,East Africa,feces
+X139_Sambar,Mammalia,Artiodactyla,Cervidae,Cervus,Cervus_unicolor,Sambar,herbivore,wild,Viet Nam,feces
+X127_Alpine_Marmot,Mammalia,Rodentia,Sciuridae,Marmota,Marmota_marmota,Alpine_Marmot,herbivore,wild,Austria,feces
+X339_White_beaked_Dolphin,Mammalia,Cetacea,Delphinidae,Lagenorhynchus,Lagenorhynchus_albirostris,White_beaked_Dolphin,carnivore,wild,England,feces
+X327_Silver_Bream,Actinopterygii,Cypriniformes,Cyprinidae,Blicca,Blicca_bjoerkna,Silver_Bream,omnivore,wild,Austria,feces
+X194_Agile_Frog,Amphibia,Anura,Ranidae,Rana,Rana_dalmatina,Agile_Frog,carnivore,wild,Austria,feces
+X280_Western_Grey_Kangaroo,Mammalia,Diprotodontia,Macropodidae,Macropus,Macropus_fuliginosus,Western_Grey_Kangaroo,herbivore,wild,Australia,feces
+X182_fail_Common_Nase,Actinopterygii,Cypriniformes,Cyprinidae,Chondrostoma,Chondrostoma_nasus,Common_Nase,omnivore,wild,Austria,gut
+X192_Common_Frog,Amphibia,Anura,Ranidae,Rana,Rana_temporaria,Common_Frog,carnivore,wild,Austria,feces
+X409_Impala,Mammalia,Artiodactyla,Bovidae,Aepyceros,Aepyceros_melampus,Impala,herbivore,wild,South Africa,feces
+X335_Harbor_Seal,Mammalia,Carnivora,Phocidae,Phoca,Phoca_vitulina,Harbor_Seal,carnivore,wild,England,feces
+X417_Giraffe,Mammalia,Artiodactyla,Giraffidae,Giraffa,Giraffa_camelopardalis,Giraffe,herbivore,wild,East Africa,feces
+X62_fail1_Common_Rudd,Actinopterygii,Cypriniformes,Cyprinidae,Scardinius,Scardinius_erythrophthalmus,Common_Rudd,omnivore,wild,Austria,feces
+X1_Eurasian_Beaver,Mammalia,Rodentia,Castoridae,Castor,Castor_fiber,Eurasian_Beaver,herbivore,wild,Austria,feces
+X342_European_Green_Toad,Amphibia,Anura,Bufonidae,Bufo,Bufo_viridis,European_Green_Toad,carnivore,wild,Austria,feces
+X403_Chacma_Baboon,Mammalia,Primates,Cercopithecidae,Papio,Papio_ursinus,Chacma_Baboon,omnivore,wild,South Africa,feces
+XF157a_European_Toad,Amphibia,Anura,Bufonidae,Bufo,Bufo_bufo,European_Toad,carnivore,wild,Austria,feces
+XF42_Fallow_Deer,Mammalia,Artiodactyla,Cervidae,Dama,Dama_dama,Fallow_Deer,herbivore,wild,Austria,feces
+X361_fail_Common_Opossum,Mammalia,Didelphimorphia,Didelphidae,Didelphis,Didelphis_marsupialis,Common_Opossum,omnivore,wild,Costa Rica,gut
+X402_fail_Blue_Wildebeest,Mammalia,Artiodactyla,Bovidae,Connochaetes,Connochaetes_taurinus,Blue_Wildebeest,herbivore,wild,South Africa,feces
+X116_Common_Kestrel,Aves,Falconiformes,Falconidae,Falco,Falco_tinnunculus,Common_Kestrel,carnivore,wild,Hungary,gut
+X332_Harbor_Porpoise,Mammalia,Cetacea,Phocoenidae,Phocoena,Phocoena_phocoena,Harbor_Porpoise,carnivore,wild,England,feces
+X326_Silver_Bream,Actinopterygii,Cypriniformes,Cyprinidae,Blicca,Blicca_bjoerkna,Silver_Bream,omnivore,wild,Austria,feces
+X213_Goose,Aves,Anseriformes,Anatidae,Anser,Anser_anser,Goose,herbivore,wild,Austria,feces
+X250_Common_Nase,Actinopterygii,Cypriniformes,Cyprinidae,Chondrostoma,Chondrostoma_nasus,Common_Nase,omnivore,wild,Austria,feces
+X259_Mute_Swan,Aves,Anseriformes,Anatidae,Cygnus,Cygnus_olor,Mute_Swan,omnivore,wild,Hungary,feces
+X33_Wild_Turkey,Aves,Galliformes,Phasianidae,Meleagris,Meleagris_gallopavo,Wild_Turkey,omnivore,wild,Austria,feces
+X404_Brown_Greater_Galago,Mammalia,Primates,Galagidae,Otolemur,Otolemur_crassicaudatus,Brown_Greater_Galago,omnivore,wild,South Africa,feces
+X432_Vervet_Monkey,Mammalia,Primates,Cercopithecidae,Chlorocebus,Chlorocebus_pygerythrus,Vervet_Monkey,omnivore,captive,Austria,feces
+X266_Western_Marsh_Harrier,Aves,Falconiformes,Accipitridae,Circus,Circus_aeruginosus,Western_Marsh_Harrier,carnivore,wild,Austria,gut
+X15_Tawny_Owl,Aves,Strigiformes,Strigidae,Strix,Strix_aluco,Tawny_Owl,carnivore,wild,Austria,gut
+X133_Domestic_Goat,Mammalia,Artiodactyla,Bovidae,Capra,Capra_hircus,Domestic_Goat,herbivore,captive,Austria,feces
+X410_Impala,Mammalia,Artiodactyla,Bovidae,Aepyceros,Aepyceros_melampus,Impala,herbivore,wild,South Africa,feces
+X383_Arctic_Wolf,Mammalia,Carnivora,Canidae,Canis,Canis_lupus,Arctic_Wolf,carnivore,captive,Austria,feces
+X83_Common_Rudd,Actinopterygii,Cypriniformes,Cyprinidae,Scardinius,Scardinius_erythrophthalmus,Common_Rudd,omnivore,wild,Austria,feces
+XF300_Asp,Actinopterygii,Cypriniformes,Cyprinidae,Aspius,Aspius_aspius,Asp,carnivore,wild,Austria,feces
+X235_Pygmy_Slow_Loris,Mammalia,Primates,Lorisidae,Nycticebus,Nycticebus_pygmaeus,Pygmy_Slow_Loris,omnivore,wild,Viet Nam,feces
+X239_Delacours_Langur,Mammalia,Primates,Cercopithecidae,Trachypithecus,Trachypithecus_delacouri,Delacours_Langur,herbivore,wild,Viet Nam,feces
+X272_Black_Grouse,Aves,Galliformes,Phasianidae,Lyrurus,Lyrurus_tetrix,Black_Grouse,omnivore,wild,Austria,feces
+X131_Rock_Ptarmigan,Aves,Galliformes,Phasianidae,Lagopus,Lagopus_muta,Rock_Ptarmigan,omnivore,wild,Austria,feces
+X286_Short_beaked_Echidna,Mammalia,Monotremata,Tachyglossidae,Tachyglossus,Tachyglossus_aculeatus,Short_beaked_Echidna,carnivore,wild,Australia,feces
+X73_One_humped_Camel,Mammalia,Artiodactyla,Camelidae,Camelus,Camelus_dromedarius,One_humped_Camel,herbivore,captive,Austria,feces
+X359_Brown_throated_Sloth,Mammalia,Pilosa,Bradypodidae,Bradypus,Bradypus_variegatus,Brown_throated_Sloth,herbivore,wild,,feces
+X344_Indian_Rhinoceros,Mammalia,Perissodactyla,Rhinocerotidae,Rhinoceros,Rhinoceros_unicornis,Indian_Rhinoceros,herbivore,wild,Nepal,feces
+X121_Raccoon_Dog,Mammalia,Carnivora,Canidae,Nyctereutes,Nyctereutes_procyonoides,Raccoon_Dog,omnivore,wild,Austria,feces
+X16_Fat_Dormouse,Mammalia,Rodentia,Gliridae,Glis,Glis_glis,Fat_Dormouse,omnivore,captive,Austria,feces
+X285_Short_beaked_Echidna,Mammalia,Monotremata,Tachyglossidae,Tachyglossus,Tachyglossus_aculeatus,Short_beaked_Echidna,carnivore,wild,Australia,feces
+X283_Koala,Mammalia,Diprotodontia,Phascolarctidae,Phascolarctos,Phascolarctos_cinereus,Koala,herbivore,wild,Australia,feces
+X257_Eurasian_Woodcock,Aves,Charadriiformes,Scolopacidae,Scolopax,Scolopax_rusticola,Eurasian_Woodcock,omnivore,wild,Hungary,feces
+X244_Common_House_Martin,Aves,Passeriformes,Hirundinidae,Delichon,Delichon_urbicum,Common_House_Martin,carnivore,wild,Austria,feces
+X369_Koala,Mammalia,Diprotodontia,Phascolarctidae,Phascolarctos,Phascolarctos_cinereus,Koala,herbivore,captive,Austria,feces
+X384_Eurasian_Lynx,Mammalia,Carnivora,Felidae,Lynx,Lynx_lynx,Eurasian_Lynx,carnivore,captive,Austria,feces
+X265_Western_Marsh_Harrier,Aves,Falconiformes,Accipitridae,Circus,Circus_aeruginosus,Western_Marsh_Harrier,carnivore,wild,Austria,gut
+X368_European_Ground_Squirrel,Mammalia,Rodentia,Sciuridae,Spermophilus,Spermophilus_citellus,European_Ground_Squirrel,omnivore,captive,Austria,feces
+X164_Greylag_Goose,Aves,Anseriformes,Anatidae,Anser,Anser_anser,Greylag_Goose,herbivore,wild,Germany,feces
+X63_fail1_European_Perch,Actinopterygii,Perciformes,Percidae,Perca,Perca_fluviatilis,European_Perch,carnivore,wild,Austria,feces
+X67_European_Roe,Mammalia,Artiodactyla,Cervidae,Capreolus,Capreolus_capreolus,European_Roe,herbivore,wild,Austria,feces
+X203_Red_Deer,Mammalia,Artiodactyla,Cervidae,Cervus,Cervus_elaphus,Red_Deer,herbivore,wild,Austria,feces
+X376_Kulan,Mammalia,Perissodactyla,Equidae,Equus,Equus_hemionus,Kulan,herbivore,wild,Mongolia,feces
+X329_Bleak,Actinopterygii,Cypriniformes,Cyprinidae,Alburnus,Alburnus_alburnus,Bleak,omnivore,wild,Austria,feces
+X111_West_European_Hedgehog,Mammalia,Insectivora,Erinaceidae,Erinaceus,Erinaceus_europaeus,West_European_Hedgehog,carnivore,wild,Hungary,feces
+X292_Central_Bearded_Dragon,Reptilia,Squamata,Agamidae,Pogona,Pogona_vitticeps,Central_Bearded_Dragon,omnivore,wild,Australia,feces
+X190_Common_House_Gecko,Reptilia,Squamata,Gekkonidae,Hemidactylus,Hemidactylus_frenatus,Common_House_Gecko,carnivore,wild,Viet Nam,feces
+X252_Eurasian_Lynx,Mammalia,Carnivora,Felidae,Lynx,Lynx_lynx,Eurasian_Lynx,carnivore,wild,Austria,feces
+X378_Fat_Sand_Rat,Mammalia,Rodentia,Muridae,Psammomys,Psammomys_obesus,Fat_Sand_Rat,herbivore,captive,Austria,feces
+X198_Human,Mammalia,Primates,Hominidae,Homo,Homo_sapiens,Human,omnivore,human,Austria,feces
+X195_Domestic_Cat,Mammalia,Carnivora,Felidae,Felis,Felis_catus,Domestic_Cat,carnivore,captive,Austria,feces
+X381_Wild_Boar,Mammalia,Artiodactyla,Suidae,Sus,Sus_scrofa,Wild_Boar,omnivore,captive,Austria,feces
+X89_Fat_Dormouse,Mammalia,Rodentia,Gliridae,Glis,Glis_glis,Fat_Dormouse,omnivore,wild,Austria,feces
+X268_Rook,Aves,Passeriformes,Corvidae,Corvus,Corvus_frugilegus,Rook,omnivore,wild,Austria,feces
+X236_Pygmy_Slow_Loris,Mammalia,Primates,Lorisidae,Nycticebus,Nycticebus_pygmaeus,Pygmy_Slow_Loris,omnivore,wild,Viet Nam,feces
+X90_Water_Rail,Aves,Gruiformes,Rallidae,Rallus,Rallus_aquaticus,Water_Rail,omnivore,wild,Austria,feces
+X230_Carrion_Crow,Aves,Passeriformes,Corvidae,Corvus,Corvus_corone,Carrion_Crow,omnivore,wild,Austria,gut
+X392_House_Mouse,Mammalia,Rodentia,Muridae,Mus,Mus_musculus,House_Mouse,omnivore,wild,Austria,gut
+X4_Red_Fox,Mammalia,Carnivora,Canidae,Vulpes,Vulpes_vulpes,Red_Fox,omnivore,wild,Germany,feces
+X124_Golden_Jackal,Mammalia,Carnivora,Canidae,Canis,Canis_aureus,Golden_Jackal,carnivore,wild,Austria,feces
+X354_Hoffmanns_Two_toed_Sloth,Mammalia,Pilosa,Megalonychidae,Choloepus,Choloepus_hoffmanni,Hoffmanns_Two_toed_Sloth,herbivore,wild,,feces
+X232_fail_Brown_Trout,Actinopterygii,Salmoniformes,Salmonidae,Salmo,Salmo_trutta,Brown_Trout,carnivore,wild,Austria,gut
+X96_European_Hare,Mammalia,Lagomorpha,Leporidae,Lepus,Lepus_europaeus,European_Hare,herbivore,wild,Austria,feces
+X367_fail_Dusky_Melanomys,Mammalia,Rodentia,Muridae,Melanomys,Melanomys_caliginosus,Dusky_Melanomys,omnivore,wild,Costa Rica,gut
+X78_Indian_Gazelle,Mammalia,Artiodactyla,Bovidae,Gazella,Gazella_bennettii,Indian_Gazelle,herbivore,wild,Iran,feces
+X415_White_Rhinoceros,Mammalia,Perissodactyla,Rhinocerotidae,Ceratotherium,Ceratotherium_simum,White_Rhinoceros,herbivore,wild,South Africa,feces
+X346_Ground_Pangolin,Mammalia,Pholidota,Manidae,Manis,Manis_temminckii,Ground_Pangolin,carnivore,wild,South Africa,feces
+X81_Wolf,Mammalia,Carnivora,Canidae,Canis,Canis_lupus,Wolf,carnivore,wild,Mongolia,feces
+X246_Great_Spotted_Woodpecker,Aves,Piciformes,Picidae,Dendrocopos,Dendrocopos_major,Great_Spotted_Woodpecker,omnivore,wild,Austria,feces
+X331_Harbor_Porpoise,Mammalia,Cetacea,Phocoenidae,Phocoena,Phocoena_phocoena,Harbor_Porpoise,carnivore,wild,Wales,feces
+X196_Domestic_Cat,Mammalia,Carnivora,Felidae,Felis,Felis_catus,Domestic_Cat,carnivore,captive,Austria,feces
+X426_Ural_Owl,Aves,Strigiformes,Strigidae,Strix,Strix_uralensis,Ural_Owl,carnivore,captive,Austria,feces
+X183_European_Chub,Actinopterygii,Cypriniformes,Cyprinidae,Leuciscus,Leuciscus_cephalus,European_Chub,omnivore,wild,Austria,gut
+X427_Great_Spotted_Woodpecker,Aves,Piciformes,Picidae,Dendrocopos,Dendrocopos_major,Great_Spotted_Woodpecker,omnivore,captive,Austria,feces
+X200_Human,Mammalia,Primates,Hominidae,Homo,Homo_sapiens,Human,omnivore,human,Austria,feces
+XF157b_European_Toad,Amphibia,Anura,Bufonidae,Bufo,Bufo_bufo,European_Toad,carnivore,wild,Austria,feces
+X241_Italian_wall_lizard,Reptilia,Squamata,Lacertidae,Podarcis,Podarcis_siculus,Italian_wall_lizard,carnivore,wild,Croatia,feces
+XF14_Common_Bream,Actinopterygii,Cypriniformes,Cyprinidae,Abramis,Abramis_brama,Common_Bream,omnivore,wild,Austria,feces
+XF90_Domestic_Dog,Mammalia,Carnivora,Canidae,Canis,Canis_lupus,Domestic_Dog,carnivore,captive,Austria,feces
+X300_Shy_Heathwren,Aves,Passeriformes,Acanthizidae,Hylacola,Hylacola_cauta,Shy_Heathwren,omnivore,wild,Australia,feces
+X240_Southern_White_cheeked_Gibbon,Mammalia,Primates,Hylobatidae,Nomascus,Nomascus_siki,Southern_White_cheeked_Gibbon,herbivore,wild,Viet Nam,feces
+X382_Arctic_Wolf,Mammalia,Carnivora,Canidae,Canis,Canis_lupus,Arctic_Wolf,carnivore,captive,Austria,feces
+X159_White_tailed_Eagle,Aves,Falconiformes,Accipitridae,Haliaeetus,Haliaeetus_albicilla,White_tailed_Eagle,carnivore,wild,Austria,gut
+X328_Prussian_Carp,Actinopterygii,Cypriniformes,Cyprinidae,Carassius,Carassius_gibelio,Prussian_Carp,omnivore,wild,Austria,feces
+X72_Ural_Owl,Aves,Strigiformes,Strigidae,Strix,Strix_uralensis,Ural_Owl,carnivore,wild,Austria,feces
+X275_Barnacle_Goose,Aves,Anseriformes,Anatidae,Branta,Branta_leucopsis,Barnacle_Goose,herbivore,wild,Germany,feces
+X298_Horsfields_Bronze_Cuckoo,Aves,Cuculiformes,Cuculidae,Chrysococcyx,Chrysococcyx_basalis,Horsfields_Bronze_Cuckoo,carnivore,wild,Australia,feces
+X5_European_Hare,Mammalia,Lagomorpha,Leporidae,Lepus,Lepus_europaeus,European_Hare,herbivore,wild,Austria,feces
+X357_Northern_Tamandua,Mammalia,Pilosa,Myrmecophagidae,Tamandua,Tamandua_mexicana,Northern_Tamandua,carnivore,wild,,feces
+X371_Linnaeus_Two_toed_Sloth,Mammalia,Pilosa,Megalonychidae,Choloepus,Choloepus_didactylus,Linnaeus_Two_toed_Sloth,herbivore,captive,Austria,feces
+X152_Tree_Shrew,Mammalia,Scandentia,Tupaiidae,Tupaia,Tupaia_belangeri,Tree_Shrew,omnivore,captive,Austria,feces
+X13_Wolf,Mammalia,Carnivora,Canidae,Canis,Canis_lupus,Wolf,carnivore,wild,Austria,feces
+X411_Leopard,Mammalia,Carnivora,Felidae,Panthera,Panthera_pardus,Leopard,carnivore,wild,South Africa,feces
+X398_Eurasian_Reed_Warbler,Aves,Passeriformes,Sylviidae,Acrocephalus,Acrocephalus_scirpaceus,Eurasian_Reed_Warbler,omnivore,captive,Austria,feces
+X425_Emu,Aves,Struthioniformes,Dromaiidae,Dromaius,Dromaius_novaehollandiae,Emu,omnivore,captive,Austria,feces
+X263_White_Stork,Aves,Ciconiiformes,Ciconiidae,Ciconia,Ciconia_ciconia,White_Stork,carnivore,wild,Hungary,feces
+X333_Gray_Seal,Mammalia,Carnivora,Phocidae,Halichoerus,Halichoerus_grypus,Gray_Seal,carnivore,wild,England,feces
+X413_Lion,Mammalia,Carnivora,Felidae,Panthera,Panthera_leo,Lion,carnivore,wild,South Africa,feces
+X197_Human,Mammalia,Primates,Hominidae,Homo,Homo_sapiens,Human,omnivore,human,Austria,feces
+X44_Meadow_Viper,Reptilia,Squamata,Viperidae,Vipera,Vipera_ursinii,Meadow_Viper,carnivore,wild,Hungary,feces
+XF302_Northern_Pike,Actinopterygii,Esociformes,Esocidae,Esox,Esox_lucius,Northern_Pike,carnivore,wild,Austria,feces
+X109_Red_Fox,Mammalia,Carnivora,Canidae,Vulpes,Vulpes_vulpes,Red_Fox,omnivore,wild,Austria,feces
+X264_Eurasian_Magpie,Aves,Passeriformes,Corvidae,Pica,Pica_pica,Eurasian_Magpie,omnivore,wild,Hungary,feces
+X85_Domestic_Dog,Mammalia,Carnivora,Canidae,Canis,Canis_lupus,Domestic_Dog,carnivore,captive,Austria,feces
+XF241_Great_Cormorant,Aves,Pelecaniformes,Phalacrocoracidae,Phalacrocorax,Phalacrocorax_carbo,Great_Cormorant,carnivore,wild,Austria,feces
+X363_Desmarests_Spiny_Pocket_Mouse,Mammalia,Rodentia,Heteromyidae,Heteromys,Heteromys_desmarestianus,Desmarests_Spiny_Pocket_Mouse,omnivore,wild,Costa Rica,gut
+X87_Garden_Dormouse,Mammalia,Rodentia,Gliridae,Eliomys,Eliomys_quercinus,Garden_Dormouse,omnivore,wild,Austria,feces
+X301_European_Hare,Mammalia,Lagomorpha,Leporidae,Lepus,Lepus_europaeus,European_Hare,herbivore,wild,Austria,feces
+X46_European_Nightjar,Aves,Caprimulgiformes,Caprimulgidae,Caprimulgus,Caprimulgus_europaeus,European_Nightjar,carnivore,wild,Austria,feces
+X191_Common_House_Gecko,Reptilia,Squamata,Gekkonidae,Hemidactylus,Hemidactylus_frenatus,Common_House_Gecko,carnivore,wild,Viet Nam,feces
+X95_Meadow_Viper,Reptilia,Squamata,Viperidae,Vipera,Vipera_ursinii,Meadow_Viper,carnivore,wild,Hungary,feces
+X103_Eurasian_Blackcap,Aves,Passeriformes,Sylviidae,Sylvia,Sylvia_atricapilla,Eurasian_Blackcap,omnivore,wild,Austria,feces
+XF141_Wood_Sandpiper,Aves,Charadriiformes,Scolopacidae,Tringa,Tringa_glareola,Wood_Sandpiper,carnivore,wild,Austria,feces
+X297_Horsfields_Bronze_Cuckoo,Aves,Cuculiformes,Cuculidae,Chrysococcyx,Chrysococcyx_basalis,Horsfields_Bronze_Cuckoo,carnivore,wild,Australia,feces
+X172_European_Greenfinch,Aves,Passeriformes,Fringillidae,Carduelis,Carduelis_chloris,European_Greenfinch,omnivore,wild,Hungary,feces
+X347_Brown_Bear,Mammalia,Carnivora,Ursidae,Ursus,Ursus_arctos,Brown_Bear,omnivore,captive,Austria,feces
+X157_Grey_Heron,Aves,Ciconiiformes,Ardeidae,Ardea,Ardea_cinerea,Grey_Heron,carnivore,wild,Austria,gut
+X18_West_European_Hedgehog,Mammalia,Insectivora,Erinaceidae,Erinaceus,Erinaceus_europaeus,West_European_Hedgehog,carnivore,wild,Austria,feces
+X299_fail_Chestnut_rumped_Thornbill,Aves,Passeriformes,Pardalotidae,Acanthiza,Acanthiza_uropygialis,Chestnut_rumped_Thornbill,carnivore,wild,Australia,feces
+X243_Noctule,Mammalia,Chiroptera,Vespertilionidae,Nyctalus,Nyctalus_noctula,Noctule,carnivore,wild,Austria,feces
+X355_Hoffmanns_Two_toed_Sloth,Mammalia,Pilosa,Megalonychidae,Choloepus,Choloepus_hoffmanni,Hoffmanns_Two_toed_Sloth,herbivore,wild,,feces
+X276_Barnacle_Goose,Aves,Anseriformes,Anatidae,Branta,Branta_leucopsis,Barnacle_Goose,herbivore,wild,Germany,feces
+X199_Human,Mammalia,Primates,Hominidae,Homo,Homo_sapiens,Human,omnivore,human,Austria,feces
+X256_Zander,Actinopterygii,Perciformes,Percidae,Sander,Sander_lucioperca,Zander,carnivore,wild,Austria,feces
+X84_Common_Chiffchaff,Aves,Passeriformes,Sylviidae,Phylloscopus,Phylloscopus_collybita,Common_Chiffchaff,omnivore,wild,Austria,feces

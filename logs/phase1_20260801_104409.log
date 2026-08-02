@@ -1,0 +1,133 @@
+10:44:09 | INFO    | ==============================================================================
+10:44:09 | INFO    | PHASE 1: DATA INGESTION & SPECIES OVERLAP CHECK
+10:44:09 | INFO    | ==============================================================================
+10:44:09 | INFO    | Run started : 2026-08-01T10:44:09.953880
+10:44:09 | INFO    | Log file    : /sessions/kind-brave-cori/mnt/outputs/logs/phase1_20260801_104409.log
+10:44:09 | INFO    | Data sources: 5 registered
+10:44:09 | INFO    | 
+10:44:09 | INFO    | --- Loading source: vincze2022_cancer ---
+10:44:09 | INFO    | Citation   : Vincze et al. 2022, Nature 601:263-267 - Cancer risk across mammals
+10:44:09 | INFO    | Source URL : https://raw.githubusercontent.com/OrsolyaVincze/VinczeEtal2021Nature/main/data.csv
+10:44:09 | DEBUG   | Local file : /sessions/kind-brave-cori/mnt/outputs/data/raw/vincze2022_cancer_mortality.csv
+10:44:09 | INFO    | Rows read            : 191
+10:44:09 | INFO    | Unique species names  : 191
+10:44:09 | INFO    | Species count matches paper's reported n (191). OK.
+10:44:09 | INFO    | 
+10:44:09 | INFO    | --- Loading source: compton2020_cancer ---
+10:44:09 | INFO    | Citation   : Compton/Boddy et al. 2020, Evolution Medicine & Public Health - Lifetime cancer prevalence and life history traits in mammals (PMC7652303)
+10:44:09 | INFO    | Source URL : https://pmc.ncbi.nlm.nih.gov/articles/instance/7652303/bin/eoaa015_supplementary_data.zip
+10:44:09 | DEBUG   | Local file : /sessions/kind-brave-cori/mnt/outputs/data/raw/compton2020_cancer_prevalence.csv
+10:44:10 | INFO    | Rows read            : 37
+10:44:10 | INFO    | Unique species names  : 37
+10:44:10 | INFO    | Species count matches paper's reported n (37). OK.
+10:44:10 | INFO    | 
+10:44:10 | INFO    | --- Loading source: manor2020_microbiome ---
+10:44:10 | INFO    | Citation   : Manor et al. 2020, Applied and Environmental Microbiology 86:e01864-20 - Multi-omics Approaches To Decipher the Impact of Diet and Host Physiology on the Mammalian Gut Microbiome
+10:44:10 | INFO    | Source URL : https://journals.asm.org/doi/10.1128/aem.01864-20
+10:44:10 | DEBUG   | Local file : /sessions/kind-brave-cori/mnt/outputs/data/raw/manor2020_host_species.csv
+10:44:10 | INFO    | Rows read            : 77
+10:44:10 | INFO    | Unique species names  : 77
+10:44:10 | INFO    | Species count matches paper's reported n (77). OK.
+10:44:10 | INFO    | 
+10:44:10 | INFO    | --- Loading source: youngblut2020_microbiome ---
+10:44:10 | INFO    | Citation   : Youngblut et al. 2020, mSystems 5:e01045-20 - Large-Scale Metagenome Assembly Reveals Novel Animal-Associated Microbial Genomes...
+10:44:10 | INFO    | Source URL : https://github.com/leylabmpi/animal_gut_metagenome_assembly
+10:44:10 | DEBUG   | Local file : /sessions/kind-brave-cori/mnt/outputs/data/raw/youngblut2020_host_species.csv
+10:44:10 | INFO    | Rows read            : 289
+10:44:10 | INFO    | Unique species names  : 180
+10:44:10 | INFO    | Species count matches paper's reported n (180). OK.
+10:44:10 | INFO    | 
+10:44:10 | INFO    | --- Loading source: guo2022_metabolome ---
+10:44:10 | INFO    | Citation   : Gregor/Guo et al. 2022, The ISME Journal 16:1262-1274 - Mammalian gut metabolomes mirror microbiome composition and host phylogeny
+10:44:10 | INFO    | Source URL : https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000086131
+10:44:10 | DEBUG   | Local file : /sessions/kind-brave-cori/mnt/outputs/data/raw/guo2022_host_species.csv
+10:44:10 | INFO    | Rows read            : 101
+10:44:10 | INFO    | Unique species names  : 25
+10:44:10 | INFO    | Species count matches paper's reported n (25). OK.
+10:44:10 | INFO    | 
+10:44:10 | INFO    | ==============================================================================
+10:44:10 | INFO    | SOURCE AVAILABILITY SUMMARY
+10:44:10 | INFO    | ==============================================================================
+10:44:10 | INFO    | Loaded this run (5/5): ['vincze2022_cancer', 'compton2020_cancer', 'manor2020_microbiome', 'youngblut2020_microbiome', 'guo2022_metabolome']
+10:44:10 | INFO    | Needs manual download (0/5): []
+10:44:10 | INFO    | 
+10:44:10 | INFO    | ==============================================================================
+10:44:10 | INFO    | NORMALIZING SPECIES NAMES
+10:44:10 | INFO    | ==============================================================================
+10:44:10 | INFO    | vincze2022_cancer: 191 raw name(s) -> 191 unique binomial(s) (0 subspecies collapsed onto an existing binomial)
+10:44:10 | INFO    | compton2020_cancer: 37 raw name(s) -> 37 unique binomial(s) (0 subspecies collapsed onto an existing binomial)
+10:44:10 | INFO    | manor2020_microbiome: 77 raw name(s) -> 73 unique binomial(s) (4 subspecies collapsed onto an existing binomial)
+10:44:10 | INFO    | youngblut2020_microbiome: 180 raw name(s) -> 180 unique binomial(s) (0 subspecies collapsed onto an existing binomial)
+10:44:10 | INFO    | guo2022_metabolome: 25 raw name(s) -> 24 unique binomial(s) (1 subspecies collapsed onto an existing binomial)
+10:44:10 | INFO    | Total unique binomial species names across ALL loaded sources: 398
+10:44:10 | INFO    | 
+10:44:10 | INFO    | ==============================================================================
+10:44:10 | INFO    | OVERLAP CHECK: cancer-mortality data x microbiome/metabolome data
+10:44:10 | INFO    | ==============================================================================
+10:44:10 | INFO    | Species with cancer-mortality data     : 209  (from: ['vincze2022_cancer', 'compton2020_cancer'])
+10:44:10 | INFO    | Species with microbiome/metabolome data: 244  (from: ['manor2020_microbiome', 'youngblut2020_microbiome', 'guo2022_metabolome'])
+10:44:10 | INFO    | *** SPECIES IN BOTH (usable for downstream PGLS / pathway / FBA work): 55 ***
+10:44:10 | INFO    |     - Aepyceros melampus           [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Ammotragus lervia            [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Bison bonasus                [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Callimico goeldii            [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Callithrix pygmaea           [compton2020_cancer+manor2020_microbiome]
+10:44:10 | INFO    |     - Capra ibex                   [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Cervus elaphus               [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Choloepus didactylus         [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Connochaetes taurinus        [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Cricetus cricetus            [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Dama dama                    [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Equus asinus                 [compton2020_cancer+guo2022_metabolome]
+10:44:10 | INFO    |     - Equus hemionus               [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Equus quagga                 [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Eulemur macaco               [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Felis margarita              [guo2022_metabolome+vincze2022_cancer]
+10:44:10 | INFO    |     - Felis silvestris             [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Gazella subgutturosa         [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Giraffa camelopardalis       [manor2020_microbiome+vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Gorilla gorilla              [guo2022_metabolome+vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Hippopotamus amphibius       [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Hylobates lar                [guo2022_metabolome+vincze2022_cancer]
+10:44:10 | INFO    |     - Kobus megaceros              [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Lama glama                   [compton2020_cancer+manor2020_microbiome]
+10:44:10 | INFO    |     - Lemur catta                  [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Loxodonta africana           [compton2020_cancer+guo2022_metabolome+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Lutra lutra                  [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Lycaon pictus                [compton2020_cancer+guo2022_metabolome+manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Lynx lynx                    [manor2020_microbiome+vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Macaca fuscata               [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Macropus eugenii             [compton2020_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Macropus giganteus           [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Nasua nasua                  [guo2022_metabolome+manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Nycticebus pygmaeus          [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Odocoileus virginianus       [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Pan troglodytes              [guo2022_metabolome+manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Panthera leo                 [compton2020_cancer+guo2022_metabolome+manor2020_microbiome+vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Panthera onca                [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Panthera pardus              [guo2022_metabolome+manor2020_microbiome+vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Panthera tigris              [compton2020_cancer+guo2022_metabolome+manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Phascolarctos cinereus       [compton2020_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Phoca vitulina               [compton2020_cancer+vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Pongo pygmaeus               [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Procyon lotor                [compton2020_cancer+vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Pygathrix nemaeus            [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Saguinus imperator           [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Saguinus oedipus             [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Saimiri boliviensis          [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Sciurus vulgaris             [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Suricata suricatta           [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Syncerus caffer              [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Tupaia belangeri             [vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Ursus arctos                 [guo2022_metabolome+manor2020_microbiome+vincze2022_cancer+youngblut2020_microbiome]
+10:44:10 | INFO    |     - Varecia rubra                [manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    |     - Varecia variegata            [guo2022_metabolome+manor2020_microbiome+vincze2022_cancer]
+10:44:10 | INFO    | 
+10:44:10 | INFO    | Full species-by-source matrix written to : /sessions/kind-brave-cori/mnt/outputs/output/species_overlap_report.csv
+10:44:10 | INFO    | Overlap-only species list written to     : /sessions/kind-brave-cori/mnt/outputs/output/overlap_species_only.csv
+10:44:10 | INFO    | 
+10:44:10 | INFO    | ==============================================================================
+10:44:10 | INFO    | PHASE 1 COMPLETE
+10:44:10 | INFO    | ==============================================================================
+10:44:10 | INFO    | Full detailed log saved to: /sessions/kind-brave-cori/mnt/outputs/logs/phase1_20260801_104409.log
+10:44:10 | INFO    | All registered sources loaded. Next step: taxonomic name resolution (e.g. GBIF/NCBI Taxonomy) to catch near-miss synonyms this string-based normalizer can't, then move to Phase 2 (bioinformatics processing).

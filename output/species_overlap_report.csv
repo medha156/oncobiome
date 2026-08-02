@@ -1,0 +1,399 @@
+binomial_species,n_sources,vincze2022_cancer,compton2020_cancer,manor2020_microbiome,youngblut2020_microbiome,guo2022_metabolome,in_cancer_dataset,in_microbiome_dataset,overlap
+Abramis brama,1,,,,Abramis_brama,,False,True,False
+Acanthiza uropygialis,1,,,,Acanthiza_uropygialis,,False,True,False
+Accipiter nisus,1,,,,Accipiter_nisus,,False,True,False
+Acinonyx jubatus,2,Acinonyx_jubatus,Acinonyx_jubatus,,,,True,False,False
+Acrocephalus scirpaceus,1,,,,Acrocephalus_scirpaceus,,False,True,False
+Addax nasomaculatus,1,Addax_nasomaculatus,,,,,True,False,False
+Aepyceros melampus,2,Aepyceros_melampus,,,Aepyceros_melampus,,True,True,True
+African wild,1,,,African wild donkey,,,False,True,False
+Ailurus fulgens,1,Ailurus_fulgens,,,,,True,False,False
+Alburnus alburnus,1,,,,Alburnus_alburnus,,False,True,False
+Alces alces,2,Alces_alces,Alces_alces,,,,True,False,False
+Alouatta caraya,1,Alouatta_caraya,,,,,True,False,False
+Ammotragus lervia,2,Ammotragus_lervia,,Ammotragus lervia,,,True,True,True
+Anas crecca,1,,,,Anas_crecca,,False,True,False
+Anas platyrhynchos,1,,,,Anas_platyrhynchos,,False,True,False
+Anguis fragilis,1,,,,Anguis_fragilis,,False,True,False
+Anser anser,1,,,,Anser_anser,,False,True,False
+Antidorcas marsupialis,1,Antidorcas_marsupialis,,,,,True,False,False
+Antilocapra americana,2,Antilocapra_americana,Antilocapra_americana,,,,True,False,False
+Antilope cervicapra,1,Antilope_cervicapra,,,,,True,False,False
+Aonyx cinerea,1,Aonyx_cinerea,,,,,True,False,False
+Apodemus flavicollis,1,,,,Apodemus_flavicollis,,False,True,False
+Apodemus sylvaticus,2,,,Apodemus sylvaticus,Apodemus_sylvaticus,,False,True,False
+Arctictis binturong,1,Arctictis_binturong,,,,,True,False,False
+Arctocephalus pusillus,1,,,Arctocephalus pusillus pusillus,,,False,True,False
+Ardea cinerea,1,,,,Ardea_cinerea,,False,True,False
+Asiatic elephant,1,,,Asiatic elephant,,,False,True,False
+Asiatic tapir,1,,,Asiatic tapir,,,False,True,False
+Asio otus,1,,,,Asio_otus,,False,True,False
+Aspius aspius,1,,,,Aspius_aspius,,False,True,False
+Ateles fusciceps,1,Ateles_fusciceps,,,,,True,False,False
+Ateles geoffroyi,1,Ateles_geoffroyi,,,,,True,False,False
+Axis axis,1,Axis_axis,,,,,True,False,False
+Axis porcinus,1,Axis_porcinus,,,,,True,False,False
+Balaenoptera borealis,1,,,,Balaenoptera_borealis,,False,True,False
+Bettongia penicillata,1,Bettongia_penicillata,,,,,True,False,False
+Bison bison,1,Bison_bison,,,,,True,False,False
+Bison bonasus,2,Bison_bonasus,,Bison bonasus,,,True,True,True
+Blicca bjoerkna,1,,,,Blicca_bjoerkna,,False,True,False
+Bos frontalis,1,,,,Bos_frontalis,,False,True,False
+Bos javanicus,1,,,Bos javanicus,,,False,True,False
+Bos primigenius,1,,,Bos primigenius,,,False,True,False
+Bos taurus,2,,,Bos taurus,Bos_taurus,,False,True,False
+Boselaphus tragocamelus,1,Boselaphus_tragocamelus,,,,,True,False,False
+Bradypus variegatus,1,,,,Bradypus_variegatus,,False,True,False
+Branta leucopsis,1,,,,Branta_leucopsis,,False,True,False
+Budorcas taxicolor,1,Budorcas_taxicolor,,,,,True,False,False
+Bufo bufo,1,,,,Bufo_bufo,,False,True,False
+Bufo viridis,1,,,,Bufo_viridis,,False,True,False
+Callimico goeldii,2,Callimico_goeldii,,Callimico goeldii,,,True,True,True
+Callithrix geoffroyi,1,Callithrix_geoffroyi,,,,,True,False,False
+Callithrix jacchus,2,Callithrix_jacchus,Callithrix_jacchus,,,,True,False,False
+Callithrix pygmaea,2,,Callithrix_pygmaea,Callithrix pygmaea,,,True,True,True
+Callosciurus prevostii,1,Callosciurus_prevostii,,,,,True,False,False
+Camelus bactrianus,2,,,Camelus bactrianus,Camelus_bactrianus,,False,True,False
+Camelus dromedarius,1,,,,Camelus_dromedarius,,False,True,False
+Canis aureus,1,,,,Canis_aureus,,False,True,False
+Canis lupus,3,,,Canis lupus,Canis_lupus,Canis lupus arabs,False,True,False
+Canis mesomelas,1,,Canis_mesomelas,,,,True,False,False
+Canis rufus,1,Canis_rufus,,,,,True,False,False
+Capra aegagrus,1,,,Capra aegagrus hircus,,,False,True,False
+Capra caucasica,1,Capra_caucasica,,,,,True,False,False
+Capra falconeri,1,Capra_falconeri,,,,,True,False,False
+Capra hircus,3,,,Capra hircus,Capra_hircus,Capra hircus,False,True,False
+Capra ibex,2,Capra_ibex,,,Capra_ibex,,True,True,True
+Capra nubiana,1,Capra_nubiana,,,,,True,False,False
+Capreolus capreolus,2,,,Capreolus capreolus,Capreolus_capreolus,,False,True,False
+Caprimulgus europaeus,1,,,,Caprimulgus_europaeus,,False,True,False
+Capybara,1,,,Capybara,,,False,True,False
+Caracal caracal,1,Caracal_caracal,,,,,True,False,False
+Carassius gibelio,1,,,,Carassius_gibelio,,False,True,False
+Carduelis chloris,1,,,,Carduelis_chloris,,False,True,False
+Carollia perspicillata,1,Carollia_perspicillata,,,,,True,False,False
+Castor fiber,1,,,,Castor_fiber,,False,True,False
+Cebuella pygmaea,1,Cebuella_pygmaea,,,,,True,False,False
+Cebus olivaceus,1,,,,,Cebus olivaceus,False,True,False
+Ceratotherium simum,2,,,,Ceratotherium_simum,Ceratotherium simum,False,True,False
+Cercocebus torquatus,1,,,Cercocebus torquatus,,,False,True,False
+Cercopithecus mitis,1,,Cercopithecus_mitis,,,,True,False,False
+Cercopithecus neglectus,1,Cercopithecus_neglectus,,,,,True,False,False
+Cervus canadensis,1,Cervus_canadensis,,,,,True,False,False
+Cervus elaphus,2,Cervus_elaphus,,,Cervus_elaphus,,True,True,True
+Cervus nippon,1,Cervus_nippon,,,,,True,False,False
+Cervus unicolor,1,,,,Cervus_unicolor,,False,True,False
+Chaetophractus villosus,1,,,Chaetophractus villosus,,,False,True,False
+Chlorocebus pygerythrus,2,,,Chlorocebus pygerythrus,Chlorocebus_pygerythrus,,False,True,False
+Choloepus didactylus,2,Choloepus_didactylus,,,Choloepus_didactylus,,True,True,True
+Choloepus hoffmanni,1,,,,Choloepus_hoffmanni,,False,True,False
+Chondrostoma nasus,1,,,,Chondrostoma_nasus,,False,True,False
+Chrysococcyx basalis,1,,,,Chrysococcyx_basalis,,False,True,False
+Chrysocyon brachyurus,1,Chrysocyon_brachyurus,,,,,True,False,False
+Ciconia ciconia,1,,,,Ciconia_ciconia,,False,True,False
+Circus aeruginosus,1,,,,Circus_aeruginosus,,False,True,False
+Colobus guereza,1,Colobus_guereza,,,,,True,False,False
+Connochaetes gnou,2,Connochaetes_gnou,Connochaetes_gnou,,,,True,False,False
+Connochaetes taurinus,2,Connochaetes_taurinus,,,Connochaetes_taurinus,,True,True,True
+Corvus corone,1,,,,Corvus_corone,,False,True,False
+Corvus frugilegus,1,,,,Corvus_frugilegus,,False,True,False
+Cricetus cricetus,2,Cricetus_cricetus,,,Cricetus_cricetus,,True,True,True
+Crocidura suaveolens,1,,,,Crocidura_suaveolens,,False,True,False
+Crocodylus moreletii,1,,,,Crocodylus_moreletii,,False,True,False
+Crocodylus niloticus,1,,,,Crocodylus_niloticus,,False,True,False
+Ctenodactylus gundi,1,Ctenodactylus_gundi,,,,,True,False,False
+Cuon alpinus,1,Cuon_alpinus,,,,,True,False,False
+Cygnus olor,1,,,,Cygnus_olor,,False,True,False
+Cynictis penicillata,1,Cynictis_penicillata,,,,,True,False,False
+Cynomys ludovicianus,2,Cynomys_ludovicianus,Cynomys_ludovicianus,,,,True,False,False
+Cyprinus carpio,1,,,,Cyprinus_carpio,,False,True,False
+Dama dama,2,Dama_dama,,,Dama_dama,,True,True,True
+Dama mesopotamica,1,Dama_mesopotamica,,,,,True,False,False
+Damaliscus pygargus,1,Damaliscus_pygargus,,,,,True,False,False
+Dasyprocta azarae,1,Dasyprocta_azarae,,,,,True,False,False
+Dasyprocta leporina,1,Dasyprocta_leporina,,,,,True,False,False
+Dasypus novemcinctus,1,,Dasypus_novemcinctus,,,,True,False,False
+Dasyuroides byrnei,1,Dasyuroides_byrnei,,,,,True,False,False
+Delichon urbicum,1,,,,Delichon_urbicum,,False,True,False
+Delphinus delphis,1,,,Delphinus delphis,,,False,True,False
+Dendrocopos major,1,,,,Dendrocopos_major,,False,True,False
+Dendrolagus matschiei,1,,Dendrolagus_matschiei,,,,True,False,False
+Desmodus rotundus,1,Desmodus_rotundus,,,,,True,False,False
+Didelphis marsupialis,1,,,,Didelphis_marsupialis,,False,True,False
+Didelphis virginiana,1,,Didelphis_virginiana,,,,True,False,False
+Dolichotis patagonum,1,Dolichotis_patagonum,,,,,True,False,False
+Donkey,1,,,Donkey,,,False,True,False
+Dromaius novaehollandiae,1,,,,Dromaius_novaehollandiae,,False,True,False
+Echinops telfairi,1,Echinops_telfairi,,,,,True,False,False
+Eidolon helvum,1,Eidolon_helvum,,,,,True,False,False
+Elaphurus davidianus,1,Elaphurus_davidianus,,,,,True,False,False
+Elephas maximus,1,,,,,Elephas maximus,False,True,False
+Eliomys quercinus,1,,,,Eliomys_quercinus,,False,True,False
+Eolophus roseicapilla,1,,,,Eolophus_roseicapilla,,False,True,False
+Eptesicus baverstocki,1,,,,Eptesicus_baverstocki,,False,True,False
+Equus asinus,2,,Equus_asinus,,,Equus asinus,True,True,True
+Equus burchelli,1,,,,,Equus burchelli boehmi,False,True,False
+Equus caballus,1,,,,Equus_caballus,,False,True,False
+Equus grevyi,1,Equus_grevyi,,,,,True,False,False
+Equus hemionus,2,Equus_hemionus,,,Equus_hemionus,,True,True,True
+Equus quagga,2,Equus_quagga,,,Equus_quagga,,True,True,True
+Equus zebra,1,Equus_zebra,,,,,True,False,False
+Erinaceus europaeus,2,,,Erinaceus europaeus,Erinaceus_europaeus,,False,True,False
+Erythrocebus patas,1,Erythrocebus_patas,,,,,True,False,False
+Esox lucius,1,,,,Esox_lucius,,False,True,False
+Eudorcas thomsonii,1,Eudorcas_thomsonii,,,,,True,False,False
+Eulemur macaco,2,Eulemur_macaco,,Eulemur macaco,,,True,True,True
+European beaver,1,,,European beaver,,,False,True,False
+European rabbit,1,,,European rabbit,,,False,True,False
+Falco tinnunculus,1,,,,Falco_tinnunculus,,False,True,False
+Felis catus,1,,,,Felis_catus,,False,True,False
+Felis chaus,1,,,,,Felis chaus,False,True,False
+Felis margarita,2,Felis_margarita,,,,Felis margarita,True,True,True
+Felis silvestris,2,Felis_silvestris,,Felis silvestris,,,True,True,True
+Galago senegalensis,1,Galago_senegalensis,,,,,True,False,False
+Gallus gallus,1,,,,Gallus_gallus,,False,True,False
+Gazella bennettii,1,,,,Gazella_bennettii,,False,True,False
+Gazella cuvieri,1,Gazella_cuvieri,,,,,True,False,False
+Gazella dorcas,1,Gazella_dorcas,,,,,True,False,False
+Gazella leptoceros,1,Gazella_leptoceros,,,,,True,False,False
+Gazella marica,1,Gazella_marica,,,,,True,False,False
+Gazella subgutturosa,2,Gazella_subgutturosa,,,Gazella_subgutturosa,,True,True,True
+Giraffa camelopardalis,3,Giraffa_camelopardalis,,Giraffa camelopardalis,Giraffa_camelopardalis,,True,True,True
+Glis glis,1,,,,Glis_glis,,False,True,False
+Gorilla gorilla,3,Gorilla_gorilla,,,Gorilla_gorilla,Gorilla gorilla,True,True,True
+Grevy zebra,1,,,Grevy zebra,,,False,True,False
+Grey kangaroo,1,,,Grey kangaroo,,,False,True,False
+Gymnocephalus cernua,1,,,,Gymnocephalus_cernua,,False,True,False
+Haliaeetus albicilla,1,,,,Haliaeetus_albicilla,,False,True,False
+Halichoerus grypus,2,,,Halichoerus grypus,Halichoerus_grypus,,False,True,False
+Hare,1,,,Hare,,,False,True,False
+Helogale parvula,1,Helogale_parvula,,,,,True,False,False
+Hemidactylus frenatus,1,,,,Hemidactylus_frenatus,,False,True,False
+Heterocephalus glaber,1,Heterocephalus_glaber,,,,,True,False,False
+Heteromys desmarestianus,1,,,,Heteromys_desmarestianus,,False,True,False
+Hippopotamus,1,,,Hippopotamus,,,False,True,False
+Hippopotamus amphibius,2,Hippopotamus_amphibius,,,Hippopotamus_amphibius,,True,True,True
+Hippotragus equinus,1,Hippotragus_equinus,,,,,True,False,False
+Hippotragus niger,1,Hippotragus_niger,,,,,True,False,False
+Homo sapiens,2,,,Homo sapiens,Homo_sapiens,,False,True,False
+Horse,1,,,Horse,,,False,True,False
+Hyaena hyaena,1,,,,,Hyaena hyaena,False,True,False
+Hydrochaeris hydrochaeris,1,,Hydrochaeris_hydrochaeris,,,,True,False,False
+Hydrochoerus hydrochaeris,1,Hydrochoerus_hydrochaeris,,,,,True,False,False
+Hylacola cauta,1,,,,Hylacola_cauta,,False,True,False
+Hylobates lar,2,Hylobates_lar,,,,Hylobates lar,True,True,True
+Hystrix africaeaustralis,1,Hystrix_africaeaustralis,,,,,True,False,False
+Hystrix indica,1,Hystrix_indica,,,,,True,False,False
+Jaculus jaculus,1,Jaculus_jaculus,,,,,True,False,False
+Kobus ellipsiprymnus,1,Kobus_ellipsiprymnus,,,,,True,False,False
+Kobus leche,1,Kobus_leche,,,,,True,False,False
+Kobus megaceros,2,Kobus_megaceros,,Kobus megaceros,,,True,True,True
+Lacerta agilis,1,,,,Lacerta_agilis,,False,True,False
+Lagenorhynchus albirostris,1,,,,Lagenorhynchus_albirostris,,False,True,False
+Lagopus muta,1,,,,Lagopus_muta,,False,True,False
+Lagurus lagurus,1,Lagurus_lagurus,,,,,True,False,False
+Lama glama,2,,Lama_glama,Lama glama,,,True,True,True
+Lama guanicoe,1,,,Lama guanicoe,,,False,True,False
+Lemur catta,2,Lemur_catta,,Lemur catta,,,True,True,True
+Leontopithecus chrysomelas,1,Leontopithecus_chrysomelas,,,,,True,False,False
+Leontopithecus rosalia,1,Leontopithecus_rosalia,,,,,True,False,False
+Leopardus pardalis,1,Leopardus_pardalis,,,,,True,False,False
+Leptailurus serval,1,Leptailurus_serval,,,,,True,False,False
+Lepus europaeus,1,,,,Lepus_europaeus,,False,True,False
+Lepus tolai,1,,,,Lepus_tolai,,False,True,False
+Leuciscus cephalus,1,,,,Leuciscus_cephalus,,False,True,False
+Leuciscus idus,1,,,,Leuciscus_idus,,False,True,False
+Litocranius walleri,1,Litocranius_walleri,,,,,True,False,False
+Lontra canadensis,1,Lontra_canadensis,,,,,True,False,False
+Loxodonta africana,3,,Loxodonta_africana,,Loxodonta_africana,Loxodonta africana,True,True,True
+Lutra lutra,2,Lutra_lutra,,,Lutra_lutra,,True,True,True
+Lycaon pictus,4,Lycaon_pictus,Lycaon_pictus,Lycaon pictus,,Lycaon pictus,True,True,True
+Lynx lynx,3,Lynx_lynx,,Lynx lynx,Lynx_lynx,,True,True,True
+Lyrurus tetrix,1,,,,Lyrurus_tetrix,,False,True,False
+Macaca fascicularis,1,Macaca_fascicularis,,,,,True,False,False
+Macaca fuscata,2,Macaca_fuscata,,Macaca fuscata,,,True,True,True
+Macaca nigra,1,Macaca_nigra,,,,,True,False,False
+Macaca silenus,1,Macaca_silenus,,,,,True,False,False
+Macaca sylvanus,1,Macaca_sylvanus,,,,,True,False,False
+Macropus eugenii,2,,Macropus_eugenii,,Macropus_eugenii,,True,True,True
+Macropus fuliginosus,1,,,,Macropus_fuliginosus,,False,True,False
+Macropus giganteus,2,Macropus_giganteus,,,Macropus_giganteus,,True,True,True
+Macropus parma,2,Macropus_parma,Macropus_parma,,,,True,False,False
+Macropus robustus,1,,Macropus_robustus,,,,True,False,False
+Macropus rufogriseus,1,Macropus_rufogriseus,,,,,True,False,False
+Macropus rufus,2,Macropus_rufus,Macropus_rufus,,,,True,False,False
+Macroscelides proboscideus,1,Macroscelides_proboscideus,,,,,True,False,False
+Madoqua kirkii,1,Madoqua_kirkii,,,,,True,False,False
+Mandrillus sphinx,2,,,Mandrillus sphinx,,Mandrillus sphinx,False,True,False
+Manis temminckii,1,,,,Manis_temminckii,,False,True,False
+Marmota marmota,1,,,,Marmota_marmota,,False,True,False
+Martes foina,1,,,,Martes_foina,,False,True,False
+Martes martes,1,,,,Martes_martes,,False,True,False
+Melanomys caliginosus,1,,,,Melanomys_caliginosus,,False,True,False
+Meleagris gallopavo,1,,,,Meleagris_gallopavo,,False,True,False
+Meles meles,1,,,,Meles_meles,,False,True,False
+Mesoplodon bidens,1,,,,Mesoplodon_bidens,,False,True,False
+Mico argentatus,1,Mico_argentatus,,,,,True,False,False
+Mico melanurus,1,Mico_melanurus,,,,,True,False,False
+Microcebus murinus,1,Microcebus_murinus,,,,,True,False,False
+Mungos mungo,1,Mungos_mungo,,,,,True,False,False
+Muntiacus muntjak,1,Muntiacus_muntjak,,,,,True,False,False
+Muntiacus reevesi,1,Muntiacus_reevesi,,,,,True,False,False
+Mus musculus,2,,,Mus musculus,Mus_musculus,,False,True,False
+Mustela eversmanii,1,,,,Mustela_eversmanii,,False,True,False
+Mustela lutreola,1,Mustela_lutreola,,,,,True,False,False
+Mustela nigripes,1,Mustela_nigripes,,,,,True,False,False
+Mustela nivalis,1,,,,Mustela_nivalis,,False,True,False
+Mustela putorius,1,,,,Mustela_putorius,,False,True,False
+Myocastor coypus,1,Myocastor_coypus,,,,,True,False,False
+Myodes glareolus,1,,,,Myodes_glareolus,,False,True,False
+Nanger dama,1,Nanger_dama,,,,,True,False,False
+Nasua nasua,3,Nasua_nasua,,Nasua nasua,,Nasua nasua,True,True,True
+Natrix natrix,1,,,,Natrix_natrix,,False,True,False
+Neofelis nebulosa,1,Neofelis_nebulosa,,,,,True,False,False
+Nomascus gabriellae,1,,,,Nomascus_gabriellae,,False,True,False
+Nomascus siki,1,,,,Nomascus_siki,,False,True,False
+Nyctalus noctula,1,,,,Nyctalus_noctula,,False,True,False
+Nyctereutes procyonoides,1,,,,Nyctereutes_procyonoides,,False,True,False
+Nycticebus pygmaeus,2,Nycticebus_pygmaeus,,,Nycticebus_pygmaeus,,True,True,True
+Odocoileus virginianus,2,Odocoileus_virginianus,,,Odocoileus_virginianus,,True,True,True
+Oncorhynchus mykiss,1,,,,Oncorhynchus_mykiss,,False,True,False
+Oryctolagus cuniculus,1,,,,Oryctolagus_cuniculus,,False,True,False
+Oryx beisa,1,Oryx_beisa,,,,,True,False,False
+Oryx dammah,1,Oryx_dammah,,,,,True,False,False
+Oryx gazella,1,Oryx_gazella,,,,,True,False,False
+Oryx leucoryx,1,Oryx_leucoryx,,,,,True,False,False
+Otaria flavescens,1,,,Otaria flavescens,,,False,True,False
+Otocolobus manul,1,Otocolobus_manul,,,,,True,False,False
+Otocyon megalotis,1,Otocyon_megalotis,,,,,True,False,False
+Otolemur crassicaudatus,1,,,,Otolemur_crassicaudatus,,False,True,False
+Ovibos moschatus,1,Ovibos_moschatus,,,,,True,False,False
+Ovis aries,3,,,Ovis aries,Ovis_aries,Ovis aries,False,True,False
+Ovis musimon,1,,,Ovis musimon,,,False,True,False
+Pachyuromys duprasi,1,Pachyuromys_duprasi,,,,,True,False,False
+Pan troglodytes,3,Pan_troglodytes,,Pan troglodytes,,Pan troglodytes,True,True,True
+Panthera leo,5,Panthera_leo,Panthera_leo,Panthera leo,Panthera_leo,Panthera leo,True,True,True
+Panthera onca,2,Panthera_onca,,Panthera onca,,,True,True,True
+Panthera pardus,4,Panthera_pardus,,Panthera pardus,Panthera_pardus,Panthera pardus,True,True,True
+Panthera tigris,4,Panthera_tigris,Panthera_tigris,Panthera tigris,,Panthera tigris,True,True,True
+Panthera uncia,1,Panthera_uncia,,,,,True,False,False
+Papio hamadryas,2,Papio_hamadryas,Papio_hamadryas,,,,True,False,False
+Papio ursinus,1,,,,Papio_ursinus,,False,True,False
+Parus major,1,,,,Parus_major,,False,True,False
+Patagonian mara,1,,,Patagonian mara,,,False,True,False
+Pecari tajacu,1,,Pecari_tajacu,,,,True,False,False
+Perca fluviatilis,1,,,,Perca_fluviatilis,,False,True,False
+Petaurus breviceps,1,Petaurus_breviceps,,,,,True,False,False
+Phacochoerus africanus,1,Phacochoerus_africanus,,,,,True,False,False
+Phalacrocorax carbo,1,,,,Phalacrocorax_carbo,,False,True,False
+Phascolarctos cinereus,2,,Phascolarctos_cinereus,,Phascolarctos_cinereus,,True,True,True
+Phasianus colchicus,1,,,,Phasianus_colchicus,,False,True,False
+Philander opossum,1,,,,Philander_opossum,,False,True,False
+Phoca vitulina,3,Phoca_vitulina,Phoca_vitulina,,Phoca_vitulina,,True,True,True
+Phocoena phocoena,1,,,,Phocoena_phocoena,,False,True,False
+Phodopus sungorus,1,,,,Phodopus_sungorus,,False,True,False
+Phylloscopus collybita,1,,,,Phylloscopus_collybita,,False,True,False
+Pica pica,1,,,,Pica_pica,,False,True,False
+Pipistrellus pipistrellus,1,,,,Pipistrellus_pipistrellus,,False,True,False
+Pithecia pithecia,1,Pithecia_pithecia,,,,,True,False,False
+Podarcis siculus,1,,,,Podarcis_siculus,,False,True,False
+Pogona vitticeps,1,,,,Pogona_vitticeps,,False,True,False
+Pongo pygmaeus,2,Pongo_pygmaeus,,Pongo pygmaeus,,,True,True,True
+Potamochoerus porcus,1,Potamochoerus_porcus,,,,,True,False,False
+Potos flavus,1,,,,Potos_flavus,,False,True,False
+Prionailurus bengalensis,1,Prionailurus_bengalensis,,,,,True,False,False
+Prionailurus viverrinus,1,Prionailurus_viverrinus,,,,,True,False,False
+Procavia capensis,2,Procavia_capensis,Procavia_capensis,,,,True,False,False
+Procyon lotor,3,Procyon_lotor,Procyon_lotor,,Procyon_lotor,,True,True,True
+Proechimys semispinosus,1,,,,Proechimys_semispinosus,,False,True,False
+Prunella modularis,1,,,,Prunella_modularis,,False,True,False
+Psammomys obesus,1,,,,Psammomys_obesus,,False,True,False
+Pseudois nayaur,1,Pseudois_nayaur,,,,,True,False,False
+Pteropus giganteus,1,Pteropus_giganteus,,,,,True,False,False
+Pteropus lylei,1,Pteropus_lylei,,,,,True,False,False
+Pteropus rodricensis,1,Pteropus_rodricensis,,,,,True,False,False
+Pteropus vampyrus,1,Pteropus_vampyrus,,,,,True,False,False
+Pudu puda,1,Pudu_puda,,,,,True,False,False
+Puma concolor,2,Puma_concolor,Puma_concolor,,,,True,False,False
+Pygathrix nemaeus,2,Pygathrix_nemaeus,,,Pygathrix_nemaeus,,True,True,True
+Pygmy hippopotamus,1,,,Pygmy hippopotamus,,,False,True,False
+Rallus aquaticus,1,,,,Rallus_aquaticus,,False,True,False
+Rana dalmatina,1,,,,Rana_dalmatina,,False,True,False
+Rana temporaria,1,,,,Rana_temporaria,,False,True,False
+Rangifer tarandus,2,Rangifer_tarandus,Rangifer_tarandus,,,,True,False,False
+Rattus rattus,1,,,Rattus rattus,,,False,True,False
+Reithrodontomys fluvesces,1,,,,Reithrodontomys_fluvesces,,False,True,False
+Rhabdomys pumilio,1,,Rhabdomys_pumilio,,,,True,False,False
+Rheomys raptor,1,,,,Rheomys_raptor,,False,True,False
+Rhinoceros unicornis,1,,,,Rhinoceros_unicornis,,False,True,False
+Rousettus aegyptiacus,1,Rousettus_aegyptiacus,,,,,True,False,False
+Rousettus leschenaultii,1,Rousettus_leschenaultii,,,,,True,False,False
+Rucervus duvaucelii,1,Rucervus_duvaucelii,,,,,True,False,False
+Rucervus eldii,1,Rucervus_eldii,,,,,True,False,False
+Rupicapra rupicapra,1,,,,Rupicapra_rupicapra,,False,True,False
+Rusa alfredi,1,Rusa_alfredi,,,,,True,False,False
+Rutilus rutilus,1,,,,Rutilus_rutilus,,False,True,False
+Saguinus bicolor,1,Saguinus_bicolor,,,,,True,False,False
+Saguinus imperator,2,Saguinus_imperator,,Saguinus imperator,,,True,True,True
+Saguinus labiatus,1,Saguinus_labiatus,,,,,True,False,False
+Saguinus midas,1,Saguinus_midas,,,,,True,False,False
+Saguinus oedipus,2,Saguinus_oedipus,,Saguinus oedipus,,,True,True,True
+Saimiri boliviensis,2,Saimiri_boliviensis,,Saimiri boliviensis peruviensis,,,True,True,True
+Saimiri sciureus,2,Saimiri_sciureus,Saimiri_sciureus,,,,True,False,False
+Salamandra atra,1,,,,Salamandra_atra,,False,True,False
+Salmo trutta,1,,,,Salmo_trutta,,False,True,False
+Salvelinus fontinalis,1,,,,Salvelinus_fontinalis,,False,True,False
+Sander lucioperca,1,,,,Sander_lucioperca,,False,True,False
+Sapajus apella,1,Sapajus_apella,,,,,True,False,False
+Sarcophilus harrisii,1,,Sarcophilus_harrisii,,,,True,False,False
+Scardinius erythrophthalmus,1,,,,Scardinius_erythrophthalmus,,False,True,False
+Sciurus vulgaris,2,Sciurus_vulgaris,,,Sciurus_vulgaris,,True,True,True
+Scolopax rusticola,1,,,,Scolopax_rusticola,,False,True,False
+Sorex alpinus,1,,,,Sorex_alpinus,,False,True,False
+Speothos venaticus,1,Speothos_venaticus,,,,,True,False,False
+Spermophilus citellus,1,,,,Spermophilus_citellus,,False,True,False
+Strix aluco,1,,,,Strix_aluco,,False,True,False
+Strix uralensis,1,,,,Strix_uralensis,,False,True,False
+Sudamerican tapir,1,,,Sudamerican tapir,,,False,True,False
+Suricata suricatta,2,Suricata_suricatta,,Suricata suricatta,,,True,True,True
+Sus scrofa,2,,,Sus scrofa domesticus,Sus_scrofa,,False,True,False
+Sylvia atricapilla,1,,,,Sylvia_atricapilla,,False,True,False
+Syncerus caffer,2,Syncerus_caffer,,,Syncerus_caffer,,True,True,True
+Tachyglossus aculeatus,1,,,,Tachyglossus_aculeatus,,False,True,False
+Tamandua mexicana,1,,,,Tamandua_mexicana,,False,True,False
+Tapirus indicus,1,Tapirus_indicus,,,,,True,False,False
+Tapirus terrestris,1,Tapirus_terrestris,,,,,True,False,False
+Tarsius syrichta,1,,Tarsius_syrichta,,,,True,False,False
+Taurotragus oryx,1,,,Taurotragus oryx,,,False,True,False
+Testudo hermanni,1,,,,Testudo_hermanni,,False,True,False
+Theropithecus gelada,1,Theropithecus_gelada,,,,,True,False,False
+Trachypithecus delacouri,1,,,,Trachypithecus_delacouri,,False,True,False
+Trachypithecus hatinhensis,1,,,,Trachypithecus_hatinhensis,,False,True,False
+Tragelaphus angasii,1,Tragelaphus_angasii,,,,,True,False,False
+Tragelaphus eurycerus,1,Tragelaphus_eurycerus,,,,,True,False,False
+Tragelaphus imberbis,1,Tragelaphus_imberbis,,,,,True,False,False
+Tragelaphus oryx,1,Tragelaphus_oryx,,,,,True,False,False
+Tragelaphus strepsiceros,1,Tragelaphus_strepsiceros,,,,,True,False,False
+Tragulus javanicus,1,Tragulus_javanicus,,,,,True,False,False
+Trichosurus vulpecula,1,,,,Trichosurus_vulpecula,,False,True,False
+Tringa glareola,1,,,,Tringa_glareola,,False,True,False
+Tupaia belangeri,2,Tupaia_belangeri,,,Tupaia_belangeri,,True,True,True
+Tupaia glis,1,,Tupaia_glis,,,,True,False,False
+Turdus merula,1,,,,Turdus_merula,,False,True,False
+Turdus philomelos,1,,,,Turdus_philomelos,,False,True,False
+Tursiops truncatus,1,,,Tursiops truncatus,,,False,True,False
+Ursus arctos,4,Ursus_arctos,,Ursus arctos,Ursus_arctos,Ursus arctos,True,True,True
+Ursus maritimus,1,Ursus_maritimus,,,,,True,False,False
+Ursus thibetanus,1,,,,,Ursus thibetanus,False,True,False
+Varecia rubra,2,Varecia_rubra,,Varecia rubra,,,True,True,True
+Varecia variegata,3,Varecia_variegata,,Varecia variegata,,Varecia variegata rubra,True,True,True
+Vicugna pacos,1,,,Vicugna pacos,,,False,True,False
+Vicugna vicugna,1,,,Vicugna vicugna,,,False,True,False
+Vipera ursinii,1,,,,Vipera_ursinii,,False,True,False
+Vulpes vulpes,1,,,,Vulpes_vulpes,,False,True,False
+Vulpes zerda,2,Vulpes_zerda,Vulpes_zerda,,,,True,False,False
+Wild horse,1,,,Wild horse,,,False,True,False
+Zalophus californianus,1,Zalophus_californianus,,,,,True,False,False
+Zamenis longissimus,1,,,,Zamenis_longissimus,,False,True,False
+Zebra,1,,,Zebra,,,False,True,False
+Zingel zingel,1,,,,Zingel_zingel,,False,True,False

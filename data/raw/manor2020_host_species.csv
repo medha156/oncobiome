@@ -1,0 +1,78 @@
+diet_group,common_name,species,family,n_individuals
+Herbivore (polygastric ruminant),African mouflon,Ammotragus lervia,Bovidae,2
+Herbivore (polygastric ruminant),European bison,Bison bonasus,Bovidae,2
+Herbivore (polygastric ruminant),Banteng,Bos javanicus,Bovidae,1
+Herbivore (polygastric ruminant),Auroch,Bos primigenius,Bovidae,1
+Herbivore (polygastric ruminant),Cow,Bos taurus,Bovidae,16
+Herbivore (polygastric ruminant),Goat,Capra aegagrus hircus,Bovidae,1
+Herbivore (polygastric ruminant),Goat,Capra hircus,Bovidae,4
+Herbivore (polygastric ruminant),Nile lechwe,Kobus megaceros,Bovidae,1
+Herbivore (polygastric ruminant),Sheep,Ovis aries,Bovidae,4
+Herbivore (polygastric ruminant),Mouflon,Ovis musimon,Bovidae,5
+Herbivore (polygastric ruminant),Eland,Taurotragus oryx,Bovidae,1
+Herbivore (polygastric ruminant),Deer,Capreolus capreolus,Cervidae,1
+Herbivore (polygastric ruminant),Giraffe,Giraffa camelopardalis,Giraffidae,2
+Herbivore (polygastric Tylopoda),Camel,Camelus bactrianus,Camelidae,2
+Herbivore (polygastric Tylopoda),Llama,Lama glama,Camelidae,1
+Herbivore (polygastric Tylopoda),Guanaco,Lama guanicoe,Camelidae,3
+Herbivore (polygastric Tylopoda),Alpaca,Vicugna pacos,Camelidae,7
+Herbivore (polygastric Tylopoda),Vicuna,Vicugna vicugna,Camelidae,1
+Herbivore (polygastric nonruminant, 3 stomachs),Pygmy hippopotamus,Hexaprotodon liberiensis,Hippopotamidae,5
+Herbivore (polygastric nonruminant, 3 stomachs),Hippopotamus,Hippopotamus amphibius,Hippopotamidae,3
+Herbivore (polygastric nonruminant, 3 stomachs),Grey kangaroo,Macropus giganteus,Macropodidae,1
+Herbivore (monogastric, <100 kg),Hare,Lepus europaeus,Leporidae,9
+Herbivore (monogastric, <100 kg),European rabbit,Oryctolagus cuniculus,Leporidae,4
+Herbivore (monogastric, <100 kg),European beaver,Castor fiber,Castoridae,2
+Herbivore (monogastric, <100 kg),Patagonian mara,Dolichotis patagonum,Caviidae,1
+Herbivore (monogastric, <100 kg),Capybara,Hydrochoerus hydrochaeris,Caviidae,2
+Herbivore (monogastric, >100 kg),African wild donkey,Equus africanus,Equidae,4
+Herbivore (monogastric, >100 kg),Donkey,Equus africanus asinus,Equidae,5
+Herbivore (monogastric, >100 kg),Wild horse,Equus ferus,Equidae,3
+Herbivore (monogastric, >100 kg),Horse,Equus ferus caballus,Equidae,10
+Herbivore (monogastric, >100 kg),Grevy zebra,Equus grevyi,Equidae,2
+Herbivore (monogastric, >100 kg),Zebra,Equus quagga,Equidae,2
+Herbivore (monogastric, >100 kg),Asiatic tapir,Tapirus indicus,Tapiridae,1
+Herbivore (monogastric, >100 kg),Sudamerican tapir,Tapirus terrestris,Tapiridae,3
+Herbivore (monogastric, >100 kg),Asiatic elephant,Elephas maximus,Elephantidae,2
+Carnivore,Wolf,Canis lupus,Canidae,10
+Carnivore,Dog,Canis lupus familiaris,Canidae,25
+Carnivore,African wild dog,Lycaon pictus,Canidae,1
+Carnivore,Wildcat,Felis silvestris,Felidae,2
+Carnivore,Cat,Felis silvestris catus,Felidae,4
+Carnivore,European lynx,Lynx lynx,Felidae,1
+Carnivore,Lion,Panthera leo,Felidae,2
+Carnivore,Asiatic lion,Panthera leo persica,Felidae,1
+Carnivore,Jaguar,Panthera onca,Felidae,1
+Carnivore,Leopard,Panthera pardus,Felidae,1
+Carnivore,Tiger,Panthera tigris,Felidae,3
+Carnivore,Meerkat,Suricata suricatta,Herpestidae,1
+Carnivore,Fur seal,Arctocephalus pusillus pusillus,Otariidae,1
+Carnivore,Sudamerican sea lion,Otaria flavescens,Otariidae,1
+Carnivore,Grey seal,Halichoerus grypus,Phocidae,2
+Carnivore,Red coati,Nasua nasua,Procyonidae,1
+Carnivore,Brown bear,Ursus arctos,Ursidae,4
+Carnivore,Armadillo,Chaetophractus villosus,Dasypodidae,2
+Carnivore,Hedgehog,Erinaceus europaeus,Erinaceidae,1
+Omnivore,Wild boar,Sus scrofa,Suidae,8
+Omnivore,Pig,Sus scrofa domesticus,Suidae,10
+Omnivore,Pygmy marmoset,Callithrix pygmaea,Cebidae,1
+Omnivore,Emperor tamarins,Saguinus imperator,Cebidae,1
+Omnivore,Cotton-top tamarin,Saguinus oedipus,Cebidae,1
+Omnivore,Saimiri,Saimiri boliviensis peruviensis,Cebidae,1
+Omnivore,Goeldi tamarin,Callimico goeldii,Cebidae,1
+Omnivore,Collared mangabey,Cercocebus torquatus,Cercopithecidae,1
+Omnivore,Green cercopithecus,Chlorocebus pygerythrus,Cercopithecidae,1
+Omnivore,Red-faced macaque,Macaca fuscata,Cercopithecidae,1
+Omnivore,Mandrill,Mandrillus sphinx,Cercopithecidae,1
+Omnivore,Human,Homo sapiens,Hominidae,19
+Omnivore,Chimpanzee,Pan troglodytes,Hominidae,1
+Omnivore,Bornean orangutan,Pongo pygmaeus,Hominidae,1
+Omnivore,Macaque,Eulemur macaco,Lemuridae,1
+Omnivore,Lemur,Lemur catta,Lemuridae,2
+Omnivore,Red ruffed lemur,Varecia rubra,Lemuridae,1
+Omnivore,Black-and-white ruffed lemur,Varecia variegata,Lemuridae,1
+Omnivore,Wood mouse,Apodemus sylvaticus,Muridae,5
+Omnivore,Mouse,Mus musculus,Muridae,2
+Omnivore,Rat,Rattus rattus,Muridae,6
+Piscivore,Dolphin,Delphinus delphis,Delphinidae,3
+Piscivore,Bottlenose dolphin,Tursiops truncatus,Delphinidae,3

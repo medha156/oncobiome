@@ -1,0 +1,102 @@
+Sample name,Animal Species,Taxonomy,Order,Diet type,Gut physiology,Subject No.,Sex
+Af_elephant_1,African elephant,Loxodonta africana,Proboscidea,Herbivorous,Hindgut,1,M
+Af_elephant_2,African elephant,Loxodonta africana,Proboscidea,Herbivorous,Hindgut,2,F
+Af_elephant_3,African elephant,Loxodonta africana,Proboscidea,Herbivorous,Hindgut,3,F
+As_elephant_1,Asian elephant,Elephas maximus,Proboscidea,Herbivorous,Hindgut,1,M
+As_elephant_2,Asian elephant,Elephas maximus,Proboscidea,Herbivorous,Hindgut,2,F
+As_elephant_3,Asian elephant,Loxodonta africana,Proboscidea,Herbivorous,Hindgut,3,F
+As_elephant_4,Asian elephant,Loxodonta africana,Proboscidea,Herbivorous,Hindgut,4,F
+As_elephant_5,Asian elephant,Elephas maximus,Proboscidea,Herbivorous,Hindgut,5,F
+Black_bear_1,Asiatic black bear,Ursus thibetanus,Carnivora,Omnivorous,Simple gut,1,M
+Black_bear_2,Asiatic black bear,Ursus thibetanus,Carnivora,Omnivorous,Simple gut,2,F
+Brown_bear_1,Brown bear,Ursus arctos,Carnivora,Omnivorous,Simple gut,1,F
+Brown_bear_2,Brown bear,Ursus arctos,Carnivora,Omnivorous,Simple gut,2,M
+Brown_bear_3,Brown bear,Ursus arctos,Carnivora,Omnivorous,Simple gut,3,F
+Brown_bear_4,Brown bear,Ursus arctos,Carnivora,Omnivorous,Simple gut,4,F
+Brown_bear_5,Brown bear,Ursus arctos,Carnivora,Omnivorous,Simple gut,5,F
+Capuchin_1,Capuchin,Cebus olivaceus,Primates,Omnivorous,Simple gut,1,M
+Chimpanzee_1,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,1,F
+Chimpanzee_10,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,8,M
+Chimpanzee_11,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,9,F
+Chimpanzee_12,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,10,F
+Chimpanzee_13,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,11,F
+Chimpanzee_4,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,2,M
+Chimpanzee_5,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,3,F
+Chimpanzee_6,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,4,F
+Chimpanzee_7,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,5,F
+Chimpanzee_9,Chimpanzee,Pan troglodytes,Primates,Omnivorous,Simple gut,7,F
+Coati_1,Coati,Nasua nasua,Carnivora,Omnivorous,Simple gut,1,M
+Coati_3,Coati,Nasua nasua,Carnivora,Omnivorous,Simple gut,2,M
+Coati_4,Coati,Nasua nasua,Carnivora,Omnivorous,Simple gut,3,F
+Coati_5,Coati,Nasua nasua,Carnivora,Omnivorous,Simple gut,4,F
+Coati_6,Coati,Nasua nasua,Carnivora,Omnivorous,Simple gut,5,F
+Coati_7,Coati,Nasua nasua,Carnivora,Omnivorous,Simple gut,6,F
+Coati_8,Coati,Nasua nasua,Carnivora,Omnivorous,Simple gut,7,F
+Donkey_1,Donkey,Equus asinus,Perissodactyla,Herbivorous,Hindgut,1,M
+Gibbon_1,Gibbon,Hylobates lar,Primates,Omnivorous,Simple gut,1,F
+Gibbon_2,Gibbon,Hylobates lar,Primates,Omnivorous,Simple gut,2,M
+Gibbon_3,Gibbon,Hylobates lar,Primates,Omnivorous,Simple gut,3,F
+Goat_1,Goat,Capra hircus,Artiodactyla,Herbivorous,Foregut,1,-
+Gorilla_1,Gorilla,Gorilla gorilla,Primates,Herbivorous,Simple gut,1,M
+Gorilla_2,Gorilla,Gorilla gorilla,Primates,Herbivorous,Simple gut,2,F
+Gorilla_3,Gorilla,Gorilla gorilla,Primates,Herbivorous,Simple gut,3,F
+Gorilla_4,Gorilla,Gorilla gorilla,Primates,Herbivorous,Simple gut,4,F
+Gorilla_5,Gorilla,Gorilla gorilla,Primates,Herbivorous,Simple gut,5,F
+Gorilla_6,Gorilla,Gorilla gorilla,Primates,Herbivorous,Simple gut,6,F
+Hyena_1,Striped hyena,Hyaena hyaena,Carnivora,Carnivorous,Simple gut,1,F
+Jungle_cat_1,Jungle cat,Felis chaus,Carnivora,Carnivorous,Simple gut,1,M
+Jungle_cat_2,Jungle cat,Felis chaus,Carnivora,Carnivorous,Simple gut,2,M
+Lemur_1,Red Ruffed Lemur,Varecia variegata rubra,Primates,Omnivorous,Simple gut,1,M
+Lemur_2,Black-and-white Ruffed Lemur,Varecia variegata,Primates,Omnivorous,Simple gut,2,M
+Leopard_1,Leopard,Panthera pardus,Carnivora,Carnivorous,Simple gut,1,M
+Leopard_2,Leopard,Panthera pardus,Carnivora,Carnivorous,Simple gut,2,F
+Lion_1,Lion,Panthera leo,Carnivora,Carnivorous,Simple gut,1,F
+Lion_2,Lion,Panthera leo,Carnivora,Carnivorous,Simple gut,2,F
+Lion_3,Lion,Panthera leo,Carnivora,Carnivorous,Simple gut,3,M
+Mandarill_1,Mandrill,Mandrillus sphinx,Primates,Omnivorous,Simple gut,1,M
+Mandarill_2,Mandrill,Mandrillus sphinx,Primates,Omnivorous,Simple gut,2,F
+Mandarill_3,Mandrill,Mandrillus sphinx,Primates,Omnivorous,Simple gut,3,F
+Mandarill_4,Mandrill,Mandrillus sphinx,Primates,Omnivorous,Simple gut,4,M
+Mandarill_5,Mandrill,Mandrillus sphinx,Primates,Omnivorous,Simple gut,5,F
+Mandarill_6,Mandrill,Mandrillus sphinx,Primates,Omnivorous,Simple gut,6,F
+Mandarill_7,Mandrill,Mandrillus sphinx,Primates,Omnivorous,Simple gut,7,F
+Mandarill_8,Mandrill,Mandrillus sphinx,Primates,Omnivorous,Simple gut,8,M
+Rhino_1,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,1,F
+Rhino_10,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,10,F
+Rhino_11,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,11,F
+Rhino_12,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,12,F
+Rhino_13,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,13,F
+Rhino_2,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,2,F
+Rhino_3,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,3,M
+Rhino_4,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,4,M
+Rhino_5,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,5,F
+Rhino_6,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,6,M
+Rhino_7,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,7,M
+Rhino_8,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,8,M
+Rhino_9,Rhinoceros,Ceratotherium simum,Perissodactyla,Herbivorous,Hindgut,9,F
+Sand_cat_1,Sand cat,Felis margarita,Carnivora,Carnivorous,Simple gut,1,M
+Sheep_1,Sheep,Ovis aries,Artiodactyla,Herbivorous,Foregut,1,-
+Sheep_2,Sheep,Ovis aries,Artiodactyla,Herbivorous,Foregut,2,-
+Sheep_3,Sheep,Ovis aries,Artiodactyla,Herbivorous,Foregut,3,F
+Sheep_4,Sheep,Ovis aries,Artiodactyla,Herbivorous,Foregut,4,F
+Sheep_5,Sheep,Ovis aries,Artiodactyla,Herbivorous,Foregut,5,F
+Tiger_1,Tiger,Panthera tigris  ,Carnivora,Carnivorous,Simple gut,1,M
+Tiger_2,Tiger,Panthera tigris  ,Carnivora,Carnivorous,Simple gut,2,M
+Wolf_1,Arabian wolf,Canis lupus arabs,Carnivora,Carnivorous,Simple gut,1,F
+Wolf_2,African wild dog,Lycaon pictus,Carnivora,Carnivorous,Simple gut,2,F
+Zebra_1,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,1,-
+Zebra_10,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,10,-
+Zebra_11,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,11,-
+Zebra_12,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,12,-
+Zebra_13,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,13,-
+Zebra_14,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,14,-
+Zebra_15,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,15,-
+Zebra_16,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,16,-
+Zebra_2,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,2,-
+Zebra_3,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,3,-
+Zebra_4,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,4,-
+Zebra_5,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,5,-
+Zebra_6,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,6,-
+Zebra_7,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,7,-
+Zebra_8,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,8,-
+Zebra_9,Zebra,Equus burchelli boehmi,Perissodactyla,Herbivorous,Hindgut,9,-

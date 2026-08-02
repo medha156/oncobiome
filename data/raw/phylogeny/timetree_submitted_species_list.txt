@@ -3,6 +3,7 @@ Ammotragus lervia
 Bison bonasus
 Callimico goeldii
 Callithrix pygmaea
+Canis lupus
 Capra ibex
 Cervus elaphus
 Choloepus didactylus
@@ -49,6 +50,7 @@ Saimiri boliviensis
 Sciurus vulgaris
 Suricata suricatta
 Syncerus caffer
+Taurotragus oryx
 Tupaia belangeri
 Ursus arctos
 Varecia rubra

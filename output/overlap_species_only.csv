@@ -4,6 +4,7 @@ Ammotragus lervia,milani2020_microbiome+vincze2022_cancer
 Bison bonasus,milani2020_microbiome+vincze2022_cancer
 Callimico goeldii,milani2020_microbiome+vincze2022_cancer
 Callithrix pygmaea,boddy2020_cancer+milani2020_microbiome
+Canis lupus,guo2022_metabolome+milani2020_microbiome+vincze2022_cancer+youngblut2020_microbiome
 Capra ibex,vincze2022_cancer+youngblut2020_microbiome
 Cervus elaphus,vincze2022_cancer+youngblut2020_microbiome
 Choloepus didactylus,vincze2022_cancer+youngblut2020_microbiome
@@ -50,6 +51,7 @@ Saimiri boliviensis,milani2020_microbiome+vincze2022_cancer
 Sciurus vulgaris,vincze2022_cancer+youngblut2020_microbiome
 Suricata suricatta,milani2020_microbiome+vincze2022_cancer
 Syncerus caffer,vincze2022_cancer+youngblut2020_microbiome
+Taurotragus oryx,milani2020_microbiome+vincze2022_cancer
 Tupaia belangeri,vincze2022_cancer+youngblut2020_microbiome
 Ursus arctos,guo2022_metabolome+milani2020_microbiome+vincze2022_cancer+youngblut2020_microbiome
 Varecia rubra,milani2020_microbiome+vincze2022_cancer

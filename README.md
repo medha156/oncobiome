@@ -8,18 +8,21 @@ why large, long-lived animals don't get proportionally more cancer).
 
 | Phase | Status | Script | Output |
 |---|---|---|---|
-| 0 — Scope the question | Planned (see Methodology) | — | — |
-| 1 — Data acquisition & species overlap | **Done** | `phase1_data_ingestion.py` | `output/overlap_species_only.csv`, `output/species_overlap_report.csv` |
-| 2 — Phylogenetic tree | **Done** | `phase2_phylogeny.py` | `output/pgls_species_list.csv`, `data/raw/phylogeny/timetree_pgls_ready.nwk` |
-| 3 — Bioinformatics processing (MAGs) | Planned | — | — |
-| 4 — Functional annotation / feature matrix | Planned (raw functional tables staged in `data/raw/functional/`) | — | — |
-| 5 — PGLS statistical analysis | Planned | — | — |
-| 6 — Mechanistic follow-up (FBA) | Planned | — | — |
-| 7 — Experimental validation | Future/separate proposal | — | — |
-| 8 — Write-up | Future | — | — |
+| 0 — Scope the question | **Done** | — | `PREREGISTRATION.md` |
+| 1 — Data acquisition & species overlap | **Done** (incl. taxonomy backbone resolution) | `phase1_data_ingestion.py`, `phase1b_taxonomy_resolution.py` | `output/overlap_species_only.csv`, `output/species_overlap_report.csv`, `output/phase1b_taxonomy_resolution_report.csv` |
+| 2 — Phylogenetic tree | **Done** | `phase2_phylogeny.py` | `output/pgls_species_list.csv`, `data/processed/overlap_species_tree.nwk` |
+| 3 — Bioinformatics processing (MAGs) | **Blocked** — no raw sequencing data or bioinformatics tooling in this environment | — | — |
+| 4 — Functional annotation / feature matrix | **Blocked** — depends on Phase 3 (raw functional tables staged in `data/raw/functional/`, not yet usable — see below) | — | — |
+| 5 — PGLS statistical analysis | **Blocked** — depends on Phase 4; no R/phylolm/caper installed either | — | — |
+| 6 — Mechanistic follow-up (FBA) | **Blocked** — depends on Phase 5; no CarveMe/gapseq/COBRApy/MICOM installed | — | — |
+| 7 — Experimental validation | Design scoped, candidates TBD pending Phase 6 | — | `EXPERIMENTAL_PROPOSAL.md` |
+| 8 — Write-up | Written up honestly given current blockers | — | `RESULTS.md` |
 
 Both implemented scripts are re-runnable and idempotent — safe to run again
-as more source data is added or names are reconciled.
+as more source data is added or names are reconciled. **See
+`PIPELINE_EXECUTION_REPORT.md` for the full phase-by-phase execution log**,
+including exactly what was checked for feasibility and why Phases 3-6 are
+blocked rather than faked.
 
 ---
 
@@ -35,14 +38,15 @@ level more concrete than the general methodology.
 - **3 of 5 sources were hand-extracted, not auto-fetched.** `pmc.ncbi.nlm.nih.gov`, NCBI SRA, and MassIVE were unreachable from this sandbox's network allow-list, so `boddy2020_cancer_prevalence.csv`, `youngblut2020_host_species.csv`, and `guo2022_host_species.csv` were extracted from supplementary Excel files downloaded manually and provided directly, rather than fetched programmatically. This is recorded per-source in `DATA_SOURCES[...]["manual_note"]` in the script.
 - **Name normalization is string-based only**, not a taxonomy-backbone lookup: underscores → spaces, whitespace collapsed, genus capitalized/epithet lowercased, and trinomial subspecies collapsed to their binomial for joining. The full original per-source name is preserved in the output report — only the join key is coarsened.
 - **Overlap is defined as the intersection** of species with cancer-mortality data and species with microbiome/metabolome data — the number that matters, since it's the actual usable sample size for every downstream statistical step.
-- **The overlap count (55) is an explicit lower bound**, not a final answer, due to the manual-extraction caveat above and the string-only name matching.
-- `data/raw/functional/` (CAZy, KEGG pathway, biosynthetic gene cluster, SGB catalog/phenotype, and annotated metabolite tables from Youngblut/Guo) is **staged but intentionally not wired into Phase 1** — it's the Phase 4 functional-enrichment input, once the species sample is locked in.
+- **The overlap count is an explicit lower bound**, not a final answer, due to the manual-extraction caveat above and the string-only name matching — which is exactly why a taxonomy-backbone follow-up pass was added.
+- `data/raw/functional/` (CAZy, KEGG pathway, biosynthetic gene cluster, SGB catalog/phenotype, and annotated metabolite tables from Youngblut/Guo) is **staged but intentionally not wired into Phase 1** — it's *group-level* enrichment data (host-vs-environment, mammal-vs-other), not a per-species feature table, so it can't directly substitute for the Phase 4 deliverable either (see `PIPELINE_EXECUTION_REPORT.md`).
+- **Taxonomy backbone resolution (`phase1b_taxonomy_resolution.py`):** every species found in only one data category (154 cancer-only, 189 microbiome-only) was resolved against the GBIF Backbone Taxonomy API (confirmed reachable; used over NCBI Taxonomy for its single-call `/species/match` endpoint). This found 2 real synonym pairs the string normalizer missed — **`Canis rufus`/`Canis lupus`** (flagged as taxonomically contested, not a clean win — red wolf's species status is genuinely disputed in the literature) and **`Tragelaphus oryx`/`Taurotragus oryx`** (a standard, uncontroversial genus reassignment) — raising the overlap from 55 to **57**. Full audit trail (including the 17 names that didn't resolve at all) in `output/phase1b_taxonomy_resolution_report.csv`.
 
-**Result:** 398 unique species total across all 5 sources; 209 have cancer data, 244 have microbiome data; **55 species have both**.
+**Result:** 398 unique species total across all 5 sources; 209 have cancer data, 244 have microbiome data; **57 species have both** (up from 55 after taxonomy backbone resolution).
 
 ### Phase 2 — choices made
 
-Used [TimeTree](http://www.timetree.org) per direct instruction, since it's the same resource Youngblut et al. 2020 (one of the Phase 1 source papers) used, and it returns actual divergence-time branch lengths, which PGLS needs.
+`METHODOLOGY.md` names the VertLife/Upham et al. 2019 mammal supertree as the *preferred* tree source (it ships as a credible set of trees, not one point estimate, letting PGLS be re-run across replicates to check sensitivity to phylogenetic uncertainty). **This was checked for feasibility and found unusable in this environment**: the full Dryad data package is 5.5 GB, and the smaller MCC-tree file specifically is blocked by a Cloudflare JS challenge on direct download (plus the Dryad REST API requiring an OAuth bearer token this environment doesn't have). Fell back to [TimeTree](http://www.timetree.org) per `METHODOLOGY.md`'s explicit instruction to note the fallback and why — this is also the same resource Youngblut et al. 2020 (one of the Phase 1 source papers) used, and it returns actual divergence-time branch lengths, which PGLS needs. **Real limitation, not just a note:** this means Phase 5, whenever it runs, gets a single point-estimate tree and can't quantify PGLS sensitivity to phylogenetic uncertainty the way an Upham-et-al.-based analysis could.
 
 **How the tree was fetched:** TimeTree has no documented public REST API. Its "Load a List" → "Prune Tree" web feature is implemented as two undocumented AJAX endpoints used by the site's own front-end JavaScript (`POST /ajax/prune/load_names/`, `POST /ajax/newick/prunetree/download`). `phase2_phylogeny.py` drives these directly with a `requests` session, reverse-engineered from TimeTree's public `app.js` — exactly what a browser does when a person uses the "Load a List" tool manually; no authentication or private access involved. This is flagged as a real caveat: these are unversioned, undocumented endpoints TimeTree could change at any time without notice. If it stops working, the fallback is to use the interactive "Load a List" tool by hand and drop the resulting Newick file at the path `RAW_TREE_PATH` points to.
 
@@ -57,15 +61,16 @@ Used [TimeTree](http://www.timetree.org) per direct instruction, since it's the 
 | `Macropus eugenii` | Tree tip is `Notamacropus_eugenii` (genus split), also **not flagged** by TimeTree | **Tip relabeled** to `Macropus_eugenii` | Same reasoning as above. |
 | `Gazella subgutturosa` | TimeTree flagged this itself: substituted with `Gazella dorcas`'s branch as a data proxy | **Kept, not excluded** — substitution carried into the `note` column | TimeTree told us about this one explicitly, so no detective work was needed — just surfacing the caveat downstream: this species' branch length is a congener's data, not species-specific. |
 | `Giraffa camelopardalis` | Same situation: substituted with `Giraffa reticulata`'s branch | **Kept, with note carried forward** | Same reasoning. |
+| `Taurotragus oryx` | Tree tip is `Tragelaphus_oryx` — **TimeTree and GBIF actively disagree** on which genus name is currently accepted for this species (TimeTree's tip keeps the old `Tragelaphus oryx`; GBIF's backbone says `Taurotragus oryx` is accepted) | **Tip relabeled** to `Taurotragus_oryx` | Same join-key reasoning as the other two relabels, but notable as a real example of two legitimate taxonomic authorities disagreeing, not a data error either database made. |
 
-**Net result: 54/55 species usable for PGLS**, with 2 label fixes applied and 1 species excluded — all decisions logged, not silently absorbed.
+**Net result: 56/57 species usable for PGLS**, with 3 label fixes applied and 1 species excluded — all decisions logged, not silently absorbed.
 
 **Outputs:**
 - `data/raw/phylogeny/timetree_prunetree_raw.nwk` — raw tree exactly as returned by TimeTree, untouched
-- `data/raw/phylogeny/timetree_pgls_ready.nwk` — same tree, tips relabeled per the table above; use this one for PGLS
+- `data/raw/phylogeny/timetree_pgls_ready.nwk` and **`data/processed/overlap_species_tree.nwk`** (identical content; the latter is the canonical path later phases read from) — tips relabeled per the table above
 - `data/raw/phylogeny/timetree_submitted_species_list.txt` — snapshot of exactly what was submitted, for reproducibility
 - `output/phylogeny_species_match_report.csv` — full per-species tree-placement detail
-- `output/pgls_species_list.csv` — final 54-species list with sources and caveat notes
+- `output/pgls_species_list.csv` — final 56-species list with sources and caveat notes
 - `logs/phase2_*.log` — full timestamped run log
 
 ---

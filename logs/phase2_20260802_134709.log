@@ -1,0 +1,61 @@
+13:47:09 | INFO    | ==============================================================================
+13:47:09 | INFO    | PHASE 2: SPECIES-LEVEL TIME-CALIBRATED PHYLOGENY (TimeTree)
+13:47:09 | INFO    | ==============================================================================
+13:47:09 | INFO    | Run started : 2026-08-02T13:47:09.219792
+13:47:09 | INFO    | Log file    : C:\Users\medha\oncobiome\logs\phase2_20260802_134709.log
+13:47:09 | INFO    | 
+13:47:09 | INFO    | Tree source decision: VertLife/Upham et al. 2019 mammal supertree was the preferred source (credible tree set, not a single point estimate -- see METHODOLOGY.md Phase 2). Checked for feasibility: full Dryad package is 5.5 GB; the smaller MCC-tree file is blocked by a Cloudflare JS challenge on direct download (and the Dryad REST API requires an OAuth bearer token this environment doesn't have). Falling back to TimeTree, per METHODOLOGY.md's explicit instruction to note the fallback and why. LIMITATION: this means Phase 5 will use a single point-estimate tree, not a credible tree-set, and cannot quantify PGLS sensitivity to phylogenetic uncertainty the way an Upham-et-al.-based analysis could.
+13:47:09 | INFO    | 
+13:47:09 | INFO    | Loaded 57 overlap species from Phase 1 output.
+13:47:09 | INFO    | 
+13:47:09 | INFO    | Establishing session with http://www.timetree.org ...
+13:47:09 | DEBUG   | Homepage GET status: 200
+13:47:09 | INFO    | Submitted species list saved to: C:\Users\medha\oncobiome\data\raw\phylogeny\timetree_submitted_species_list.txt
+13:47:09 | INFO    | POST 57 species names to http://www.timetree.org/ajax/prune/load_names/ ...
+13:47:10 | DEBUG   | Prune-tree widget HTML saved to: C:\Users\medha\oncobiome\data\raw\phylogeny\timetree_prunetree_response.html
+13:47:10 | INFO    | POST export=newick to http://www.timetree.org/ajax/newick/prunetree/download ...
+13:47:10 | INFO    | Raw Newick tree saved to: C:\Users\medha\oncobiome\data\raw\phylogeny\timetree_prunetree_raw.nwk (2522 bytes)
+13:47:10 | INFO    | 
+13:47:10 | INFO    | ==============================================================================
+13:47:10 | INFO    | TREE SUMMARY
+13:47:10 | INFO    | ==============================================================================
+13:47:10 | INFO    | Species submitted        : 57
+13:47:10 | INFO    | Leaf nodes in tree       : 56
+13:47:10 | INFO    | TimeTree-flagged name issues (3):
+13:47:10 | INFO    |     - Gazella subgutturosa: replaced with Gazella dorcas
+13:47:10 | INFO    |     - Giraffa camelopardalis: replaced with Giraffa reticulata
+13:47:10 | INFO    |     - Felis silvestris: insufficient data in TimeTree to place this taxon
+13:47:10 | INFO    | 
+13:47:10 | INFO    | ==============================================================================
+13:47:10 | INFO    | SPECIES <-> TREE TIP CROSS-CHECK
+13:47:10 | INFO    | ==============================================================================
+13:47:10 | INFO    | dropped_no_data       : 1
+13:47:10 | INFO    | exact_match           : 53
+13:47:10 | INFO    | silent_genus_rename   : 3
+13:47:10 | INFO    | 
+13:47:10 | WARNING | [silent_genus_rename] Callithrix pygmaea -> Not found as 'Callithrix pygmaea'; matched by species epithet to tree tip 'Cebuella_pygmaea' (TimeTree did not flag this in its own unresolved-names list -- likely a taxonomic revision not reflected in the source dataset's naming).
+13:47:10 | WARNING | [dropped_no_data] Felis silvestris -> insufficient data in TimeTree to place this taxon
+13:47:10 | WARNING | [silent_genus_rename] Macropus eugenii -> Not found as 'Macropus eugenii'; matched by species epithet to tree tip 'Notamacropus_eugenii' (TimeTree did not flag this in its own unresolved-names list -- likely a taxonomic revision not reflected in the source dataset's naming).
+13:47:10 | WARNING | [silent_genus_rename] Taurotragus oryx -> Not found as 'Taurotragus oryx'; matched by species epithet to tree tip 'Tragelaphus_oryx' (TimeTree did not flag this in its own unresolved-names list -- likely a taxonomic revision not reflected in the source dataset's naming).
+13:47:10 | INFO    | 
+13:47:10 | INFO    | Per-species match report written to: C:\Users\medha\oncobiome\output\phylogeny_species_match_report.csv
+13:47:10 | INFO    | 
+13:47:10 | INFO    | ==============================================================================
+13:47:10 | INFO    | FINALIZING PGLS-READY TREE + SPECIES LIST
+13:47:10 | INFO    | ==============================================================================
+13:47:11 | INFO    | PGLS-ready tree (tips relabeled) written to: C:\Users\medha\oncobiome\data\raw\phylogeny\timetree_pgls_ready.nwk
+13:47:11 | INFO    |     relabeled tip: Cebuella_pygmaea -> Callithrix_pygmaea
+13:47:11 | INFO    |     relabeled tip: Notamacropus_eugenii -> Macropus_eugenii
+13:47:11 | INFO    |     relabeled tip: Tragelaphus_oryx -> Taurotragus_oryx
+13:47:11 | INFO    | Same tree also written to canonical path: C:\Users\medha\oncobiome\data\processed\overlap_species_tree.nwk (this is what Phase 5 reads)
+13:47:11 | INFO    | Final PGLS species list (56 species) written to: C:\Users\medha\oncobiome\output\pgls_species_list.csv
+13:47:11 | INFO    | Excluded from PGLS sample (1): ['Felis silvestris']
+13:47:11 | INFO    | 
+13:47:11 | INFO    | ==============================================================================
+13:47:11 | INFO    | PHASE 2 COMPLETE
+13:47:11 | INFO    | ==============================================================================
+13:47:11 | INFO    | 56/57 overlap species are placed on the tree and usable for downstream PGLS.
+13:47:11 | INFO    | 1 species have NO tree placement and must be excluded from PGLS (or manually grafted onto the tree at a conservative node): ['Felis silvestris']
+13:47:11 | INFO    | 3 species matched only after allowing for a genus-level taxonomic revision -- flag these for the taxonomy cross-check step: ['Callithrix pygmaea', 'Macropus eugenii', 'Taurotragus oryx']
+13:47:11 | INFO    | Full detailed log saved to: C:\Users\medha\oncobiome\logs\phase2_20260802_134709.log
+13:47:11 | INFO    | Next step: use RAW_TREE_PATH as the PGLS phylogeny, substituting tip labels per the match report so they align with the species names used in the cancer-mortality and microbiome tables.

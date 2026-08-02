@@ -7,8 +7,9 @@ Project: Comparative analysis of mammalian gut microbiome functions
 
 WHAT THIS SCRIPT DOES
 ----------------------
-1. Reads the 55-species cancer x microbiome overlap list produced by
-   Phase 1 (output/overlap_species_only.csv).
+1. Reads the cancer x microbiome overlap list produced by Phase 1
+   (output/overlap_species_only.csv) -- 57 species as of the taxonomy
+   backbone resolution pass (phase1b_taxonomy_resolution.py).
 2. Submits that species list to TimeTree (timetree.org) -- the same
    resource Youngblut et al. 2020 used -- and retrieves a pruned,
    time-calibrated Newick tree spanning exactly those species.
@@ -19,6 +20,36 @@ WHAT THIS SCRIPT DOES
    catch (synonyms, genus reassignments, insufficient data for a taxon).
 4. Writes the raw tree, a per-species match report, and a timestamped
    log.
+
+TIMETREE VS. VERTLIFE/UPHAM -- WHY TIMETREE WAS USED
+------------------------------------------------------
+METHODOLOGY.md Phase 2 names the VertLife/Upham et al. 2019 mammal
+supertree as the *preferred* source (it ships as a credible set of
+trees, not a single point estimate, which lets PGLS be re-run across
+tree replicates to check sensitivity to phylogenetic uncertainty).
+This was checked for feasibility before defaulting to TimeTree:
+
+  - The full Dryad data package (doi:10.5061/dryad.tb03d03) is 5.5 GB --
+    impractical to fetch in bulk just to extract one species subset.
+  - The smaller, specifically relevant file (Data_S4_patchClade_results_
+    and_MCC.zip, ~4.5 MB, likely containing the maximum-clade-credibility
+    single tree) could not actually be downloaded from this environment:
+    the Dryad REST API's file-download endpoint requires an OAuth bearer
+    token (401 Unauthorized), and the public web "file_stream" download
+    link is behind a Cloudflare JS challenge ("Validating..." page) that
+    a plain HTTP client cannot pass.
+  - The interactive VertLife species-subsetting tool (vertlife.org/
+    phylosubsets) does load, but is not a simple stateless request/
+    response flow like TimeTree's -- it did not yield a quick,
+    reasonably-scoped path to a scripted subset download either.
+
+Given this, TimeTree was used as the documented fallback, per
+METHODOLOGY.md's own instruction to do so explicitly rather than
+silently substitute. **This is a real limitation, not a stylistic
+choice**: it means this project's PGLS step (Phase 5) will use a single
+point-estimate tree and cannot re-run models across a credible set of
+trees to quantify sensitivity to phylogenetic uncertainty, the way an
+Upham-et-al.-based analysis could.
 
 DATA PROVENANCE / IMPORTANT CAVEAT
 -----------------------------------
@@ -62,11 +93,12 @@ import requests
 # --------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent
 DATA_RAW = BASE_DIR / "data" / "raw"
+DATA_PROCESSED = BASE_DIR / "data" / "processed"
 PHYLO_DIR = DATA_RAW / "phylogeny"
 LOG_DIR = BASE_DIR / "logs"
 OUT_DIR = BASE_DIR / "output"
 
-for d in (PHYLO_DIR, LOG_DIR, OUT_DIR):
+for d in (PHYLO_DIR, DATA_PROCESSED, LOG_DIR, OUT_DIR):
     d.mkdir(parents=True, exist_ok=True)
 
 OVERLAP_LIST_PATH = OUT_DIR / "overlap_species_only.csv"
@@ -76,6 +108,10 @@ RAW_HTML_PATH = PHYLO_DIR / "timetree_prunetree_response.html"
 MATCH_REPORT_PATH = OUT_DIR / "phylogeny_species_match_report.csv"
 PGLS_TREE_PATH = PHYLO_DIR / "timetree_pgls_ready.nwk"
 PGLS_SPECIES_LIST_PATH = OUT_DIR / "pgls_species_list.csv"
+# Canonical path later pipeline phases (Phase 5 prompt) expect the final
+# pruned, PGLS-ready tree at -- identical content to PGLS_TREE_PATH, just
+# the stable name/location downstream phases read from.
+FINAL_TREE_PATH = DATA_PROCESSED / "overlap_species_tree.nwk"
 
 TIMETREE_BASE = "http://www.timetree.org"
 LOAD_NAMES_URL = f"{TIMETREE_BASE}/ajax/prune/load_names/"
@@ -253,6 +289,9 @@ def finalize_pgls_tree(newick, rows):
     logger.info(f"PGLS-ready tree (tips relabeled) written to: {PGLS_TREE_PATH}")
     for old_tip, new_tip in rename_map.items():
         logger.info(f"    relabeled tip: {old_tip} -> {new_tip}")
+    FINAL_TREE_PATH.write_text(pgls_newick + "\n", encoding="utf-8")
+    logger.info(f"Same tree also written to canonical path: {FINAL_TREE_PATH} "
+                f"(this is what Phase 5 reads)")
 
     sources = load_overlap_sources()
     excluded = [r for r in rows if r["status"] in ("dropped_no_data", "missing_unexplained")]
@@ -345,6 +384,18 @@ def main():
     logger.info("=" * 78)
     logger.info(f"Run started : {datetime.now().isoformat()}")
     logger.info(f"Log file    : {log_path}")
+    logger.info("")
+    logger.info("Tree source decision: VertLife/Upham et al. 2019 mammal supertree was the "
+                "preferred source (credible tree set, not a single point estimate -- see "
+                "METHODOLOGY.md Phase 2). Checked for feasibility: full Dryad package is "
+                "5.5 GB; the smaller MCC-tree file is blocked by a Cloudflare JS challenge on "
+                "direct download (and the Dryad REST API requires an OAuth bearer token this "
+                "environment doesn't have). Falling back to TimeTree, per METHODOLOGY.md's "
+                "explicit instruction to note the fallback and why. LIMITATION: this means "
+                "Phase 5 will use a single point-estimate tree, not a credible tree-set, and "
+                "cannot quantify PGLS sensitivity to phylogenetic uncertainty the way an "
+                "Upham-et-al.-based analysis could.")
+    logger.info("")
 
     if not OVERLAP_LIST_PATH.exists():
         logger.error(

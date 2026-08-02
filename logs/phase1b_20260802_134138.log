@@ -1,0 +1,42 @@
+13:41:38 | INFO    | ==============================================================================
+13:41:38 | INFO    | PHASE 1 STEP 2: TAXONOMIC BACKBONE NAME RESOLUTION (GBIF)
+13:41:38 | INFO    | ==============================================================================
+13:41:38 | INFO    | Run started : 2026-08-02T13:41:38.354633
+13:41:38 | INFO    | Log file    : C:\Users\medha\oncobiome\logs\phase1b_20260802_134138.log
+13:41:38 | INFO    | Original overlap (Phase 1, string-matching only): 55
+13:41:38 | INFO    | Cancer-only species to resolve     : 154
+13:41:38 | INFO    | Microbiome-only species to resolve  : 189
+13:41:38 | INFO    | 
+13:41:58 | DEBUG   |   ... resolved 50/343 names so far
+13:42:16 | DEBUG   |   ... resolved 100/343 names so far
+13:42:36 | DEBUG   |   ... resolved 150/343 names so far
+13:42:54 | DEBUG   |   ... resolved 200/343 names so far
+13:43:12 | DEBUG   |   ... resolved 250/343 names so far
+13:43:31 | DEBUG   |   ... resolved 300/343 names so far
+13:43:47 | INFO    | GBIF returned a match for 326/343 names (17 unresolved/no match).
+13:43:47 | INFO    | 
+13:43:47 | INFO    | ==============================================================================
+13:43:47 | INFO    | RESOLUTION RESULTS
+13:43:47 | INFO    | ==============================================================================
+13:43:47 | INFO    | NEW overlap species found via synonym resolution: 2
+13:43:47 | INFO    |     - Canis lupus  (cancer-side spelling: ['Canis rufus']; microbiome-side spelling: ['Canis lupus'])
+13:43:47 | INFO    |     - Taurotragus oryx  (cancer-side spelling: ['Tragelaphus oryx']; microbiome-side spelling: ['Taurotragus oryx'])
+13:43:47 | INFO    | 
+13:43:47 | INFO    | Additional source-coverage found for already-overlapping species (does not change overlap count, logged for completeness): 4
+13:43:47 | INFO    |     - 'Cervus canadensis' resolves to already-counted overlap species 'Cervus elaphus'
+13:43:47 | INFO    |     - 'Dama mesopotamica' resolves to already-counted overlap species 'Dama dama'
+13:43:47 | INFO    |     - 'Equus burchelli' resolves to already-counted overlap species 'Equus quagga'
+13:43:47 | INFO    |     - 'Lama guanicoe' resolves to already-counted overlap species 'Lama glama'
+13:43:47 | INFO    | 
+13:43:47 | INFO    | Full resolution audit trail written to: C:\Users\medha\oncobiome\output\phase1b_taxonomy_resolution_report.csv
+13:43:47 | INFO    | 
+13:43:47 | INFO    | ==============================================================================
+13:43:47 | INFO    | BEFORE / AFTER SUMMARY
+13:43:47 | INFO    | ==============================================================================
+13:43:47 | INFO    | Overlap BEFORE naming fix (original Phase 1 run)      : 55
+13:43:47 | INFO    | Overlap AFTER naming fix, same string matching        : 55 (unchanged, as expected)
+13:43:47 | INFO    | Overlap AFTER taxonomic backbone resolution (this run): 57
+13:43:47 | INFO    | Net new species from taxonomy resolution              : 2
+13:43:47 | INFO    | 17 species had no usable GBIF match at all (status NONE/low match type) -- these remain unmatched, not silently dropped.
+13:43:47 | INFO    | Updated overlap outputs written to: C:\Users\medha\oncobiome\output\species_overlap_report.csv, C:\Users\medha\oncobiome\output\overlap_species_only.csv
+13:43:47 | INFO    | Full log: C:\Users\medha\oncobiome\logs\phase1b_20260802_134138.log

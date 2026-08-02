@@ -23,9 +23,9 @@ DATA PROVENANCE (read before trusting numbers downstream)
 -----------------------------------------------------------
 - vincze2022_cancer_mortality.csv : REAL DATA. Downloaded verbatim from the
   Vincze et al. 2022 (Nature) authors' GitHub repo (data.csv), 191 species.
-- manor2020_host_species.csv      : REAL DATA. Hand-extracted from Table 1
-  of the Manor et al. 2020 (AEM) paper's full-text HTML, 77 species.
-- compton2020_cancer_prevalence.csv,
+- milani2020_host_species.csv     : REAL DATA. Hand-extracted from Table 1
+  of the Milani et al. 2020 (AEM) paper's full-text HTML, 77 species.
+- boddy2020_cancer_prevalence.csv,
   youngblut2020_host_species.csv,
   guo2022_host_species.csv         : REAL DATA. Extracted from supplementary
   Excel files the user downloaded manually and provided directly (see each
@@ -94,11 +94,11 @@ DATA_SOURCES = {
         "expected_n": 191,
         "auto_fetchable": True,
     },
-    "compton2020_cancer": {
-        "citation": "Compton/Boddy et al. 2020, Evolution Medicine & Public Health - "
+    "boddy2020_cancer": {
+        "citation": "Boddy et al. 2020, Evolution Medicine & Public Health - "
                     "Lifetime cancer prevalence and life history traits in mammals (PMC7652303)",
         "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/7652303/bin/eoaa015_supplementary_data.zip",
-        "local_file": DATA_RAW / "compton2020_cancer_prevalence.csv",
+        "local_file": DATA_RAW / "boddy2020_cancer_prevalence.csv",
         "role": "cancer_mortality",
         "species_col": "species_name",
         "expected_n": 37,
@@ -109,12 +109,12 @@ DATA_SOURCES = {
             "reachable from this environment's network allow-list. Extracted to local_file."
         ),
     },
-    "manor2020_microbiome": {
-        "citation": "Manor et al. 2020, Applied and Environmental Microbiology 86:e01864-20 - "
+    "milani2020_microbiome": {
+        "citation": "Milani et al. 2020, Applied and Environmental Microbiology 86:e01864-20 - "
                     "Multi-omics Approaches To Decipher the Impact of Diet and Host Physiology "
                     "on the Mammalian Gut Microbiome",
         "source_url": "https://journals.asm.org/doi/10.1128/aem.01864-20",
-        "local_file": DATA_RAW / "manor2020_host_species.csv",
+        "local_file": DATA_RAW / "milani2020_host_species.csv",
         "role": "microbiome",
         "species_col": "species",
         "expected_n": 77,

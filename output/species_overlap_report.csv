@@ -1,4 +1,4 @@
-binomial_species,n_sources,vincze2022_cancer,compton2020_cancer,manor2020_microbiome,youngblut2020_microbiome,guo2022_metabolome,in_cancer_dataset,in_microbiome_dataset,overlap
+binomial_species,n_sources,vincze2022_cancer,boddy2020_cancer,milani2020_microbiome,youngblut2020_microbiome,guo2022_metabolome,in_cancer_dataset,in_microbiome_dataset,overlap
 Abramis brama,1,,,,Abramis_brama,,False,True,False
 Acanthiza uropygialis,1,,,,Acanthiza_uropygialis,,False,True,False
 Accipiter nisus,1,,,,Accipiter_nisus,,False,True,False
@@ -386,7 +386,7 @@ Ursus arctos,4,Ursus_arctos,,Ursus arctos,Ursus_arctos,Ursus arctos,True,True,Tr
 Ursus maritimus,1,Ursus_maritimus,,,,,True,False,False
 Ursus thibetanus,1,,,,,Ursus thibetanus,False,True,False
 Varecia rubra,2,Varecia_rubra,,Varecia rubra,,,True,True,True
-Varecia variegata,3,Varecia_variegata,,Varecia variegata,,Varecia variegata rubra,True,True,True
+Varecia variegata,3,Varecia_variegata,,Varecia variegata,,Varecia variegata,True,True,True
 Vicugna pacos,1,,,Vicugna pacos,,,False,True,False
 Vicugna vicugna,1,,,Vicugna vicugna,,,False,True,False
 Vipera ursinii,1,,,,Vipera_ursinii,,False,True,False
